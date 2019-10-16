@@ -10,7 +10,8 @@ namespace GieldaL2.API.Controllers
     {
         [HttpGet("{id}")]
         [ProducesResponseType(200)]
-        [ProducesResponseType(400)]
+        [ProducesResponseType(404)]
+        [ProducesResponseType(500)]
         public ActionResult<UserViewModel> Get(int id)
         {
             return null;
@@ -25,6 +26,7 @@ namespace GieldaL2.API.Controllers
 
         [HttpPut("{id}")]
         [ProducesResponseType(200)]
+        [ProducesResponseType(404)]
         [ProducesResponseType(500)]
         public void Put(int id, [FromBody] EditUserViewModel user)
         {
@@ -32,6 +34,7 @@ namespace GieldaL2.API.Controllers
 
         [HttpDelete("{id}")]
         [ProducesResponseType(204)]
+        [ProducesResponseType(404)]
         [ProducesResponseType(500)]
         public void Delete(int id)
         {

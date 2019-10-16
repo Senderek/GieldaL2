@@ -11,6 +11,7 @@ namespace GieldaL2.API.Controllers
     {
         [HttpGet]
         [ProducesResponseType(200)]
+        [ProducesResponseType(500)]
         public ActionResult<IEnumerable<OrderViewModel>> Get()
         {
             return null;

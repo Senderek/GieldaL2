@@ -10,7 +10,8 @@ namespace GieldaL2.API.Controllers
     {
         [HttpGet("{id}")]
         [ProducesResponseType(200)]
-        [ProducesResponseType(400)]
+        [ProducesResponseType(404)]
+        [ProducesResponseType(500)]
         public ActionResult<OrderViewModel> Get(int id)
         {
             return null;
