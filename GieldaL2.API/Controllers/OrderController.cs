@@ -19,7 +19,7 @@ namespace GieldaL2.API.Controllers
         [HttpPost]
         [ProducesResponseType(201)]
         [ProducesResponseType(500)]
-        public void Post([FromBody] OrderViewModel order)
+        public void Post([FromBody] EditOrderViewModel order)
         {
         }
     }

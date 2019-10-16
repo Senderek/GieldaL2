@@ -1,26 +1,11 @@
-﻿using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-
-namespace GieldaL2.API.ViewModels
+﻿namespace GieldaL2.API.ViewModels
 {
     public class OrderViewModel
     {
-        [Required]
         public int Id { get; set; }
-
-        [Required]
-        public int BuyerId { get; set; }
-
-        [Required]
-        public int SellerId { get; set; }
-
-        [Required]
-        public int StockId { get; set; }
-
-        [Required]
+        public UserViewModel User { get; set; }
+        public ShareViewModel Share { get; set; }
         public int Amount { get; set; }
-
-        [Required]
-        public decimal Price { get; set; }
+        public decimal Value { get; set; }
     }
 }

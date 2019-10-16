@@ -19,14 +19,14 @@ namespace GieldaL2.API.Controllers
         [HttpPost]
         [ProducesResponseType(201)]
         [ProducesResponseType(500)]
-        public void Post([FromBody] ShareViewModel share)
+        public void Post([FromBody] EditShareViewModel share)
         {
         }
 
         [HttpPut("{id}")]
         [ProducesResponseType(200)]
         [ProducesResponseType(500)]
-        public void Put(int id, [FromBody] ShareViewModel share)
+        public void Put(int id, [FromBody] EditShareViewModel share)
         {
         }
 

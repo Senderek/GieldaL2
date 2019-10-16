@@ -1,17 +1,14 @@
-﻿using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
 
 namespace GieldaL2.API.ViewModels
 {
     public class UserViewModel
     {
-        [Required]
         public int Id { get; set; }
-
-        [Required]
         public string Name { get; set; }
-
-        [DefaultValue(0)]
         public decimal Value { get; set; }
+
+        public List<ShareViewModel> Shares { get; set; }
+        public List<OrderViewModel> Orders { get; set; }
     }
 }

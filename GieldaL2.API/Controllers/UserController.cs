@@ -19,14 +19,14 @@ namespace GieldaL2.API.Controllers
         [HttpPost]
         [ProducesResponseType(201)]
         [ProducesResponseType(500)]
-        public void Post([FromBody] UserViewModel user)
+        public void Post([FromBody] EditUserViewModel user)
         {
         }
 
         [HttpPut("{id}")]
         [ProducesResponseType(200)]
         [ProducesResponseType(500)]
-        public void Put(int id, [FromBody] UserViewModel user)
+        public void Put(int id, [FromBody] EditUserViewModel user)
         {
         }
 
