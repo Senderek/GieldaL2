@@ -11,7 +11,7 @@ namespace GieldaL2.API.Controllers
         [HttpGet("{id}")]
         [ProducesResponseType(200)]
         [ProducesResponseType(400)]
-        public ActionResult<string> Get(int id)
+        public ActionResult<UserViewModel> Get(int id)
         {
             return null;
         }
