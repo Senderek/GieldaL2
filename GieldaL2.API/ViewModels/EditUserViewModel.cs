@@ -6,9 +6,6 @@ namespace GieldaL2.API.ViewModels
     public class EditUserViewModel
     {
         [Required]
-        public int Id { get; set; }
-
-        [Required]
         public string Name { get; set; }
 
         [Required]

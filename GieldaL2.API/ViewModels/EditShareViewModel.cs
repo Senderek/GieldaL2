@@ -16,5 +16,8 @@ namespace GieldaL2.API.ViewModels
 
         [DefaultValue(0)]
         public decimal BuyoutPrice { get; set; }
+
+        [Required]
+        public int OwnerId { get; set; }
     }
 }
