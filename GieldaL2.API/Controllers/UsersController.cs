@@ -16,5 +16,46 @@ namespace GieldaL2.API.Controllers
         {
             return null;
         }
+
+        [HttpGet("{id}")]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(404)]
+        [ProducesResponseType(500)]
+        public ActionResult<UserViewModel> Get(int id)
+        {
+            return null;
+        }
+
+        [HttpGet("{id}/shares")]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(404)]
+        [ProducesResponseType(500)]
+        public ActionResult<List<ShareViewModel>> GetShares(int id)
+        {
+            return null;
+        }
+
+        [HttpPost]
+        [ProducesResponseType(201)]
+        [ProducesResponseType(500)]
+        public void Post([FromBody] EditUserViewModel user)
+        {
+        }
+
+        [HttpPut("{id}")]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(404)]
+        [ProducesResponseType(500)]
+        public void Put(int id, [FromBody] EditUserViewModel user)
+        {
+        }
+
+        [HttpDelete("{id}")]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(404)]
+        [ProducesResponseType(500)]
+        public void Delete(int id)
+        {
+        }
     }
 }
