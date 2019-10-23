@@ -1,6 +1,6 @@
 ﻿namespace GieldaL2.API.ViewModels
 {
-    public class OrderViewModel
+    public class OfferViewModel
     {
         public int Id { get; set; }
         public int UserId { get; set; }

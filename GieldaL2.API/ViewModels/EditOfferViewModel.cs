@@ -2,7 +2,7 @@
 
 namespace GieldaL2.API.ViewModels
 {
-    public class EditOrderViewModel
+    public class EditOfferViewModel
     {
         [Required]
         public int UserId { get; set; }
