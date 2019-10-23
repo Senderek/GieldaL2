@@ -7,6 +7,6 @@
         public string Abbreviation { get; set; }
         public string TotalVolume { get; set; }
         public decimal BuyoutPrice { get; set; }
-        public UserViewModel Owner { get; set; }
+        public int OwnerId { get; set; }
     }
 }
