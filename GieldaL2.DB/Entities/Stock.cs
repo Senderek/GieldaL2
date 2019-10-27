@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace GieldaL2.INFRASTRUCTURE.Entities
+namespace GieldaL2.DB.Entities
 {
     public class Stock
     {

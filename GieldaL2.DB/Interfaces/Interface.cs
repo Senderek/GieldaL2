@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace GieldaL2.INFRASTRUCTURE.Interfaces
+namespace GieldaL2.DB.Interfaces
 {
     public class Interface
     {

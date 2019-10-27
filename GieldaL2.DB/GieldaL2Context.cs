@@ -1,11 +1,11 @@
-﻿using GieldaL2.INFRASTRUCTURE.Entities;
+﻿using GieldaL2.DB.Entities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace GieldaL2.INFRASTRUCTURE
+namespace GieldaL2.DB
 {
     public class GieldaL2Context : IdentityDbContext
     {

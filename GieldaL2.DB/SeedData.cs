@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace GieldaL2.INFRASTRUCTURE
+namespace GieldaL2.DB
 {
     public static class SeedData
     {
