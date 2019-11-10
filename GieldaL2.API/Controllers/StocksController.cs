@@ -8,12 +8,12 @@ namespace GieldaL2.API.Controllers
     [ApiController]
     [Route("api/[controller]")]
     [Produces("application/json")]
-    public class UsersController : ControllerBase
+    public class StocksController : ControllerBase
     {
         [HttpGet]
         [ProducesResponseType(200)]
         [ProducesResponseType(500)]
-        public ActionResult<IEnumerable<UserViewModel>> Get()
+        public ActionResult<IEnumerable<StockViewModel>> Get()
         {
             return null;
         }
@@ -22,16 +22,7 @@ namespace GieldaL2.API.Controllers
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
-        public ActionResult<UserViewModel> Get(int id)
-        {
-            return null;
-        }
-
-        [HttpGet("{id}/shares")]
-        [ProducesResponseType(200)]
-        [ProducesResponseType(404)]
-        [ProducesResponseType(500)]
-        public ActionResult<List<ShareViewModel>> GetShares(int id)
+        public ActionResult<StockViewModel> Get(int id)
         {
             return null;
         }
@@ -39,7 +30,7 @@ namespace GieldaL2.API.Controllers
         [HttpPost]
         [ProducesResponseType(201)]
         [ProducesResponseType(500)]
-        public void Post([FromBody] EditUserViewModel user)
+        public void Post([FromBody] EditStockViewModel user)
         {
         }
 
@@ -47,7 +38,7 @@ namespace GieldaL2.API.Controllers
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
-        public void Put(int id, [FromBody] EditUserViewModel user)
+        public void Put(int id, [FromBody] EditStockViewModel user)
         {
         }
 
