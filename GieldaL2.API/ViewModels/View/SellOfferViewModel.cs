@@ -1,4 +1,4 @@
-﻿namespace GieldaL2.API.ViewModels
+﻿namespace GieldaL2.API.ViewModels.View
 {
     public class SellOfferViewModel
     {

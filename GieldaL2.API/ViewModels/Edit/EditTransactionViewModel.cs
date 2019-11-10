@@ -1,7 +1,6 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace GieldaL2.API.ViewModels
+namespace GieldaL2.API.ViewModels.Edit
 {
     public class EditTransactionViewModel
     {

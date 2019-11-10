@@ -1,14 +1,14 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace GieldaL2.API.ViewModels
+namespace GieldaL2.API.ViewModels.Edit
 {
-    public class EditBuyOfferViewModel
+    public class EditSellOfferViewModel
     {
         [Required]
         public int UserId { get; set; }
 
         [Required]
-        public int StockId { get; set; }
+        public int ShareId { get; set; }
 
         [Required]
         public int Amount { get; set; }
