@@ -30,24 +30,27 @@ namespace GieldaL2.API.Controllers
         [HttpPost]
         [ProducesResponseType(201)]
         [ProducesResponseType(500)]
-        public void Post([FromBody] EditStockViewModel user)
+        public ActionResult<StatisticsViewModel> Post([FromBody] EditStockViewModel user)
         {
+            return null;
         }
 
         [HttpPut("{id}")]
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
-        public void Put(int id, [FromBody] EditStockViewModel user)
+        public ActionResult<StatisticsViewModel> Put(int id, [FromBody] EditStockViewModel user)
         {
+            return null;
         }
 
         [HttpDelete("{id}")]
         [ProducesResponseType(204)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
-        public void Delete(int id)
+        public ActionResult<StatisticsViewModel> Delete(int id)
         {
+            return null;
         }
     }
 }

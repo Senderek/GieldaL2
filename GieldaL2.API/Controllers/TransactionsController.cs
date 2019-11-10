@@ -29,16 +29,18 @@ namespace GieldaL2.API.Controllers
         [HttpPost]
         [ProducesResponseType(201)]
         [ProducesResponseType(500)]
-        public void Post([FromBody] TransactionViewModel order)
+        public ActionResult<StatisticsViewModel> Post([FromBody] TransactionViewModel order)
         {
+            return null;
         }
 
         [HttpDelete("{id}")]
         [ProducesResponseType(204)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
-        public void Delete(int id)
+        public ActionResult<StatisticsViewModel> Delete(int id)
         {
+            return null;
         }
     }
 }
