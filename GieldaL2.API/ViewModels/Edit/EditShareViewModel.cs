@@ -1,23 +1,16 @@
-﻿using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace GieldaL2.API.ViewModels.Edit
 {
     public class EditShareViewModel
     {
         [Required]
-        public string Name { get; set; }
+        public int StockId { get; set; }
 
         [Required]
-        public string Abbreviation { get; set; }
-
-        [DefaultValue(0)]
-        public string TotalVolume { get; set; }
-
-        [DefaultValue(0)]
-        public decimal BuyoutPrice { get; set; }
+        public int UserId { get; set; }
 
         [Required]
-        public int OwnerId { get; set; }
+        public int Amount { get; set; }
     }
 }
