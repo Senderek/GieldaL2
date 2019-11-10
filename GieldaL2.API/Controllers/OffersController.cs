@@ -30,16 +30,18 @@ namespace GieldaL2.API.Controllers
         [HttpPost("sell")]
         [ProducesResponseType(201)]
         [ProducesResponseType(500)]
-        public void PostSell([FromBody] EditSellOfferViewModel order)
+        public ActionResult<StatisticsViewModel> PostSell([FromBody] EditSellOfferViewModel order)
         {
+            return null;
         }
 
         [HttpDelete("sell/{id}")]
         [ProducesResponseType(204)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
-        public void DeleteSell(int id)
+        public ActionResult<StatisticsViewModel> DeleteSell(int id)
         {
+            return null;
         }
 
         [HttpGet("buy")]
@@ -62,16 +64,18 @@ namespace GieldaL2.API.Controllers
         [HttpPost("buy")]
         [ProducesResponseType(201)]
         [ProducesResponseType(500)]
-        public void PostBuy([FromBody] EditBuyOfferViewModel order)
+        public ActionResult<StatisticsViewModel> PostBuy([FromBody] EditBuyOfferViewModel order)
         {
+            return null;
         }
 
         [HttpDelete("buy/{id}")]
         [ProducesResponseType(204)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
-        public void DeleteBuy(int id)
+        public ActionResult<StatisticsViewModel> DeleteBuy(int id)
         {
+            return null;
         }
     }
 }
