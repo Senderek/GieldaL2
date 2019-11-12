@@ -8,4 +8,12 @@
     <ProjectReference Include="..\GieldaL2.DB\GieldaL2.DB.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="5.0.1" />
+  </ItemGroup>
+
 </Project>
