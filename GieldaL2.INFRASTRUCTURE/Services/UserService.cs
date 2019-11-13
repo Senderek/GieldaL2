@@ -13,9 +13,9 @@ namespace GieldaL2.INFRASTRUCTURE.Services
 {
     public class UserService : IService, IUserService
     {
-        private readonly UserRepository _userRepository;
+        private readonly IUserRepository _userRepository;
 
-        public UserService(UserRepository userRepository)
+        public UserService(IUserRepository userRepository)
         {
             _userRepository = userRepository;
         }
