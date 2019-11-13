@@ -6,7 +6,5 @@
         public int StockId { get; set; }
         public int UserId { get; set; }
         public int Amount { get; set; }
-
-        public StatisticsViewModel Statistics { get; set; }
     }
 }
