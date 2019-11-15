@@ -1,9 +1,11 @@
-﻿using Autofac;
+using GieldaL2.DB;
+using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using GieldaL2.INFRASTRUCTURE.IoC;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
@@ -30,6 +32,9 @@ namespace GieldaL2.API
             {
                 c.SwaggerDoc("v1", new Info { Title = "GieldaL2.API", Version = "v1" });
             });
+
+
+            services.AddDbContext<GieldaL2Context>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             var builder = new ContainerBuilder();
             builder.Populate(services);
