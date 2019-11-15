@@ -10,7 +10,7 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace GieldaL2.INFRASTRUCTURE.Services
 {
-    public class AuthService : IAuthService
+    public class AuthService : IService, IAuthService
     {
         private readonly IUserRepository _userRepository;
 
@@ -32,13 +32,13 @@ namespace GieldaL2.INFRASTRUCTURE.Services
             var tokenHandler = new JwtSecurityTokenHandler();
 
             // TODO: move to the another location if necessary
-            var key = Encoding.ASCII.GetBytes("secret-key");
+            var key = Encoding.ASCII.GetBytes("ed7de58fd5a7b41d7532f9b12101f8330c4d3da82bdb9d72ec067ca21c97041b");
 
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new[]
                 {
-                    new Claim(ClaimTypes.Name, user.Id.ToString())
+                    new Claim(ClaimTypes.Name, user.UserName)
                 }),
                 Expires = DateTime.UtcNow.AddDays(7),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)

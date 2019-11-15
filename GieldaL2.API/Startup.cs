@@ -10,9 +10,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace GieldaL2.API
 {
@@ -34,10 +37,21 @@ namespace GieldaL2.API
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "GieldaL2.API", Version = "v1" });
+                c.AddSecurityDefinition("Bearer",
+                    new ApiKeyScheme
+                    {
+                        In = "header",
+                        Description = "Please enter into field the word 'Bearer' following by space and JWT",
+                        Name = "Authorization",
+                        Type = "apiKey"
+                    });
+                c.AddSecurityRequirement(new Dictionary<string, IEnumerable<string>> {
+                    { "Bearer", Enumerable.Empty<string>() },
+                });
             });
 
             // TODO: move to the another location if necessary
-            var key = Encoding.ASCII.GetBytes("secret-key");
+            var key = Encoding.ASCII.GetBytes("ed7de58fd5a7b41d7532f9b12101f8330c4d3da82bdb9d72ec067ca21c97041b");
             services.AddAuthentication(x =>
             {
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;

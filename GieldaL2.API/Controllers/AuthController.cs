@@ -15,7 +15,7 @@ namespace GieldaL2.API.Controllers
     {
         private readonly IAuthService _authService;
 
-        public AuthController(AuthService authService)
+        public AuthController(IAuthService authService)
         {
             _authService = authService;
         }

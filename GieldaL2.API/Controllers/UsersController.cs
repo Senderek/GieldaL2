@@ -65,6 +65,7 @@ namespace GieldaL2.API.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         [ProducesResponseType(201)]
         [ProducesResponseType(500)]
         public ActionResult<StatisticsViewModel> Post([FromBody] EditUserViewModel user)
