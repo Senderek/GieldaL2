@@ -16,9 +16,14 @@ namespace GieldaL2.INFRASTRUCTURE.Repositories
             _context = context;
         }
 
-        public User GetById(string id)
+        public User GetById(int id)
         {
             return _context.Users.FirstOrDefault(user => user.Id == id);
+        }
+
+        public User GetByUserNameAndPassword(string userName, string password)
+        {
+            return _context.Users.FirstOrDefault(user => user.UserName == userName && user.Password == password);
         }
 
         public ICollection<User> GetAll()

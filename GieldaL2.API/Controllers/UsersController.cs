@@ -6,11 +6,13 @@ using GieldaL2.API.ViewModels.View;
 using GieldaL2.INFRASTRUCTURE.DTO;
 using GieldaL2.INFRASTRUCTURE.Interfaces;
 using GieldaL2.INFRASTRUCTURE.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Omu.ValueInjecter;
 
 namespace GieldaL2.API.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     [Produces("application/json")]

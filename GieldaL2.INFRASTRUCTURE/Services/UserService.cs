@@ -27,7 +27,7 @@ namespace GieldaL2.INFRASTRUCTURE.Services
 
         public UserDTO GetUserById(int id)
         {
-            return Mapper.Map<UserDTO>(_userRepository.GetById(id.ToString()));
+            return Mapper.Map<UserDTO>(_userRepository.GetById(id));
         }
 
         public void AddUser(UserDTO user)
@@ -37,7 +37,7 @@ namespace GieldaL2.INFRASTRUCTURE.Services
 
         public bool EditUser(int id, UserDTO user)
         {
-            var userToEdit = _userRepository.GetById(id.ToString());
+            var userToEdit = _userRepository.GetById(id);
             if (userToEdit == null)
             {
                 return false;
@@ -51,7 +51,7 @@ namespace GieldaL2.INFRASTRUCTURE.Services
 
         public bool DeleteUser(int id)
         {
-            var userToDelete = _userRepository.GetById(id.ToString());
+            var userToDelete = _userRepository.GetById(id);
             if (userToDelete == null)
             {
                 return false;

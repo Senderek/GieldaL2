@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
 using GieldaL2.API.ViewModels.View;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GieldaL2.API.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     [Produces("application/json")]

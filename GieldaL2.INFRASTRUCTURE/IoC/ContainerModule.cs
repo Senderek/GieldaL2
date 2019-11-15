@@ -4,6 +4,7 @@ using System.Reflection;
 using System.Text;
 using Autofac;
 using GieldaL2.DB.Interfaces;
+using GieldaL2.INFRASTRUCTURE.Interfaces;
 
 namespace GieldaL2.INFRASTRUCTURE.IoC
 {

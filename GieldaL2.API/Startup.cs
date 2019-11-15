@@ -8,6 +8,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
 using System;
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 
 namespace GieldaL2.API
 {
@@ -31,6 +34,26 @@ namespace GieldaL2.API
                 c.SwaggerDoc("v1", new Info { Title = "GieldaL2.API", Version = "v1" });
             });
 
+            // TODO: move to the another location if necessary
+            var key = Encoding.ASCII.GetBytes("secret-key");
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(x =>
+            {
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = true;
+                x.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = false,
+                    ValidateAudience = false
+                };
+            });
+
             var builder = new ContainerBuilder();
             builder.Populate(services);
             builder.RegisterModule<ContainerModule>();
@@ -52,6 +75,7 @@ namespace GieldaL2.API
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "GieldaL2.API");
             });
 
+            app.UseAuthentication();
             app.UseMvc();
         }
     }
