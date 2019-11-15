@@ -1,5 +1,4 @@
-﻿using System;
-using GieldaL2.DB.Entities;
+﻿using GieldaL2.DB.Entities;
 using GieldaL2.INFRASTRUCTURE.DTO;
 using Omu.ValueInjecter;
 
@@ -18,6 +17,17 @@ namespace GieldaL2.INFRASTRUCTURE.Mappers
                 Password = src.Password,
                 EMail = src.EMail,
                 Money = src.Value
+            });
+
+            Mapper.AddMap<User, UserDTO>(src => new UserDTO
+            {
+                Id = src.Id,
+                Name = src.Name,
+                Value = src.Money,
+                Login = src.UserName,
+                EMail = src.EMail,
+                Password = src.Password,
+                Surname = src.Surname
             });
         }
     }

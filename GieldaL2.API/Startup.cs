@@ -13,6 +13,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using GieldaL2.INFRASTRUCTURE.Helpers;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Swashbuckle.AspNetCore.SwaggerGen;
@@ -34,6 +35,9 @@ namespace GieldaL2.API
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
+            var appSettingsSection = Configuration.GetSection("AppSettings");
+            services.Configure<AppSettings>(appSettingsSection);
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "GieldaL2.API", Version = "v1" });
@@ -50,8 +54,9 @@ namespace GieldaL2.API
                 });
             });
 
-            // TODO: move to the another location if necessary
-            var key = Encoding.ASCII.GetBytes("ed7de58fd5a7b41d7532f9b12101f8330c4d3da82bdb9d72ec067ca21c97041b");
+            var appSettings = appSettingsSection.Get<AppSettings>();
+            var key = Encoding.ASCII.GetBytes(appSettings.Secret);
+
             services.AddAuthentication(x =>
             {
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
