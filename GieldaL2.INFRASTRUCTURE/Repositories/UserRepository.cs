@@ -4,42 +4,42 @@ using GieldaL2.DB.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace GieldaL2.INFRASTRUCTURE.Repositories
 {
-    public class StockRepository : IStockRepository
+    public class UserRepository : IUserRepository
     {
         private readonly GieldaL2Context _context;
-
-        public StockRepository(GieldaL2Context context)
+        public UserRepository(GieldaL2Context context)
         {
             _context = context;
         }
 
-        public Stock GetById(int id)
+        public User GetById(string id)
         {
-            return _context.Stocks.FirstOrDefault(stock => stock.Id == id);
+            return _context.Users.FirstOrDefault(user => user.Id == id);
         }
 
-        public ICollection<Stock> GetAll()
+        public ICollection<User> GetAll()
         {
-            return _context.Stocks.ToList();
+            return _context.Users.ToList();
         }
 
-        public void Add(Stock stock)
+        public void Add(User user)
         {
-            _context.Add(stock);
+            _context.Add(user);
             _context.SaveChanges();
         }
 
-        public void Edit(Stock stock)
+        public void Edit(User user)
         {
             _context.SaveChanges();
-        }
+        }  
 
-        public void Remove(Stock stock)
+        public void Remove(User user)
         {
-            _context.Remove(stock);
+            _context.Remove(user);
             _context.SaveChanges();
         }
     }

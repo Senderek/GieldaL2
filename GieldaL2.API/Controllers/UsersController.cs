@@ -1,6 +1,13 @@
 ﻿using System.Collections.Generic;
-using GieldaL2.API.ViewModels;
+using System.Linq;
+using System.Net;
+using GieldaL2.API.ViewModels.Edit;
+using GieldaL2.API.ViewModels.View;
+using GieldaL2.INFRASTRUCTURE.DTO;
+using GieldaL2.INFRASTRUCTURE.Interfaces;
+using GieldaL2.INFRASTRUCTURE.Services;
 using Microsoft.AspNetCore.Mvc;
+using Omu.ValueInjecter;
 
 namespace GieldaL2.API.Controllers
 {
@@ -9,12 +16,19 @@ namespace GieldaL2.API.Controllers
     [Produces("application/json")]
     public class UsersController : ControllerBase
     {
+        private readonly IUserService _userService;
+
+        public UsersController(IUserService userService)
+        {
+            _userService = userService;
+        }
+
         [HttpGet]
         [ProducesResponseType(200)]
         [ProducesResponseType(500)]
         public ActionResult<IEnumerable<UserViewModel>> Get()
         {
-            return null;
+            return _userService.GetAllUsers().Select(p => Mapper.Map<UserViewModel>(p)).ToList();
         }
 
         [HttpGet("{id}")]
@@ -23,7 +37,13 @@ namespace GieldaL2.API.Controllers
         [ProducesResponseType(500)]
         public ActionResult<UserViewModel> Get(int id)
         {
-            return null;
+            var userDto = _userService.GetUserById(id);
+            if (userDto == null)
+            {
+                return new NotFoundResult();
+            }
+
+            return Mapper.Map<UserViewModel>(userDto);
         }
 
         [HttpGet("{id}/shares")]
@@ -38,24 +58,42 @@ namespace GieldaL2.API.Controllers
         [HttpPost]
         [ProducesResponseType(201)]
         [ProducesResponseType(500)]
-        public void Post([FromBody] EditUserViewModel user)
+        public ActionResult<StatisticsViewModel> Post([FromBody] EditUserViewModel user)
         {
+            _userService.AddUser(Mapper.Map<UserDTO>(user));
+            return new StatisticsViewModel();
         }
 
         [HttpPut("{id}")]
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
-        public void Put(int id, [FromBody] EditUserViewModel user)
+        public ActionResult<StatisticsViewModel> Put(int id, [FromBody] EditUserViewModel user)
         {
+            var userDto = _userService.GetUserById(id);
+            if (userDto == null)
+            {
+                return new NotFoundResult();
+            }
+
+            userDto = Mapper.Map<UserDTO>(user);
+            _userService.AddUser(userDto);
+
+            return new StatisticsViewModel();
         }
 
         [HttpDelete("{id}")]
         [ProducesResponseType(204)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
-        public void Delete(int id)
+        public ActionResult<StatisticsViewModel> Delete(int id)
         {
+            if (!_userService.DeleteUser(id))
+            {
+                return new NotFoundResult();
+            }
+
+            return new StatisticsViewModel();
         }
     }
 }

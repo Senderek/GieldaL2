@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace GieldaL2.API.ViewModels
+﻿namespace GieldaL2.API.ViewModels.View
 {
     public class UserViewModel
     {
@@ -10,5 +8,7 @@ namespace GieldaL2.API.ViewModels
         public string Login { get; set; }
         public string EMail { get; set; }
         public decimal Value { get; set; }
+
+        public StatisticsViewModel Statistics { get; set; }
     }
 }
