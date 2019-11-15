@@ -26,16 +26,20 @@ namespace GieldaL2.API.Controllers
         [HttpGet]
         [ProducesResponseType(200)]
         [ProducesResponseType(500)]
-        public ActionResult<IEnumerable<UserViewModel>> Get()
+        public ActionResult<StatisticsViewModel<IEnumerable<UserViewModel>>> Get()
         {
-            return _userService.GetAllUsers().Select(p => Mapper.Map<UserViewModel>(p)).ToList();
+            var data = _userService.GetAllUsers().Select(p => Mapper.Map<UserViewModel>(p)).ToList();
+            return new StatisticsViewModel<IEnumerable<UserViewModel>>
+            {
+                Data = data
+            };
         }
 
         [HttpGet("{id}")]
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
-        public ActionResult<UserViewModel> Get(int id)
+        public ActionResult<StatisticsViewModel<UserViewModel>> Get(int id)
         {
             var userDto = _userService.GetUserById(id);
             if (userDto == null)
@@ -43,14 +47,17 @@ namespace GieldaL2.API.Controllers
                 return new NotFoundResult();
             }
 
-            return Mapper.Map<UserViewModel>(userDto);
+            return new StatisticsViewModel<UserViewModel>
+            {
+                Data = Mapper.Map<UserViewModel>(userDto)
+            };
         }
 
         [HttpGet("{id}/shares")]
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
-        public ActionResult<List<ShareViewModel>> GetShares(int id)
+        public ActionResult<StatisticsViewModel<IEnumerable<ShareViewModel>>> GetShares(int id)
         {
             return null;
         }

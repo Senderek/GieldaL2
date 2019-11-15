@@ -8,7 +8,5 @@
         public string Login { get; set; }
         public string EMail { get; set; }
         public decimal Value { get; set; }
-
-        public StatisticsViewModel Statistics { get; set; }
     }
 }

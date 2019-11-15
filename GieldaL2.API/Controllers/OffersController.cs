@@ -13,7 +13,7 @@ namespace GieldaL2.API.Controllers
         [HttpGet("sell")]
         [ProducesResponseType(200)]
         [ProducesResponseType(500)]
-        public ActionResult<IEnumerable<SellOfferViewModel>> GetSell()
+        public ActionResult<StatisticsViewModel<IEnumerable<SellOfferViewModel>>> GetSell()
         {
             return null;
         }
@@ -22,7 +22,7 @@ namespace GieldaL2.API.Controllers
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
-        public ActionResult<SellOfferViewModel> GetSell(int id)
+        public ActionResult<StatisticsViewModel<SellOfferViewModel>> GetSell(int id)
         {
             return null;
         }
@@ -47,7 +47,7 @@ namespace GieldaL2.API.Controllers
         [HttpGet("buy")]
         [ProducesResponseType(200)]
         [ProducesResponseType(500)]
-        public ActionResult<IEnumerable<BuyOfferViewModel>> GetBuy()
+        public ActionResult<StatisticsViewModel<IEnumerable<BuyOfferViewModel>>> GetBuy()
         {
             return null;
         }
@@ -56,7 +56,7 @@ namespace GieldaL2.API.Controllers
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
-        public ActionResult<BuyOfferViewModel> GetBuy(int id)
+        public ActionResult<StatisticsViewModel<BuyOfferViewModel>> GetBuy(int id)
         {
             return null;
         }
