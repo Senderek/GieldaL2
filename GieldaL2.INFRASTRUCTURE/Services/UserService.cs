@@ -49,7 +49,13 @@ namespace GieldaL2.INFRASTRUCTURE.Services
                 return false;
             }
 
-            userToEdit = Mapper.Map<User>(user);
+            userToEdit.UserName = user.Login;
+            userToEdit.Name = user.Name;
+            userToEdit.Surname = user.Surname;
+            userToEdit.EMail = user.EMail;
+            userToEdit.Password = user.Password;
+            userToEdit.Money = user.Value;
+
             _userRepository.Edit(userToEdit);
 
             return true;
