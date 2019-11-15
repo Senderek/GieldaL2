@@ -27,7 +27,13 @@ namespace GieldaL2.INFRASTRUCTURE.Services
 
         public UserDTO GetUserById(int id)
         {
-            return Mapper.Map<UserDTO>(_userRepository.GetById(id));
+            var user = _userRepository.GetById(id);
+            if (user == null)
+            {
+                return null;
+            }
+
+            return Mapper.Map<UserDTO>(user);
         }
 
         public void AddUser(UserDTO user)

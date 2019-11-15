@@ -87,7 +87,7 @@ namespace GieldaL2.API.Controllers
             }
 
             userDto = Mapper.Map<UserDTO>(user);
-            _userService.AddUser(userDto);
+            _userService.EditUser(id, userDto);
 
             return new StatisticsViewModel();
         }
