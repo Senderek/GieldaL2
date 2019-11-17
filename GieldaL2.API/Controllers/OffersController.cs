@@ -10,7 +10,7 @@ using Omu.ValueInjecter;
 
 namespace GieldaL2.API.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [ApiController]
     [Route("api/[controller]")]
     [Produces("application/json")]
@@ -74,10 +74,12 @@ namespace GieldaL2.API.Controllers
         public ActionResult<StatisticsViewModel> DeleteSell(int id)
         {
             var statisticsDto = new StatisticsDTO();
-            if (!_sellOfferService.Delete(id, statisticsDto))
-            {
-                return new NotFoundResult();
-            }
+            //w przypadku braku sell oferty wywala exception
+            //if (!_sellOfferService.Delete(id, statisticsDto))
+            //{
+            //    return new NotFoundResult();
+            //}
+            _sellOfferService.Delete(id, statisticsDto);
 
             return Mapper.Map<StatisticsViewModel>(statisticsDto);
         }
