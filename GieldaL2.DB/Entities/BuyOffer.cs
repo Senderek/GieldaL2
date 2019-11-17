@@ -23,6 +23,9 @@ namespace GieldaL2.DB.Entities
 		/// Price that the buyer is willing to pay for a single share
 		/// </summary>
 		public decimal Price { get; set; }
+        /// <summary>
+		/// Date of making buy offer
+		/// </summary>
 		public DateTime Date { get; set; }
 	}
 }

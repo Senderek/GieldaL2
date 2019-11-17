@@ -40,6 +40,16 @@ namespace GieldaL2.INFRASTRUCTURE.Mappers
                 Price = src.Price,
                 Date = src.Date
             });
+
+            Mapper.AddMap<SellOffer, SellOfferDTO>(src => new SellOfferDTO
+            {
+                Id = src.Id,
+                ShareId = src.ShareId,
+                Amount = src.Amount,
+                Price = src.Price,
+                Date = src.Date
+
+            });
         }
     }
 }
