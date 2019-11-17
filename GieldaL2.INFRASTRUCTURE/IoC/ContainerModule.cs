@@ -4,6 +4,8 @@ using System.Reflection;
 using System.Text;
 using Autofac;
 using GieldaL2.DB.Interfaces;
+using GieldaL2.INFRASTRUCTURE.Interfaces;
+using GieldaL2.INFRASTRUCTURE.Mappers;
 
 namespace GieldaL2.INFRASTRUCTURE.IoC
 {
@@ -24,6 +26,8 @@ namespace GieldaL2.INFRASTRUCTURE.IoC
                 .Where(x => x.IsAssignableTo<IService>())
                 .AsImplementedInterfaces()
                 .InstancePerLifetimeScope();
+
+            MapperConfig.Init();
         }
     }
 }

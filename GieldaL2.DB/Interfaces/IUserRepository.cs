@@ -5,7 +5,8 @@ namespace GieldaL2.DB.Interfaces
 {
     public interface IUserRepository : IRepository
     {
-        User GetById(string id);
+        User GetById(int id);
+        User GetByUserNameAndPassword(string userName, string password);
         ICollection<User> GetAll();
 
         void Add(User user);

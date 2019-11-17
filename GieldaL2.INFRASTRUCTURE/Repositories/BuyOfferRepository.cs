@@ -10,6 +10,8 @@ namespace GieldaL2.INFRASTRUCTURE.Repositories
 {
     public class BuyOfferRepository : IBuyOfferRepository
     {
+        public int LastOperationTime { get; set; }
+
         private readonly GieldaL2Context _context;
 
         public BuyOfferRepository(GieldaL2Context context)

@@ -10,6 +10,8 @@ namespace GieldaL2.INFRASTRUCTURE.Repositories
 {
     public class ShareRepository : IShareRepository
     {
+        public int LastOperationTime { get; set; }
+
         private readonly GieldaL2Context _context;
 
         public ShareRepository(GieldaL2Context context)

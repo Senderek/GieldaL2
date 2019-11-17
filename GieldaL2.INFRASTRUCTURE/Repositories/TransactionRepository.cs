@@ -9,6 +9,8 @@ namespace GieldaL2.INFRASTRUCTURE.Repositories
 {
     public class TransactionRepository : ITransactionRepository
     {
+        public int LastOperationTime { get; set; }
+
         private readonly GieldaL2Context _context;
         public TransactionRepository(GieldaL2Context context)
         {

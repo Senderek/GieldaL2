@@ -9,6 +9,7 @@ namespace GieldaL2.INFRASTRUCTURE.DTO
         public string Surname { get; set; }
         public string Login { get; set; }
         public string EMail { get; set; }
+        public string Password { get; set; }
         public decimal Value { get; set; }
     }
 }

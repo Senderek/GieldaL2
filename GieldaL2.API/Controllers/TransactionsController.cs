@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
 using GieldaL2.API.ViewModels.View;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GieldaL2.API.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     [Produces("application/json")]
@@ -12,7 +14,7 @@ namespace GieldaL2.API.Controllers
         [HttpGet]
         [ProducesResponseType(200)]
         [ProducesResponseType(500)]
-        public ActionResult<List<TransactionViewModel>> Get()
+        public ActionResult<StatisticsViewModel<IEnumerable<TransactionViewModel>>> Get()
         {
             return null;
         }
@@ -21,7 +23,7 @@ namespace GieldaL2.API.Controllers
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
-        public ActionResult<TransactionViewModel> Get(int id)
+        public ActionResult<StatisticsViewModel<TransactionViewModel>> Get(int id)
         {
             return null;
         }
@@ -29,7 +31,7 @@ namespace GieldaL2.API.Controllers
         [HttpPost]
         [ProducesResponseType(201)]
         [ProducesResponseType(500)]
-        public ActionResult<StatisticsViewModel> Post([FromBody] TransactionViewModel order)
+        public ActionResult<StatisticsViewModel> Post([FromBody] TransactionViewModel transaction)
         {
             return null;
         }

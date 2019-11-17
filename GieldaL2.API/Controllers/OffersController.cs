@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
 using GieldaL2.API.ViewModels.Edit;
 using GieldaL2.API.ViewModels.View;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GieldaL2.API.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     [Produces("application/json")]
@@ -13,7 +15,7 @@ namespace GieldaL2.API.Controllers
         [HttpGet("sell")]
         [ProducesResponseType(200)]
         [ProducesResponseType(500)]
-        public ActionResult<IEnumerable<SellOfferViewModel>> GetSell()
+        public ActionResult<StatisticsViewModel<IEnumerable<SellOfferViewModel>>> GetSell()
         {
             return null;
         }
@@ -22,7 +24,7 @@ namespace GieldaL2.API.Controllers
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
-        public ActionResult<SellOfferViewModel> GetSell(int id)
+        public ActionResult<StatisticsViewModel<SellOfferViewModel>> GetSell(int id)
         {
             return null;
         }
@@ -47,7 +49,7 @@ namespace GieldaL2.API.Controllers
         [HttpGet("buy")]
         [ProducesResponseType(200)]
         [ProducesResponseType(500)]
-        public ActionResult<IEnumerable<BuyOfferViewModel>> GetBuy()
+        public ActionResult<StatisticsViewModel<IEnumerable<BuyOfferViewModel>>> GetBuy()
         {
             return null;
         }
@@ -56,7 +58,7 @@ namespace GieldaL2.API.Controllers
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
-        public ActionResult<BuyOfferViewModel> GetBuy(int id)
+        public ActionResult<StatisticsViewModel<BuyOfferViewModel>> GetBuy(int id)
         {
             return null;
         }

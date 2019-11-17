@@ -20,4 +20,10 @@
     <ProjectReference Include="..\GieldaL2.INFRASTRUCTURE\GieldaL2.INFRASTRUCTURE.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

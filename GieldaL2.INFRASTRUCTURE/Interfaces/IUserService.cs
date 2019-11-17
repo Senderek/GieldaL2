@@ -5,10 +5,10 @@ namespace GieldaL2.INFRASTRUCTURE.Interfaces
 {
     public interface IUserService
     {
-        ICollection<UserDTO> GetAllUsers();
-        UserDTO GetUserById(int id);
-        void AddUser(UserDTO user);
-        bool EditUser(int id, UserDTO user);
-        bool DeleteUser(int id);
+        ICollection<UserDTO> GetAllUsers(StatisticsDTO statistics);
+        UserDTO GetUserById(int id, StatisticsDTO statistics);
+        void AddUser(UserDTO user, StatisticsDTO statistics);
+        bool EditUser(int id, UserDTO user, StatisticsDTO statistics);
+        bool DeleteUser(int id, StatisticsDTO statistics);
     }
 }

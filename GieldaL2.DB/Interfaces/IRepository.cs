@@ -2,5 +2,6 @@
 {
     public interface IRepository
     {
+        int LastOperationTime { get; set; }
     }
 }

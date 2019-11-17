@@ -9,6 +9,8 @@ namespace GieldaL2.INFRASTRUCTURE.Repositories
 {
     public class SellOfferRepostory : ISellOfferRepository
     {
+        public int LastOperationTime { get; set; }
+
         private readonly GieldaL2Context _context;
 
         public SellOfferRepostory(GieldaL2Context context)
