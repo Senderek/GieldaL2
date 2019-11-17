@@ -35,6 +35,7 @@ namespace GieldaL2.API.Controllers
 
             var statistics = Mapper.Map<StatisticsViewModel<IEnumerable<UserViewModel>>>(statisticsDto);
             statistics.Data = data;
+
             return statistics;
         }
 
@@ -54,6 +55,7 @@ namespace GieldaL2.API.Controllers
 
             var statistics = Mapper.Map<StatisticsViewModel<UserViewModel>>(statisticsDto);
             statistics.Data = Mapper.Map<UserViewModel>(userDto);
+
             return statistics;
         }
 
@@ -95,8 +97,7 @@ namespace GieldaL2.API.Controllers
             userDto = Mapper.Map<UserDTO>(user);
             _userService.EditUser(id, userDto, statisticsDto);
 
-            var statistics = Mapper.Map<StatisticsViewModel>(statisticsDto);
-            return statistics;
+            return Mapper.Map<StatisticsViewModel>(statisticsDto);
         }
 
         [HttpDelete("{id}")]
@@ -111,8 +112,7 @@ namespace GieldaL2.API.Controllers
                 return new NotFoundResult();
             }
 
-            var statistics = Mapper.Map<StatisticsViewModel>(statisticsDto);
-            return statistics;
+            return Mapper.Map<StatisticsViewModel>(statisticsDto);
         }
     }
 }
