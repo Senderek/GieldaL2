@@ -11,10 +11,14 @@ using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using GieldaL2.API.Filters;
+using GieldaL2.API.ViewModels.View;
 using GieldaL2.INFRASTRUCTURE.Helpers;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.IdentityModel.Tokens;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
@@ -76,6 +80,7 @@ namespace GieldaL2.API
             });
 
             services.AddDbContext<GieldaL2Context>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddMvc(options => { options.Filters.Add<BackendTimeFilter>(); });
 
             var builder = new ContainerBuilder();
             builder.Populate(services);

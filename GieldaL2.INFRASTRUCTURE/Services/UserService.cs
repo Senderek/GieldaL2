@@ -46,15 +46,15 @@ namespace GieldaL2.INFRASTRUCTURE.Services
         public void AddUser(UserDTO user, StatisticsDTO statistics)
         {
             _userRepository.Add(Mapper.Map<User>(user));
-            statistics.InsertsCount += _userRepository.LastOperationTime;
-            statistics.InsertsTime++;
+            statistics.InsertsTime += _userRepository.LastOperationTime;
+            statistics.InsertsCount++;
         }
 
         public bool EditUser(int id, UserDTO user, StatisticsDTO statistics)
         {
             var userToEdit = _userRepository.GetById(id);
-            statistics.InsertsTime += _userRepository.LastOperationTime;
-            statistics.InsertsCount++;
+            statistics.SelectsTime += _userRepository.LastOperationTime;
+            statistics.SelectsCount++;
 
             if (userToEdit == null)
             {
