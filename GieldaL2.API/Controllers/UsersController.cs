@@ -30,11 +30,12 @@ namespace GieldaL2.API.Controllers
         [ProducesResponseType(500)]
         public ActionResult<StatisticsViewModel<IEnumerable<UserViewModel>>> Get()
         {
-            var data = _userService.GetAllUsers().Select(p => Mapper.Map<UserViewModel>(p)).ToList();
-            return new StatisticsViewModel<IEnumerable<UserViewModel>>
-            {
-                Data = data
-            };
+            var statisticsDto = new StatisticsDTO();
+            var data = _userService.GetAllUsers(statisticsDto).Select(p => Mapper.Map<UserViewModel>(p)).ToList();
+
+            var statistics = Mapper.Map<StatisticsViewModel<IEnumerable<UserViewModel>>>(statisticsDto);
+            statistics.Data = data;
+            return statistics;
         }
 
         [HttpGet("{id}")]
@@ -43,16 +44,17 @@ namespace GieldaL2.API.Controllers
         [ProducesResponseType(500)]
         public ActionResult<StatisticsViewModel<UserViewModel>> Get(int id)
         {
-            var userDto = _userService.GetUserById(id);
+            var statisticsDto = new StatisticsDTO();
+            var userDto = _userService.GetUserById(id, statisticsDto);
+
             if (userDto == null)
             {
                 return new NotFoundResult();
             }
 
-            return new StatisticsViewModel<UserViewModel>
-            {
-                Data = Mapper.Map<UserViewModel>(userDto)
-            };
+            var statistics = Mapper.Map<StatisticsViewModel<UserViewModel>>(statisticsDto);
+            statistics.Data = Mapper.Map<UserViewModel>(userDto);
+            return statistics;
         }
 
         [HttpGet("{id}/shares")]
@@ -70,8 +72,10 @@ namespace GieldaL2.API.Controllers
         [ProducesResponseType(500)]
         public ActionResult<StatisticsViewModel> Post([FromBody] EditUserViewModel user)
         {
-            _userService.AddUser(Mapper.Map<UserDTO>(user));
-            return new StatisticsViewModel();
+            var statisticsDto = new StatisticsDTO();
+            _userService.AddUser(Mapper.Map<UserDTO>(user), statisticsDto);
+
+            return Mapper.Map<StatisticsViewModel>(statisticsDto);
         }
 
         [HttpPut("{id}")]
@@ -80,16 +84,19 @@ namespace GieldaL2.API.Controllers
         [ProducesResponseType(500)]
         public ActionResult<StatisticsViewModel> Put(int id, [FromBody] EditUserViewModel user)
         {
-            var userDto = _userService.GetUserById(id);
+            var statisticsDto = new StatisticsDTO();
+            var userDto = _userService.GetUserById(id, statisticsDto);
+
             if (userDto == null)
             {
                 return new NotFoundResult();
             }
 
             userDto = Mapper.Map<UserDTO>(user);
-            _userService.EditUser(id, userDto);
+            _userService.EditUser(id, userDto, statisticsDto);
 
-            return new StatisticsViewModel();
+            var statistics = Mapper.Map<StatisticsViewModel>(statisticsDto);
+            return statistics;
         }
 
         [HttpDelete("{id}")]
@@ -98,12 +105,14 @@ namespace GieldaL2.API.Controllers
         [ProducesResponseType(500)]
         public ActionResult<StatisticsViewModel> Delete(int id)
         {
-            if (!_userService.DeleteUser(id))
+            var statisticsDto = new StatisticsDTO();
+            if (!_userService.DeleteUser(id, statisticsDto))
             {
                 return new NotFoundResult();
             }
 
-            return new StatisticsViewModel();
+            var statistics = Mapper.Map<StatisticsViewModel>(statisticsDto);
+            return statistics;
         }
     }
 }

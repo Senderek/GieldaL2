@@ -20,14 +20,21 @@ namespace GieldaL2.INFRASTRUCTURE.Services
             _userRepository = userRepository;
         }
 
-        public ICollection<UserDTO> GetAllUsers()
+        public ICollection<UserDTO> GetAllUsers(StatisticsDTO statistics)
         {
-            return _userRepository.GetAll().Select(p => Mapper.Map<UserDTO>(p)).ToList();
+            var users = _userRepository.GetAll().Select(p => Mapper.Map<UserDTO>(p)).ToList();
+            statistics.SelectsTime += _userRepository.LastOperationTime;
+            statistics.SelectsCount++;
+
+            return users;
         }
 
-        public UserDTO GetUserById(int id)
+        public UserDTO GetUserById(int id, StatisticsDTO statistics)
         {
             var user = _userRepository.GetById(id);
+            statistics.SelectsTime += _userRepository.LastOperationTime;
+            statistics.SelectsCount++;
+
             if (user == null)
             {
                 return null;
@@ -36,14 +43,19 @@ namespace GieldaL2.INFRASTRUCTURE.Services
             return Mapper.Map<UserDTO>(user);
         }
 
-        public void AddUser(UserDTO user)
+        public void AddUser(UserDTO user, StatisticsDTO statistics)
         {
             _userRepository.Add(Mapper.Map<User>(user));
+            statistics.InsertsCount += _userRepository.LastOperationTime;
+            statistics.InsertsTime++;
         }
 
-        public bool EditUser(int id, UserDTO user)
+        public bool EditUser(int id, UserDTO user, StatisticsDTO statistics)
         {
             var userToEdit = _userRepository.GetById(id);
+            statistics.InsertsTime += _userRepository.LastOperationTime;
+            statistics.InsertsCount++;
+
             if (userToEdit == null)
             {
                 return false;
@@ -57,19 +69,27 @@ namespace GieldaL2.INFRASTRUCTURE.Services
             userToEdit.Money = user.Value;
 
             _userRepository.Edit(userToEdit);
+            statistics.UpdatesTime += _userRepository.LastOperationTime;
+            statistics.UpdatesCount++;
 
             return true;
         }
 
-        public bool DeleteUser(int id)
+        public bool DeleteUser(int id, StatisticsDTO statistics)
         {
             var userToDelete = _userRepository.GetById(id);
+            statistics.SelectsTime += _userRepository.LastOperationTime;
+            statistics.SelectsCount++;
+
             if (userToDelete == null)
             {
                 return false;
             }
 
             _userRepository.Remove(userToDelete);
+            statistics.DeletesTime += _userRepository.LastOperationTime;
+            statistics.DeletesCount++;
+
             return true;
         }
     }
