@@ -1,7 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using GieldaL2.API.ViewModels.View;
+using GieldaL2.INFRASTRUCTURE.DTO;
+using GieldaL2.INFRASTRUCTURE.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Omu.ValueInjecter;
 
 namespace GieldaL2.API.Controllers
 {
@@ -9,14 +13,26 @@ namespace GieldaL2.API.Controllers
     [ApiController]
     [Route("api/[controller]")]
     [Produces("application/json")]
-    public class TransactionsController
+    public class TransactionsController : ControllerBase
     {
+        private readonly ITransactionService _transactionService;
+        public TransactionsController(ITransactionService transactionService)
+        {
+            _transactionService = transactionService;
+        }
+
         [HttpGet]
         [ProducesResponseType(200)]
         [ProducesResponseType(500)]
         public ActionResult<StatisticsViewModel<IEnumerable<TransactionViewModel>>> Get()
         {
-            return null;
+            var statisticsDto = new StatisticsDTO();
+            var transactions = _transactionService.GetAll(statisticsDto).Select(t => Mapper.Map<TransactionViewModel>(t)).ToList();
+
+            var statistics = Mapper.Map<StatisticsViewModel<IEnumerable<TransactionViewModel>>>(statisticsDto);
+            statistics.Data = transactions;
+
+            return statistics;
         }
 
         [HttpGet("{id}")]
@@ -25,7 +41,19 @@ namespace GieldaL2.API.Controllers
         [ProducesResponseType(500)]
         public ActionResult<StatisticsViewModel<TransactionViewModel>> Get(int id)
         {
-            return null;
+            var statisticsDto = new StatisticsDTO();
+            var transaction = _transactionService.GetById(id, statisticsDto);
+
+            var statistics = Mapper.Map<StatisticsViewModel<TransactionViewModel>>(statisticsDto);
+
+            if (transaction == null)
+            {
+                return NotFound(statistics);
+            }
+
+            statistics.Data = Mapper.Map<TransactionViewModel>(transaction);
+
+            return statistics;
         }
 
         [HttpPost]
