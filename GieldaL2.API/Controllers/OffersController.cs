@@ -16,7 +16,7 @@ namespace GieldaL2.API.Controllers
     public class OffersController : ControllerBase
     {
         /// <summary>
-        /// Retrieves list of the all sell offers.
+        /// Retrieves a list of all sell offers.
         /// </summary>
         /// <returns>List of the all sell offers and backend statistics.</returns>
         [HttpGet("sell")]
@@ -69,7 +69,7 @@ namespace GieldaL2.API.Controllers
         }
 
         /// <summary>
-        /// Retrieves list of the all buy offers.
+        /// Retrieves a list of all buy offers.
         /// </summary>
         /// <returns>List of the all buy offers and backend statistics.</returns>
         [HttpGet("buy")]
