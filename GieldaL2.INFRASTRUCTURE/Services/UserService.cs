@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using GieldaL2.DB.Entities;
 using GieldaL2.DB.Interfaces;
 using GieldaL2.INFRASTRUCTURE.DTO;
 using GieldaL2.INFRASTRUCTURE.Interfaces;
-using GieldaL2.INFRASTRUCTURE.Repositories;
 using Omu.ValueInjecter;
 
 namespace GieldaL2.INFRASTRUCTURE.Services

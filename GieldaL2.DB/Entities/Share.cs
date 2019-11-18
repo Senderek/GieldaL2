@@ -1,7 +1,4 @@
-﻿using System;
-
-
-namespace GieldaL2.DB.Entities
+﻿namespace GieldaL2.DB.Entities
 {
 	/// <summary>
 	/// Represents some number of shares of a company owned by a particular user 

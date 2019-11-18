@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace GieldaL2.INFRASTRUCTURE.DTO
+﻿namespace GieldaL2.INFRASTRUCTURE.DTO
 {
     /// <summary>
     /// User data transfer object

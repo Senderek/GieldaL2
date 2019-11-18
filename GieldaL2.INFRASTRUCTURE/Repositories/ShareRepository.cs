@@ -1,10 +1,8 @@
 ﻿using GieldaL2.DB;
 using GieldaL2.DB.Entities;
 using GieldaL2.DB.Interfaces;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace GieldaL2.INFRASTRUCTURE.Repositories
 {

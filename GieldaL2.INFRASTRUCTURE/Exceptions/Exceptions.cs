@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace GieldaL2.INFRASTRUCTURE.Exceptions
+﻿namespace GieldaL2.INFRASTRUCTURE.Exceptions
 {
     class Exceptions
     {

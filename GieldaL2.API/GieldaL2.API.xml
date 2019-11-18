@@ -1,0 +1,255 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GieldaL2.API</name>
+    </assembly>
+    <members>
+        <member name="T:GieldaL2.API.Controllers.AuthController">
+            <summary>
+            Authentication controller containing endpoints to check user identity and generating JWT tokens.
+            </summary>
+        </member>
+        <member name="M:GieldaL2.API.Controllers.AuthController.#ctor(GieldaL2.INFRASTRUCTURE.Interfaces.IAuthService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GieldaL2.API.Controllers.AuthController"/> class.
+            </summary>
+            <param name="authService">Authentication service.</param>
+        </member>
+        <member name="M:GieldaL2.API.Controllers.AuthController.LogIn(GieldaL2.API.ViewModels.View.LogInViewModel)">
+            <summary>
+            Authenticates user and generates JWT token if passed data is valid.
+            </summary>
+            <param name="viewModel">Authentication data.</param>
+            <returns>Flag indicating if authentication has been done with success and JWT token.</returns>
+        </member>
+        <member name="T:GieldaL2.API.Controllers.OffersController">
+            <summary>
+            Offers controller containing endpoints to manage offers.
+            </summary>
+        </member>
+        <member name="M:GieldaL2.API.Controllers.OffersController.GetSell">
+            <summary>
+            Retrieves a list of all sell offers.
+            </summary>
+            <returns>List of the all sell offers and backend statistics.</returns>
+        </member>
+        <member name="M:GieldaL2.API.Controllers.OffersController.GetSell(System.Int32)">
+            <summary>
+            Retrieves sell offer with the specified ID.
+            </summary>
+            <param name="id">ID of the requested sell offer.</param>
+            <returns>Sell offer with the specified ID and backend statistics if success, otherwise 404 when not found.</returns>
+        </member>
+        <member name="M:GieldaL2.API.Controllers.OffersController.PostSell(GieldaL2.API.ViewModels.Edit.EditSellOfferViewModel)">
+            <summary>
+            Adds sell offer passed in the request body.
+            </summary>
+            <param name="order">Sell offer which will be added.</param>
+            <returns>Backend statistics.</returns>
+        </member>
+        <member name="M:GieldaL2.API.Controllers.OffersController.DeleteSell(System.Int32)">
+            <summary>
+            Deletes sell offer with the specified ID.
+            </summary>
+            <param name="id">ID of the sell offer which will be deleted.</param>
+            <returns>Backend statistics if success, otherwise 404 when ID was not found.</returns>
+        </member>
+        <member name="M:GieldaL2.API.Controllers.OffersController.GetBuy">
+            <summary>
+            Retrieves a list of all buy offers.
+            </summary>
+            <returns>List of the all buy offers and backend statistics.</returns>
+        </member>
+        <member name="M:GieldaL2.API.Controllers.OffersController.GetBuy(System.Int32)">
+            <summary>
+            Retrieves buy offer with the specified ID.
+            </summary>
+            <param name="id">ID of the requested buy offer.</param>
+            <returns>Buy offer with the specified ID and backend statistics if success, otherwise 404 when not found.</returns>
+        </member>
+        <member name="M:GieldaL2.API.Controllers.OffersController.PostBuy(GieldaL2.API.ViewModels.Edit.EditBuyOfferViewModel)">
+            <summary>
+            Adds buy offer passed in the request body.
+            </summary>
+            <param name="order">Buy offer which will be added.</param>
+            <returns>Backend statistics.</returns>
+        </member>
+        <member name="M:GieldaL2.API.Controllers.OffersController.DeleteBuy(System.Int32)">
+            <summary>
+            Deletes buy offer with the specified ID.
+            </summary>
+            <param name="id">ID of the buy offer which will be deleted.</param>
+            <returns>Backend statistics if success, otherwise 404 when ID was not found.</returns>
+        </member>
+        <member name="T:GieldaL2.API.Controllers.SharesController">
+            <summary>
+            Shares controller containing endpoints to manage user shares.
+            </summary>
+        </member>
+        <member name="M:GieldaL2.API.Controllers.SharesController.Get">
+            <summary>
+            Retrieves a list of all shares.
+            </summary>
+            <returns>List of the all shares and backend statistics.</returns>
+        </member>
+        <member name="M:GieldaL2.API.Controllers.SharesController.Get(System.Int32)">
+            <summary>
+            Retrieves share with the specified ID.
+            </summary>
+            <param name="id">ID of the requested share.</param>
+            <returns>Share with the specified ID and backend statistics if success, otherwise 404 when not found.</returns>
+        </member>
+        <member name="M:GieldaL2.API.Controllers.SharesController.Post(GieldaL2.API.ViewModels.Edit.EditShareViewModel)">
+            <summary>
+            Adds share offer passed in the request body.
+            </summary>
+            <param name="model">Share which will be added.</param>
+            <returns>Backend statistics.</returns>
+        </member>
+        <member name="M:GieldaL2.API.Controllers.SharesController.Put(System.Int32,GieldaL2.API.ViewModels.Edit.EditShareViewModel)">
+            <summary>
+            Edits share with the specified ID.
+            </summary>
+            <param name="id">ID of the share which will be edited.</param>
+            <param name="model">New data which will be applied to the share.</param>
+            <returns>Backend statistics if share has been modified with success, otherwise 404 if not found.</returns>
+        </member>
+        <member name="M:GieldaL2.API.Controllers.SharesController.Delete(System.Int32)">
+            <summary>
+            Deletes share with the specified ID.
+            </summary>
+            <param name="id">ID of the share which will be deleted.</param>
+            <returns>Backend statistics if share has been deleted with success, otherwise 404 if not found.</returns>
+        </member>
+        <member name="T:GieldaL2.API.Controllers.StocksController">
+            <summary>
+            Stocks controller containing endpoints to manage stocks.
+            </summary>
+        </member>
+        <member name="M:GieldaL2.API.Controllers.StocksController.Get">
+            <summary>
+            Retrieves a list of all stocks.
+            </summary>
+            <returns>List of the all stocks and backend statistics.</returns>
+        </member>
+        <member name="M:GieldaL2.API.Controllers.StocksController.Get(System.Int32)">
+            <summary>
+            Retrieves stock with the specified ID.
+            </summary>
+            <param name="id">ID of the requested stock.</param>
+            <returns>Stock with the specified ID and backend statistics if success, otherwise 404 when not found.</returns>
+        </member>
+        <member name="M:GieldaL2.API.Controllers.StocksController.Post(GieldaL2.API.ViewModels.Edit.EditStockViewModel)">
+            <summary>
+            Adds stock passed in the request body.
+            </summary>
+            <param name="model">Stock which will be added.</param>
+            <returns>Backend statistics.</returns>
+        </member>
+        <member name="M:GieldaL2.API.Controllers.StocksController.Put(System.Int32,GieldaL2.API.ViewModels.Edit.EditStockViewModel)">
+            <summary>
+            Edits stock with the specified ID.
+            </summary>
+            <param name="id">ID of the stock which will be edited.</param>
+            <param name="model">New data which will be applied to the stock.</param>
+            <returns>Backend statistics if stock has been modified with success, otherwise 404 if not found.</returns>
+        </member>
+        <member name="M:GieldaL2.API.Controllers.StocksController.Delete(System.Int32)">
+            <summary>
+            Deletes stock with the specified ID.
+            </summary>
+            <param name="id">ID of the stock which will be deleted.</param>
+            <returns>Backend statistics if stock has been deleted with success, otherwise 404 if not found.</returns>
+        </member>
+        <member name="T:GieldaL2.API.Controllers.TransactionsController">
+            <summary>
+            Transactions controller containing endpoints to manage transactions.
+            </summary>
+        </member>
+        <member name="M:GieldaL2.API.Controllers.TransactionsController.Get">
+            <summary>
+            Retrieves a list of all transactions.
+            </summary>
+            <returns>List of the all transactions and backend statistics.</returns>
+        </member>
+        <member name="M:GieldaL2.API.Controllers.TransactionsController.Get(System.Int32)">
+            <summary>
+            Retrieves transaction with the specified ID.
+            </summary>
+            <param name="id">ID of the requested transaction.</param>
+            <returns>Transaction with the specified ID and backend statistics if success, otherwise 404 when not found.</returns>
+        </member>
+        <member name="M:GieldaL2.API.Controllers.TransactionsController.Post(GieldaL2.API.ViewModels.View.TransactionViewModel)">
+            <summary>T
+            Adds transaction passed in the request body.
+            </summary>
+            <param name="transaction">Transaction which will be added.</param>
+            <returns>Backend statistics.</returns>
+        </member>
+        <member name="M:GieldaL2.API.Controllers.TransactionsController.Delete(System.Int32)">
+            <summary>
+            Deletes transaction with the specified ID.
+            </summary>
+            <param name="id">ID of the transaction which will be deleted.</param>
+            <returns>Backend statistics if transaction has been deleted with success, otherwise 404 if not found.</returns>
+        </member>
+        <member name="T:GieldaL2.API.Controllers.UsersController">
+            <summary>
+            Users controller containing endpoints to manage users.
+            </summary>
+        </member>
+        <member name="M:GieldaL2.API.Controllers.UsersController.#ctor(GieldaL2.INFRASTRUCTURE.Interfaces.IUserService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GieldaL2.API.Controllers.UsersController"/> class.
+            </summary>
+            <param name="userService">User service.</param>
+        </member>
+        <member name="M:GieldaL2.API.Controllers.UsersController.Get">
+            <summary>
+            Retrieves a list of all users.
+            </summary>
+            <returns>List of the all users and backend statistics.</returns>
+        </member>
+        <member name="M:GieldaL2.API.Controllers.UsersController.Get(System.Int32)">
+            <summary>
+            Retrieves user with the specified ID.
+            </summary>
+            <param name="id">ID of the requested user.</param>
+            <returns>User with the specified ID and backend statistics if success, otherwise 404 when not found.</returns>
+        </member>
+        <member name="M:GieldaL2.API.Controllers.UsersController.GetShares(System.Int32)">
+            <summary>
+            Adds user passed in the request body.
+            </summary>
+            <param name="id">Stock which will be added.</param>
+            <returns>Backend statistics.</returns>
+        </member>
+        <member name="M:GieldaL2.API.Controllers.UsersController.Post(GieldaL2.API.ViewModels.Edit.EditUserViewModel)">
+            <summary>
+            Adds user passed in the request body.
+            </summary>
+            <param name="user">User which will be added.</param>
+            <returns>Backend statistics.</returns>
+        </member>
+        <member name="M:GieldaL2.API.Controllers.UsersController.Put(System.Int32,GieldaL2.API.ViewModels.Edit.EditUserViewModel)">
+            <summary>
+            Edits user with the specified ID.
+            </summary>
+            <param name="id">ID of the user which will be edited.</param>
+            <param name="user">New data which will be applied to the user.</param>
+            <returns>Backend statistics if user has been modified with success, otherwise 404 if not found.</returns>
+        </member>
+        <member name="M:GieldaL2.API.Controllers.UsersController.Delete(System.Int32)">
+            <summary>
+            Deletes user with the specified ID.
+            </summary>
+            <param name="id">ID of the user which will be deleted.</param>
+            <returns>Backend statistics if user has been deleted with success, otherwise 404 if not found.</returns>
+        </member>
+        <member name="P:GieldaL2.API.ViewModels.Edit.EditBuyOfferViewModel.UserId">
+            <summary>
+            asdasd asd asdasd
+            </summary>
+        </member>
+    </members>
+</doc>

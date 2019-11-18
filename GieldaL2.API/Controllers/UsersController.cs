@@ -1,11 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using GieldaL2.API.ViewModels.Edit;
 using GieldaL2.API.ViewModels.View;
 using GieldaL2.INFRASTRUCTURE.DTO;
 using GieldaL2.INFRASTRUCTURE.Interfaces;
-using GieldaL2.INFRASTRUCTURE.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Omu.ValueInjecter;

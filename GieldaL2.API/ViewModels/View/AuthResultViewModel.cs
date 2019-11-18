@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace GieldaL2.API.ViewModels.View
+﻿namespace GieldaL2.API.ViewModels.View
 {
     public class AuthResultViewModel
     {

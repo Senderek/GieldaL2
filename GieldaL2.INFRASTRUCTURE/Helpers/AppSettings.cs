@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace GieldaL2.INFRASTRUCTURE.Helpers
+﻿namespace GieldaL2.INFRASTRUCTURE.Helpers
 {
     /// <summary>
     /// Data read from the appsettings.json file.

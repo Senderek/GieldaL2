@@ -1,8 +1,6 @@
 ﻿using GieldaL2.API.ViewModels.View;
-using GieldaL2.DB.Interfaces;
 using GieldaL2.INFRASTRUCTURE.DTO;
 using GieldaL2.INFRASTRUCTURE.Interfaces;
-using GieldaL2.INFRASTRUCTURE.Services;
 using Microsoft.AspNetCore.Mvc;
 using Omu.ValueInjecter;
 
