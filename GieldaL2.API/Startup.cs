@@ -12,7 +12,9 @@ using Swashbuckle.AspNetCore.Swagger;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using GieldaL2.API.Filters;
 using GieldaL2.API.ViewModels.View;
@@ -56,6 +58,8 @@ namespace GieldaL2.API
                 c.AddSecurityRequirement(new Dictionary<string, IEnumerable<string>> {
                     { "Bearer", Enumerable.Empty<string>() },
                 });
+
+                c.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, "GieldaL2.API.XML"));
             });
 
             var appSettings = appSettingsSection.Get<AppSettings>();
