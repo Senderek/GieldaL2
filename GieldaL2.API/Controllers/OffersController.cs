@@ -10,7 +10,7 @@ using Omu.ValueInjecter;
 
 namespace GieldaL2.API.Controllers
 {
-    //[Authorize]
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     [Produces("application/json")]
