@@ -50,6 +50,16 @@ namespace GieldaL2.INFRASTRUCTURE.Mappers
                 Date = src.Date
 
             });
+
+            Mapper.AddMap<BuyOffer, BuyOfferDTO>(src => new BuyOfferDTO
+            {
+                Id = src.Id,
+                UserId = src.UserId,
+                StockId = src.StockId,
+                Amount = src.Amount,
+                Price = src.Price,
+                Date = src.Date,
+            });
         }
     }
 }
