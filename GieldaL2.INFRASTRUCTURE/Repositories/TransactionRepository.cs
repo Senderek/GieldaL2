@@ -3,6 +3,7 @@ using GieldaL2.DB.Entities;
 using GieldaL2.DB.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 
 namespace GieldaL2.INFRASTRUCTURE.Repositories
@@ -19,24 +20,38 @@ namespace GieldaL2.INFRASTRUCTURE.Repositories
 
         public Transaction GetById(int id)
         {
-            return _context.Transactions.FirstOrDefault(transaction => transaction.Id == id);
+            var watch = Stopwatch.StartNew();
+            var data = _context.Transactions.FirstOrDefault(transaction => transaction.Id == id);
+            LastOperationTime = (int)watch.ElapsedMilliseconds;
+
+            return data;
         }
 
         public ICollection<Transaction> GetAll()
         {
-            return _context.Transactions.ToList();
+            var watch = Stopwatch.StartNew();
+            var data = _context.Transactions.ToList();
+            LastOperationTime = (int)watch.ElapsedMilliseconds;
+
+            return data;
         }
 
         public void Add(Transaction transaction)
         {
             _context.Add(transaction);
+
+            var watch = Stopwatch.StartNew();
             _context.SaveChanges();
-        }   
+            LastOperationTime = (int)watch.ElapsedMilliseconds;
+        }
 
         public void Remove(Transaction transaction)
         {
             _context.Remove(transaction);
+
+            var watch = Stopwatch.StartNew();
             _context.SaveChanges();
+            LastOperationTime = (int)watch.ElapsedMilliseconds;
         }
     }
 }
