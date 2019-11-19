@@ -1,4 +1,6 @@
-﻿namespace GieldaL2.INFRASTRUCTURE.DTO
+﻿using System;
+
+namespace GieldaL2.INFRASTRUCTURE.DTO
 {
     /// <summary>
     /// Data Transfer Object that sotres information of transaction
