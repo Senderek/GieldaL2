@@ -79,6 +79,11 @@ namespace GieldaL2.API
             });
 
             services.AddDbContext<GieldaL2Context>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddCors(o => o.AddPolicy("CorsPolicy", policyBuilder => policyBuilder
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader()));
+
             services.AddMvc(options => { options.Filters.Add<BackendTimeFilter>(); });
 
             var builder = new ContainerBuilder();
@@ -103,6 +108,7 @@ namespace GieldaL2.API
             });
 
             app.UseAuthentication();
+            app.UseCors("CorsPolicy");
             app.UseMvc();
         }
     }
