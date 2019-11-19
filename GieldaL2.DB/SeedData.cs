@@ -1,6 +1,4 @@
-﻿using GieldaL2.DB.Entities;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 

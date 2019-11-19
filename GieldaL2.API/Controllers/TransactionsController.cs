@@ -9,6 +9,9 @@ using Omu.ValueInjecter;
 
 namespace GieldaL2.API.Controllers
 {
+    /// <summary>
+    /// Controller that includes endpoints for transactions
+    /// </summary>
     [Authorize]
     [ApiController]
     [Route("api/[controller]")]
@@ -16,11 +19,16 @@ namespace GieldaL2.API.Controllers
     public class TransactionsController : ControllerBase
     {
         private readonly ITransactionService _transactionService;
+
         public TransactionsController(ITransactionService transactionService)
         {
             _transactionService = transactionService;
         }
 
+        /// <summary>
+        /// Action that returns Collection of TransactionViewModels
+        /// </summary>
+        /// <returns>Collection of Transaction ViewModels</returns>
         [HttpGet]
         [ProducesResponseType(200)]
         [ProducesResponseType(500)]
@@ -35,6 +43,11 @@ namespace GieldaL2.API.Controllers
             return statistics;
         }
 
+        /// <summary>
+        /// Action that returns specific TransactionViewModel
+        /// </summary>
+        /// <param name="id">identifier of transaction</param>
+        /// <returns>Singular Transaction ViewModel</returns>
         [HttpGet("{id}")]
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
@@ -56,6 +69,11 @@ namespace GieldaL2.API.Controllers
             return statistics;
         }
 
+        /// <summary>
+        /// Adds transaction passed in the request body.
+        /// </summary>
+        /// <param name="transaction">Transaction which will be added.</param>
+        /// <returns>Backend statistics.</returns>
         [HttpPost]
         [ProducesResponseType(201)]
         [ProducesResponseType(500)]
@@ -64,6 +82,11 @@ namespace GieldaL2.API.Controllers
             return null;
         }
 
+        /// <summary>
+        /// Deletes transaction with the specified ID.
+        /// </summary>
+        /// <param name="id">ID of the transaction which will be deleted.</param>
+        /// <returns>Backend statistics if transaction has been deleted with success, otherwise 404 if not found.</returns>
         [HttpDelete("{id}")]
         [ProducesResponseType(204)]
         [ProducesResponseType(404)]

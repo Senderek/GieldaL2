@@ -1,6 +1,7 @@
 ﻿namespace GieldaL2.INFRASTRUCTURE.Services
 {
-    class StockService
+    public class OfferService
     {
+        
     }
 }

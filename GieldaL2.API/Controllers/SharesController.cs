@@ -9,6 +9,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace GieldaL2.API.Controllers
 {
+    /// <summary>
+    /// Shares controller containing endpoints to manage user shares.
+    /// </summary>
     [Authorize]
     [ApiController]
     [Route("api/[controller]")]
@@ -16,11 +19,16 @@ namespace GieldaL2.API.Controllers
     public class SharesController : ControllerBase
     {
 		GieldaL2Context context;
+
 		public SharesController(GieldaL2Context context)
 		{
 			this.context = context;
 		}
 
+        /// <summary>
+        /// Retrieves a list of all shares.
+        /// </summary>
+        /// <returns>List of the all shares and backend statistics.</returns>
 		[HttpGet]
         [ProducesResponseType(200)]
         [ProducesResponseType(500)]
@@ -40,7 +48,12 @@ namespace GieldaL2.API.Controllers
 			};
 		}
 
-		[HttpGet("{id}")]
+        /// <summary>
+        /// Retrieves share with the specified ID.
+        /// </summary>
+        /// <param name="id">ID of the requested share.</param>
+        /// <returns>Share with the specified ID and backend statistics if success, otherwise 404 when not found.</returns>
+        [HttpGet("{id}")]
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
@@ -60,6 +73,11 @@ namespace GieldaL2.API.Controllers
 			};
 		}
 
+        /// <summary>
+        /// Adds share offer passed in the request body.
+        /// </summary>
+        /// <param name="model">Share which will be added.</param>
+        /// <returns>Backend statistics.</returns>
 		[HttpPost]
         [ProducesResponseType(201)]
         [ProducesResponseType(500)]
@@ -85,6 +103,12 @@ namespace GieldaL2.API.Controllers
 			};
 		}
 
+        /// <summary>
+        /// Edits share with the specified ID.
+        /// </summary>
+        /// <param name="id">ID of the share which will be edited.</param>
+        /// <param name="model">New data which will be applied to the share.</param>
+        /// <returns>Backend statistics if share has been modified with success, otherwise 404 if not found.</returns>
 		[HttpPut("{id}")]
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
@@ -121,6 +145,11 @@ namespace GieldaL2.API.Controllers
 			}
 		}
 
+        /// <summary>
+        /// Deletes share with the specified ID.
+        /// </summary>
+        /// <param name="id">ID of the share which will be deleted.</param>
+        /// <returns>Backend statistics if share has been deleted with success, otherwise 404 if not found.</returns>
 		[HttpDelete("{id}")]
         [ProducesResponseType(204)]
         [ProducesResponseType(404)]
