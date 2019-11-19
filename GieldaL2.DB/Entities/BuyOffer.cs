@@ -7,22 +7,14 @@ namespace GieldaL2.DB.Entities
 	public class BuyOffer
 	{
 		public int Id { get; set; }
-        /// <summary>
-        /// Id of user who made buy offer
-        /// </summary>
-        public int UserId { get; set; }
-        /// <summary>
-        /// User who created the offer
-        /// </summary>
-        public virtual User Buyer { get; set; }
-        /// <summary>
-        /// Id of stock in offer
-        /// </summary>
-        public int StockId { get; set; }
-        /// <summary>
-        /// Stock that is offered to be bought
-        /// </summary>
-        public virtual Stock Stock { get; set; }
+		/// <summary>
+		/// User who created the offer
+		/// </summary>
+		public virtual User Buyer { get; set; }
+		/// <summary>
+		/// Stock that is offered to be bought
+		/// </summary>
+		public virtual Stock Stock { get; set; }
 		/// <summary>
 		/// Amount of shares that the user is willing to buy
 		/// </summary>
@@ -31,9 +23,6 @@ namespace GieldaL2.DB.Entities
 		/// Price that the buyer is willing to pay for a single share
 		/// </summary>
 		public decimal Price { get; set; }
-        /// <summary>
-		/// Date of making buy offer
-		/// </summary>
 		public DateTime Date { get; set; }
 	}
 }
