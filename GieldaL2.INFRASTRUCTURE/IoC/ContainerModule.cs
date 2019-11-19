@@ -6,6 +6,9 @@ using GieldaL2.INFRASTRUCTURE.Mappers;
 
 namespace GieldaL2.INFRASTRUCTURE.IoC
 {
+    /// <summary>
+    /// Class that contains Dependency Injection configuration
+    /// </summary>
     public class ContainerModule : Autofac.Module
     {
         protected override void Load(ContainerBuilder builder)

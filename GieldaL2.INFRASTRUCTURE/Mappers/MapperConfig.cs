@@ -35,6 +35,17 @@ namespace GieldaL2.INFRASTRUCTURE.Mappers
                 Password = src.Password,
                 Surname = src.Surname
             });
+
+            Mapper.AddMap<Transaction, TransactionDTO>(src => new TransactionDTO
+            {
+                Id = src.Id,
+                BuyerId = src.BuyerId,
+                SellerId = src.SellerId,
+                StockId = src.StockId,
+                Amount = src.Amount,
+                Price = src.Price,
+                Date = src.Date
+            });
         }
     }
 }

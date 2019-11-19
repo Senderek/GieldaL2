@@ -4,47 +4,43 @@ using System.Collections.Generic;
 namespace GieldaL2.DB.Interfaces
 {
     /// <summary>
-    /// Interface for the repository containing users data.
+    /// Interface implemented by UserRepository class
     /// </summary>
     public interface IUserRepository : IRepository
     {
         /// <summary>
-        /// Retrieves an user with the specified ID.
+        /// Declaration of method that returns User entity
         /// </summary>
-        /// <param name="id">ID of the requested user.</param>
-        /// <returns>User entity if found, otherwise null.</returns>
+        /// <param name="id">Identifier of User</param>
+        /// <returns>Singular user entity</returns>
         User GetById(int id);
-        
         /// <summary>
-        /// Retrieves an user with the specified username and password.
+        /// Declaration of method that returns User entity
         /// </summary>
-        /// <param name="userName">Username</param>
-        /// <param name="password">Password</param>
-        /// <returns>User entity if found, otherwise null.</returns>
+        /// <param name="userName">Username of User</param>
+        /// <param name="password">Password of User</param>
+        /// <returns>Singular user entity</returns>
         User GetByUserNameAndPassword(string userName, string password);
-        
         /// <summary>
-        /// Retrieves all user entities from the Users table.
+        /// Declaration of method that returns Collection of user entities
         /// </summary>
-        /// <returns>List of the user entities.</returns>
+        /// <returns>Collection of User entities</returns>
         ICollection<User> GetAll();
 
         /// <summary>
-        /// Adds user entity to the Users table.
+        /// Declaration of method for adding User to database
         /// </summary>
-        /// <param name="user">User entity which will be added to the database.</param>
+        /// <param name="user">User entity to add</param>
         void Add(User user);
-
         /// <summary>
-        /// Applies changes done in the user entity in the database.
+        /// Declaration of method for modifying User
         /// </summary>
-        /// <param name="user">User entity which has been modified.</param>
+        /// <param name="user">User entity to modify</param>
         void Edit(User user);
-
         /// <summary>
-        /// Removes user entity from the Users table.
+        /// Declaration of method for removing user
         /// </summary>
-        /// <param name="user">User entity which will be removed.</param>
+        /// <param name="user">User entity to remove</param>
         void Remove(User user);
     }
 }

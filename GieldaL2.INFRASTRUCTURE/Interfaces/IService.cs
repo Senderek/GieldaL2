@@ -1,7 +1,7 @@
 ﻿namespace GieldaL2.INFRASTRUCTURE.Interfaces
 {
     /// <summary>
-    /// Generic interface fot the services.
+    /// Marked interface for dependency injection resolve
     /// </summary>
     public interface IService
     {
