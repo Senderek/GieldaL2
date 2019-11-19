@@ -9,6 +9,9 @@ using Omu.ValueInjecter;
 
 namespace GieldaL2.API.Controllers
 {
+    /// <summary>
+    /// Controller that includes endpoints for transactions
+    /// </summary>
     [Authorize]
     [ApiController]
     [Route("api/[controller]")]
@@ -16,11 +19,16 @@ namespace GieldaL2.API.Controllers
     public class TransactionsController : ControllerBase
     {
         private readonly ITransactionService _transactionService;
+
         public TransactionsController(ITransactionService transactionService)
         {
             _transactionService = transactionService;
         }
 
+        /// <summary>
+        /// Action that returns Collection of TransactionViewModels
+        /// </summary>
+        /// <returns>Collection of Transaction ViewModels</returns>
         [HttpGet]
         [ProducesResponseType(200)]
         [ProducesResponseType(500)]
@@ -35,6 +43,11 @@ namespace GieldaL2.API.Controllers
             return statistics;
         }
 
+        /// <summary>
+        /// Action that returns specific TransactionViewModel
+        /// </summary>
+        /// <param name="id">identifier of transaction</param>
+        /// <returns>Singular Transaction ViewModel</returns>
         [HttpGet("{id}")]
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
