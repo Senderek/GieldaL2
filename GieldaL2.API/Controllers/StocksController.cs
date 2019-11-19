@@ -9,6 +9,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace GieldaL2.API.Controllers
 {
+    /// <summary>
+    /// Stocks controller containing endpoints to manage stocks.
+    /// </summary>
     [Authorize]
     [ApiController]
     [Route("api/[controller]")]
@@ -21,6 +24,10 @@ namespace GieldaL2.API.Controllers
 			this.context = context;
 		}
 
+        /// <summary>
+        /// Retrieves a list of all stocks.
+        /// </summary>
+        /// <returns>List of the all stocks and backend statistics.</returns>
         [HttpGet]
         [ProducesResponseType(200)]
         [ProducesResponseType(500)]
@@ -41,6 +48,11 @@ namespace GieldaL2.API.Controllers
 			};
         }
 
+        /// <summary>
+        /// Retrieves stock with the specified ID.
+        /// </summary>
+        /// <param name="id">ID of the requested stock.</param>
+        /// <returns>Stock with the specified ID and backend statistics if success, otherwise 404 when not found.</returns>
 		[HttpGet("{id}")]
 		[ProducesResponseType(200)]
 		[ProducesResponseType(404)]
@@ -62,6 +74,11 @@ namespace GieldaL2.API.Controllers
 			};
 		}
 
+        /// <summary>
+        /// Adds stock passed in the request body.
+        /// </summary>
+        /// <param name="model">Stock which will be added.</param>
+        /// <returns>Backend statistics.</returns>
         [HttpPost]
         [ProducesResponseType(201)]
         [ProducesResponseType(500)]
@@ -83,6 +100,12 @@ namespace GieldaL2.API.Controllers
 			};
         }
 
+        /// <summary>
+        /// Edits stock with the specified ID.
+        /// </summary>
+        /// <param name="id">ID of the stock which will be edited.</param>
+        /// <param name="model">New data which will be applied to the stock.</param>
+        /// <returns>Backend statistics if stock has been modified with success, otherwise 404 if not found.</returns>
         [HttpPut("{id}")]
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
@@ -113,6 +136,11 @@ namespace GieldaL2.API.Controllers
 			}
 		}
 
+        /// <summary>
+        /// Deletes stock with the specified ID.
+        /// </summary>
+        /// <param name="id">ID of the stock which will be deleted.</param>
+        /// <returns>Backend statistics if stock has been deleted with success, otherwise 404 if not found.</returns>
         [HttpDelete("{id}")]
         [ProducesResponseType(204)]
         [ProducesResponseType(404)]

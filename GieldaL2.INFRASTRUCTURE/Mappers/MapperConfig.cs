@@ -4,8 +4,14 @@ using Omu.ValueInjecter;
 
 namespace GieldaL2.INFRASTRUCTURE.Mappers
 {
+    /// <summary>
+    /// Mapper configurator which initializes ValueInjecter maps.
+    /// </summary>
     public static class MapperConfig
     {
+        /// <summary>
+        /// Creates maps for the ValueInjecter library.
+        /// </summary>
         public static void Init()
         {
             Mapper.AddMap<UserDTO, User>(src => new User

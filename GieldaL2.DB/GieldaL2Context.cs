@@ -1,6 +1,5 @@
 ﻿
 using GieldaL2.DB.Entities;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace GieldaL2.DB

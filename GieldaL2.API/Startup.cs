@@ -11,16 +11,13 @@ using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using GieldaL2.API.Filters;
-using GieldaL2.API.ViewModels.View;
 using GieldaL2.INFRASTRUCTURE.Helpers;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.IdentityModel.Tokens;
-using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace GieldaL2.API
 {
@@ -56,6 +53,8 @@ namespace GieldaL2.API
                 c.AddSecurityRequirement(new Dictionary<string, IEnumerable<string>> {
                     { "Bearer", Enumerable.Empty<string>() },
                 });
+
+                c.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, "GieldaL2.API.XML"));
             });
 
             var appSettings = appSettingsSection.Get<AppSettings>();
@@ -80,6 +79,11 @@ namespace GieldaL2.API
             });
 
             services.AddDbContext<GieldaL2Context>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddCors(o => o.AddPolicy("CorsPolicy", policyBuilder => policyBuilder
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader()));
+
             services.AddMvc(options => { options.Filters.Add<BackendTimeFilter>(); });
 
             var builder = new ContainerBuilder();
@@ -104,6 +108,7 @@ namespace GieldaL2.API
             });
 
             app.UseAuthentication();
+            app.UseCors("CorsPolicy");
             app.UseMvc();
         }
     }
