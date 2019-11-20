@@ -137,7 +137,7 @@ namespace GieldaL2.API.Controllers
         /// <param name="id">ID of the user which will be deleted.</param>
         /// <returns>Backend statistics if user has been deleted with success, otherwise 404 if not found.</returns>
         [HttpDelete("{id}")]
-        [ProducesResponseType(204)]
+        [ProducesResponseType(200)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
         public ActionResult<StatisticsViewModel> Delete(int id)
@@ -147,8 +147,7 @@ namespace GieldaL2.API.Controllers
             {
                 return new NotFoundResult();
             }
-
-            Response.StatusCode = 204;
+            
             return Mapper.Map<StatisticsViewModel>(statisticsDto);
         }
     }
