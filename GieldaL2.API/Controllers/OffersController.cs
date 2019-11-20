@@ -1,13 +1,17 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using GieldaL2.API.ViewModels.Edit;
 using GieldaL2.API.ViewModels.View;
+using GieldaL2.INFRASTRUCTURE.DTO;
+using GieldaL2.INFRASTRUCTURE.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Omu.ValueInjecter;
 
 namespace GieldaL2.API.Controllers
 {
     /// <summary>
-    /// Offers controller containing endpoints to manage offers.
+    /// Controller for handling all of the sell offer and buy offer operations
     /// </summary>
     [Authorize]
     [ApiController]
@@ -15,110 +19,170 @@ namespace GieldaL2.API.Controllers
     [Produces("application/json")]
     public class OffersController : ControllerBase
     {
+        private readonly ISellOfferService _sellOfferService;
+        private readonly IBuyOfferService _buyOfferService;
+        public OffersController(ISellOfferService sellOfferService, IBuyOfferService buyOfferService)
+        {
+            _sellOfferService = sellOfferService;
+            _buyOfferService = buyOfferService;
+        }
+
         /// <summary>
-        /// Retrieves a list of all sell offers.
+        /// Retrives list of all sell offers
         /// </summary>
-        /// <returns>List of the all sell offers and backend statistics.</returns>
+        /// <returns>List of sell offers</returns>
         [HttpGet("sell")]
         [ProducesResponseType(200)]
         [ProducesResponseType(500)]
         public ActionResult<StatisticsViewModel<IEnumerable<SellOfferViewModel>>> GetSell()
         {
-            return null;
+            var statisticsDto = new StatisticsDTO();
+            var offerDto = _sellOfferService.GetAll(statisticsDto).Select(s => Mapper.Map<SellOfferViewModel>(s)).ToList();
+
+            var statistics = Mapper.Map<StatisticsViewModel<IEnumerable<SellOfferViewModel>>>(statisticsDto);
+            statistics.Data = offerDto;
+
+            return statistics;
         }
 
         /// <summary>
-        /// Retrieves sell offer with the specified ID.
+        /// Retrives specified sell offer
         /// </summary>
-        /// <param name="id">ID of the requested sell offer.</param>
-        /// <returns>Sell offer with the specified ID and backend statistics if success, otherwise 404 when not found.</returns>
+        /// <param name="id">sell offer id</param>
+        /// <returns>offer with specified id</returns>
         [HttpGet("sell/{id}")]
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
         public ActionResult<StatisticsViewModel<SellOfferViewModel>> GetSell(int id)
         {
-            return null;
+            var statisticsDto = new StatisticsDTO();
+            var offerDto = _sellOfferService.GetById(id, statisticsDto);
+
+            var statistics = Mapper.Map<StatisticsViewModel<SellOfferViewModel>>(statisticsDto);
+
+            if (offerDto == null)
+            {
+                return NotFound(statistics);
+            }
+
+            statistics.Data = Mapper.Map<SellOfferViewModel>(offerDto);
+
+            return statistics;
         }
 
         /// <summary>
-        /// Adds sell offer passed in the request body.
+        /// Adds sell offer passed in request body
         /// </summary>
-        /// <param name="order">Sell offer which will be added.</param>
-        /// <returns>Backend statistics.</returns>
+        /// <param name="sellOffer">Sell offer to add</param>
+        /// <returns>Backend statistics</returns>
         [HttpPost("sell")]
         [ProducesResponseType(201)]
         [ProducesResponseType(500)]
-        public ActionResult<StatisticsViewModel> PostSell([FromBody] EditSellOfferViewModel order)
+        public ActionResult<StatisticsViewModel> PostSell([FromBody] EditSellOfferViewModel sellOffer)
         {
-            return null;
+            var statisticsDto = new StatisticsDTO();
+            _sellOfferService.Add(Mapper.Map<SellOfferDTO>(sellOffer), statisticsDto);
+            return Mapper.Map<StatisticsViewModel>(statisticsDto);
         }
 
         /// <summary>
-        /// Deletes sell offer with the specified ID.
+        /// Deletes sell offer specified by id
         /// </summary>
-        /// <param name="id">ID of the sell offer which will be deleted.</param>
-        /// <returns>Backend statistics if success, otherwise 404 when ID was not found.</returns>
+        /// <param name="id">id of sell offer to delete</param>
+        /// <returns>backend statistics</returns>
         [HttpDelete("sell/{id}")]
         [ProducesResponseType(204)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
         public ActionResult<StatisticsViewModel> DeleteSell(int id)
         {
-            return null;
+            var statisticsDto = new StatisticsDTO();
+            if (!_sellOfferService.Delete(id, statisticsDto))
+            {
+                return NotFound(statisticsDto);
+            }
+
+            return Mapper.Map<StatisticsViewModel>(statisticsDto);
         }
 
         /// <summary>
-        /// Retrieves a list of all buy offers.
+        /// Retrives list of all buy offers
         /// </summary>
-        /// <returns>List of the all buy offers and backend statistics.</returns>
+        /// <returns>List of buy offers</returns>
         [HttpGet("buy")]
         [ProducesResponseType(200)]
         [ProducesResponseType(500)]
         public ActionResult<StatisticsViewModel<IEnumerable<BuyOfferViewModel>>> GetBuy()
         {
-            return null;
+            var statisticsDto = new StatisticsDTO();
+            var offerDto = _buyOfferService.GetAll(statisticsDto).Select(s => Mapper.Map<BuyOfferViewModel>(s)).ToList();
+
+            var statistics = Mapper.Map<StatisticsViewModel<IEnumerable<BuyOfferViewModel>>>(statisticsDto);
+            statistics.Data = offerDto;
+
+            return statistics;
         }
 
         /// <summary>
-        /// Retrieves buy offer with the specified ID.
+        /// Retrives specified buy offer
         /// </summary>
-        /// <param name="id">ID of the requested buy offer.</param>
-        /// <returns>Buy offer with the specified ID and backend statistics if success, otherwise 404 when not found.</returns>
+        /// <param name="id">buy offer id</param>
+        /// <returns>offer with specified id</returns>
         [HttpGet("buy/{id}")]
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
         public ActionResult<StatisticsViewModel<BuyOfferViewModel>> GetBuy(int id)
         {
-            return null;
+            var statisticsDto = new StatisticsDTO();
+            var offerDto = _buyOfferService.GetById(id, statisticsDto);
+
+            var statistics = Mapper.Map<StatisticsViewModel<BuyOfferViewModel>>(statisticsDto);
+
+            if (offerDto == null)
+            {
+                return NotFound(statistics);
+            }
+
+            statistics.Data = Mapper.Map<BuyOfferViewModel>(offerDto);
+
+            return statistics;
         }
 
         /// <summary>
-        /// Adds buy offer passed in the request body.
+        /// Adds buy offer passed in request body
         /// </summary>
-        /// <param name="order">Buy offer which will be added.</param>
-        /// <returns>Backend statistics.</returns>
+        /// <param name="buyOffer">Buy offer to add</param>
+        /// <returns>backend statistics</returns>
         [HttpPost("buy")]
         [ProducesResponseType(201)]
         [ProducesResponseType(500)]
-        public ActionResult<StatisticsViewModel> PostBuy([FromBody] EditBuyOfferViewModel order)
+        public ActionResult<StatisticsViewModel> PostBuy([FromBody] EditBuyOfferViewModel buyOffer)
         {
-            return null;
+            var statisticsDto = new StatisticsDTO();
+            _buyOfferService.Add(Mapper.Map<BuyOfferDTO>(buyOffer), statisticsDto);
+            return Mapper.Map<StatisticsViewModel>(statisticsDto);
         }
 
         /// <summary>
-        /// Deletes buy offer with the specified ID.
+        /// Deletes buy offer specified by id
         /// </summary>
-        /// <param name="id">ID of the buy offer which will be deleted.</param>
-        /// <returns>Backend statistics if success, otherwise 404 when ID was not found.</returns>
+        /// <param name="id">id of buy offer to delete</param>
+        /// <returns>backend statistics</returns>
         [HttpDelete("buy/{id}")]
         [ProducesResponseType(204)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
         public ActionResult<StatisticsViewModel> DeleteBuy(int id)
         {
-            return null;
+            var statisticsDto = new StatisticsDTO();
+            if (!_buyOfferService.Delete(id, statisticsDto))
+            {
+                return NotFound(statisticsDto);
+            }
+
+            return Mapper.Map<StatisticsViewModel>(statisticsDto);
         }
     }
 }
