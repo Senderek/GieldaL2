@@ -1,14 +1,29 @@
-﻿
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace GieldaL2.DB.Entities
 {
-	public class User : IdentityUser
+	public class User
 	{
+        /// <summary>
+        /// User's ID
+        /// </summary>
+        public int Id { get; set; }
+        /// <summary>
+        /// User name
+        /// </summary>
+        public string UserName { get; set; }
+
+        public string Name { get; set; }
+        public string Surname { get; set; }
+
+        /// <summary>
+        /// Password hash
+        /// </summary>
+        public string Password { get; set; }
+        /// <summary>
+        /// User's e-mail
+        /// </summary>
+        public string EMail { get; set; }
 		/// <summary>
 		/// Users money
 		/// </summary>

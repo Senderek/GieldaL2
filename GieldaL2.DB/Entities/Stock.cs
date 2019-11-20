@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace GieldaL2.DB.Entities
 {
@@ -16,5 +15,10 @@ namespace GieldaL2.DB.Entities
 		/// Current computed value of single share of this company
 		/// </summary>
 		public decimal CurrentPrice { get; set; }
-    }
+
+		/// <summary>
+		/// Last change in company's  shares value
+		/// </summary>
+		public decimal PriceDelta { get; set; }
+	}
 }

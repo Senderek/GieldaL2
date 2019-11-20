@@ -1,8 +1,7 @@
-﻿using System;
-
-namespace GieldaL2.INFRASTRUCTURE.Services
+﻿namespace GieldaL2.INFRASTRUCTURE.Services
 {
-    class OfferService
+    public class OfferService
     {
+        
     }
 }

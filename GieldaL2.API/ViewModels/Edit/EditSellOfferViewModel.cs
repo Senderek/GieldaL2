@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace GieldaL2.API.ViewModels
+namespace GieldaL2.API.ViewModels.Edit
 {
-    public class EditOfferViewModel
+    public class EditSellOfferViewModel
     {
         [Required]
         public int UserId { get; set; }
@@ -14,6 +14,6 @@ namespace GieldaL2.API.ViewModels
         public int Amount { get; set; }
 
         [Required]
-        public decimal Value { get; set; }
+        public decimal Price { get; set; }
     }
 }

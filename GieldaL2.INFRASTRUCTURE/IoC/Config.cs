@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace GieldaL2.INFRASTRUCTURE.IoC
+﻿namespace GieldaL2.INFRASTRUCTURE.IoC
 {
     class Config
     {

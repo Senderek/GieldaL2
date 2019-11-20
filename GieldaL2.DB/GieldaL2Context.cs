@@ -1,12 +1,12 @@
 ﻿
 using GieldaL2.DB.Entities;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace GieldaL2.DB
 {
-    public class GieldaL2Context : IdentityDbContext<User>
+    public class GieldaL2Context : DbContext
     {
+        public virtual DbSet<User> Users { get; set; }
 		/// <summary>
 		/// Transactions history
 		/// </summary>
