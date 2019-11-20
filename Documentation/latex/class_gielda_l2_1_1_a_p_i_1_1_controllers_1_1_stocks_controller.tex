@@ -1,0 +1,129 @@
+\hypertarget{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_stocks_controller}{}\section{Gielda\+L2.\+A\+P\+I.\+Controllers.\+Stocks\+Controller Class Reference}
+\label{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_stocks_controller}\index{GieldaL2.API.Controllers.StocksController@{GieldaL2.API.Controllers.StocksController}}
+
+
+Stocks controller containing endpoints to manage stocks.  
+
+
+Inheritance diagram for Gielda\+L2.\+A\+P\+I.\+Controllers.\+Stocks\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_stocks_controller}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_stocks_controller_ade3beae2417a52f2545b54b492e06ed8}\label{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_stocks_controller_ade3beae2417a52f2545b54b492e06ed8}} 
+{\bfseries Stocks\+Controller} (\mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_gielda_l2_context}{Gielda\+L2\+Context}} context)
+\item 
+Action\+Result$<$ \mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_view_1_1_statistics_view_model}{Statistics\+View\+Model}}$<$ I\+Enumerable$<$ \mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_view_1_1_stock_view_model}{Stock\+View\+Model}} $>$ $>$ $>$ \mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_stocks_controller_a3265a9c160c9a1f7f493423739f90561}{Get}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves a list of all stocks. \end{DoxyCompactList}\item 
+Action\+Result$<$ \mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_view_1_1_statistics_view_model}{Statistics\+View\+Model}}$<$ \mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_view_1_1_stock_view_model}{Stock\+View\+Model}} $>$ $>$ \mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_stocks_controller_acbb679302b68f67ebfc9c22184332f27}{Get}} (int id)
+\begin{DoxyCompactList}\small\item\em Retrieves stock with the specified ID. \end{DoxyCompactList}\item 
+Action\+Result$<$ \mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_view_1_1_statistics_view_model}{Statistics\+View\+Model}} $>$ \mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_stocks_controller_af9f6e39e439883c0c2af93a3081213ec}{Post}} (\mbox{[}From\+Body\mbox{]} \mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_edit_1_1_edit_stock_view_model}{Edit\+Stock\+View\+Model}} model)
+\begin{DoxyCompactList}\small\item\em Adds stock passed in the request body. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result$<$ \mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_view_1_1_statistics_view_model}{Statistics\+View\+Model}} $>$ $>$ \mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_stocks_controller_a1bd303fea5e96889618d79668344f6ad}{Put}} (int id, \mbox{[}From\+Body\mbox{]} \mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_edit_1_1_edit_stock_view_model}{Edit\+Stock\+View\+Model}} model)
+\begin{DoxyCompactList}\small\item\em Edits stock with the specified ID. \end{DoxyCompactList}\item 
+Action\+Result$<$ \mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_view_1_1_statistics_view_model}{Statistics\+View\+Model}} $>$ \mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_stocks_controller_ad83a73170f0d55d1b08353e76adef581}{Delete}} (int id)
+\begin{DoxyCompactList}\small\item\em Deletes stock with the specified ID. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Stocks controller containing endpoints to manage stocks. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_stocks_controller_ad83a73170f0d55d1b08353e76adef581}\label{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_stocks_controller_ad83a73170f0d55d1b08353e76adef581}} 
+\index{GieldaL2.API.Controllers.StocksController@{GieldaL2.API.Controllers.StocksController}!Delete@{Delete}}
+\index{Delete@{Delete}!GieldaL2.API.Controllers.StocksController@{GieldaL2.API.Controllers.StocksController}}
+\subsubsection{\texorpdfstring{Delete()}{Delete()}}
+{\footnotesize\ttfamily Action\+Result$<$\mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_view_1_1_statistics_view_model}{Statistics\+View\+Model}}$>$ Gielda\+L2.\+A\+P\+I.\+Controllers.\+Stocks\+Controller.\+Delete (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Deletes stock with the specified ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID of the stock which will be deleted.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Backend statistics if stock has been deleted with success, otherwise 404 if not found.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_stocks_controller_a3265a9c160c9a1f7f493423739f90561}\label{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_stocks_controller_a3265a9c160c9a1f7f493423739f90561}} 
+\index{GieldaL2.API.Controllers.StocksController@{GieldaL2.API.Controllers.StocksController}!Get@{Get}}
+\index{Get@{Get}!GieldaL2.API.Controllers.StocksController@{GieldaL2.API.Controllers.StocksController}}
+\subsubsection{\texorpdfstring{Get()}{Get()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result$<$\mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_view_1_1_statistics_view_model}{Statistics\+View\+Model}}$<$I\+Enumerable$<$\mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_view_1_1_stock_view_model}{Stock\+View\+Model}}$>$ $>$ $>$ Gielda\+L2.\+A\+P\+I.\+Controllers.\+Stocks\+Controller.\+Get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieves a list of all stocks. 
+
+\begin{DoxyReturn}{Returns}
+List of the all stocks and backend statistics.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_stocks_controller_acbb679302b68f67ebfc9c22184332f27}\label{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_stocks_controller_acbb679302b68f67ebfc9c22184332f27}} 
+\index{GieldaL2.API.Controllers.StocksController@{GieldaL2.API.Controllers.StocksController}!Get@{Get}}
+\index{Get@{Get}!GieldaL2.API.Controllers.StocksController@{GieldaL2.API.Controllers.StocksController}}
+\subsubsection{\texorpdfstring{Get()}{Get()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Action\+Result$<$\mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_view_1_1_statistics_view_model}{Statistics\+View\+Model}}$<$\mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_view_1_1_stock_view_model}{Stock\+View\+Model}}$>$ $>$ Gielda\+L2.\+A\+P\+I.\+Controllers.\+Stocks\+Controller.\+Get (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Retrieves stock with the specified ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID of the requested stock.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Stock with the specified ID and backend statistics if success, otherwise 404 when not found.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_stocks_controller_af9f6e39e439883c0c2af93a3081213ec}\label{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_stocks_controller_af9f6e39e439883c0c2af93a3081213ec}} 
+\index{GieldaL2.API.Controllers.StocksController@{GieldaL2.API.Controllers.StocksController}!Post@{Post}}
+\index{Post@{Post}!GieldaL2.API.Controllers.StocksController@{GieldaL2.API.Controllers.StocksController}}
+\subsubsection{\texorpdfstring{Post()}{Post()}}
+{\footnotesize\ttfamily Action\+Result$<$\mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_view_1_1_statistics_view_model}{Statistics\+View\+Model}}$>$ Gielda\+L2.\+A\+P\+I.\+Controllers.\+Stocks\+Controller.\+Post (\begin{DoxyParamCaption}\item[{\mbox{[}\+From\+Body\mbox{]} \mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_edit_1_1_edit_stock_view_model}{Edit\+Stock\+View\+Model}}}]{model }\end{DoxyParamCaption})}
+
+
+
+Adds stock passed in the request body. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & Stock which will be added.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Backend statistics.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_stocks_controller_a1bd303fea5e96889618d79668344f6ad}\label{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_stocks_controller_a1bd303fea5e96889618d79668344f6ad}} 
+\index{GieldaL2.API.Controllers.StocksController@{GieldaL2.API.Controllers.StocksController}!Put@{Put}}
+\index{Put@{Put}!GieldaL2.API.Controllers.StocksController@{GieldaL2.API.Controllers.StocksController}}
+\subsubsection{\texorpdfstring{Put()}{Put()}}
+{\footnotesize\ttfamily async Task$<$Action\+Result$<$\mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_view_1_1_statistics_view_model}{Statistics\+View\+Model}}$>$ $>$ Gielda\+L2.\+A\+P\+I.\+Controllers.\+Stocks\+Controller.\+Put (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{\mbox{[}\+From\+Body\mbox{]} \mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_edit_1_1_edit_stock_view_model}{Edit\+Stock\+View\+Model}}}]{model }\end{DoxyParamCaption})}
+
+
+
+Edits stock with the specified ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID of the stock which will be edited.\\
+\hline
+{\em model} & New data which will be applied to the stock.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Backend statistics if stock has been modified with success, otherwise 404 if not found.
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Gielda\+L2.\+A\+P\+I/\+Controllers/Stocks\+Controller.\+cs\end{DoxyCompactItemize}
