@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace GieldaL2.API.ViewModels.Edit
 {
@@ -15,5 +16,8 @@ namespace GieldaL2.API.ViewModels.Edit
 
         [Required]
         public decimal Price { get; set; }
+
+		[Required]
+		public DateTime Date { get; set; }
     }
 }
