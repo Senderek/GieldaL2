@@ -64,7 +64,7 @@ namespace GieldaL2.API.Controllers
 
             if (userDto == null)
             {
-                return new NotFoundResult();
+                return NotFound(Mapper.Map<StatisticsViewModel>(statisticsDto));
             }
 
             var statistics = Mapper.Map<StatisticsViewModel<UserViewModel>>(statisticsDto);
@@ -122,7 +122,7 @@ namespace GieldaL2.API.Controllers
 
             if (userDto == null)
             {
-                return new NotFoundResult();
+                return NotFound(Mapper.Map<StatisticsViewModel>(statisticsDto));
             }
 
             userDto = Mapper.Map<UserDTO>(user);
@@ -145,7 +145,7 @@ namespace GieldaL2.API.Controllers
             var statisticsDto = new StatisticsDTO();
             if (!_userService.DeleteUser(id, statisticsDto))
             {
-                return new NotFoundResult();
+                return NotFound(Mapper.Map<StatisticsViewModel>(statisticsDto));
             }
             
             return Mapper.Map<StatisticsViewModel>(statisticsDto);

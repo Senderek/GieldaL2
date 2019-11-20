@@ -28,7 +28,7 @@ namespace GieldaL2.API.Controllers
         }
 
         /// <summary>
-        /// Retrives list of all sell offers
+        /// Retrieves list of all sell offers
         /// </summary>
         /// <returns>List of sell offers</returns>
         [HttpGet("sell")]
@@ -46,7 +46,7 @@ namespace GieldaL2.API.Controllers
         }
 
         /// <summary>
-        /// Retrives specified sell offer
+        /// Retrieves specified sell offer
         /// </summary>
         /// <param name="id">sell offer id</param>
         /// <returns>offer with specified id</returns>
@@ -100,14 +100,14 @@ namespace GieldaL2.API.Controllers
             var statisticsDto = new StatisticsDTO();
             if (!_sellOfferService.Delete(id, statisticsDto))
             {
-                return NotFound(statisticsDto);
+                return NotFound(Mapper.Map<StatisticsViewModel>(statisticsDto));
             }
 
             return Mapper.Map<StatisticsViewModel>(statisticsDto);
         }
 
         /// <summary>
-        /// Retrives list of all buy offers
+        /// Retrieves list of all buy offers
         /// </summary>
         /// <returns>List of buy offers</returns>
         [HttpGet("buy")]
@@ -125,7 +125,7 @@ namespace GieldaL2.API.Controllers
         }
 
         /// <summary>
-        /// Retrives specified buy offer
+        /// Retrieves specified buy offer
         /// </summary>
         /// <param name="id">buy offer id</param>
         /// <returns>offer with specified id</returns>
@@ -179,7 +179,7 @@ namespace GieldaL2.API.Controllers
             var statisticsDto = new StatisticsDTO();
             if (!_buyOfferService.Delete(id, statisticsDto))
             {
-                return NotFound(statisticsDto);
+                return NotFound(Mapper.Map<StatisticsViewModel>(statisticsDto));
             }
 
             return Mapper.Map<StatisticsViewModel>(statisticsDto);

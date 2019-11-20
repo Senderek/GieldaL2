@@ -24,62 +24,62 @@
         </member>
         <member name="T:GieldaL2.API.Controllers.OffersController">
             <summary>
-            Offers controller containing endpoints to manage offers.
+            Controller for handling all of the sell offer and buy offer operations
             </summary>
         </member>
         <member name="M:GieldaL2.API.Controllers.OffersController.GetSell">
             <summary>
-            Retrieves a list of all sell offers.
+            Retrieves list of all sell offers
             </summary>
-            <returns>List of the all sell offers and backend statistics.</returns>
+            <returns>List of sell offers</returns>
         </member>
         <member name="M:GieldaL2.API.Controllers.OffersController.GetSell(System.Int32)">
             <summary>
-            Retrieves sell offer with the specified ID.
+            Retrieves specified sell offer
             </summary>
-            <param name="id">ID of the requested sell offer.</param>
-            <returns>Sell offer with the specified ID and backend statistics if success, otherwise 404 when not found.</returns>
+            <param name="id">sell offer id</param>
+            <returns>offer with specified id</returns>
         </member>
         <member name="M:GieldaL2.API.Controllers.OffersController.PostSell(GieldaL2.API.ViewModels.Edit.EditSellOfferViewModel)">
             <summary>
-            Adds sell offer passed in the request body.
+            Adds sell offer passed in request body
             </summary>
-            <param name="order">Sell offer which will be added.</param>
-            <returns>Backend statistics.</returns>
+            <param name="sellOffer">Sell offer to add</param>
+            <returns>Backend statistics</returns>
         </member>
         <member name="M:GieldaL2.API.Controllers.OffersController.DeleteSell(System.Int32)">
             <summary>
-            Deletes sell offer with the specified ID.
+            Deletes sell offer specified by id
             </summary>
-            <param name="id">ID of the sell offer which will be deleted.</param>
-            <returns>Backend statistics if success, otherwise 404 when ID was not found.</returns>
+            <param name="id">id of sell offer to delete</param>
+            <returns>backend statistics</returns>
         </member>
         <member name="M:GieldaL2.API.Controllers.OffersController.GetBuy">
             <summary>
-            Retrieves a list of all buy offers.
+            Retrieves list of all buy offers
             </summary>
-            <returns>List of the all buy offers and backend statistics.</returns>
+            <returns>List of buy offers</returns>
         </member>
         <member name="M:GieldaL2.API.Controllers.OffersController.GetBuy(System.Int32)">
             <summary>
-            Retrieves buy offer with the specified ID.
+            Retrieves specified buy offer
             </summary>
-            <param name="id">ID of the requested buy offer.</param>
-            <returns>Buy offer with the specified ID and backend statistics if success, otherwise 404 when not found.</returns>
+            <param name="id">buy offer id</param>
+            <returns>offer with specified id</returns>
         </member>
         <member name="M:GieldaL2.API.Controllers.OffersController.PostBuy(GieldaL2.API.ViewModels.Edit.EditBuyOfferViewModel)">
             <summary>
-            Adds buy offer passed in the request body.
+            Adds buy offer passed in request body
             </summary>
-            <param name="order">Buy offer which will be added.</param>
-            <returns>Backend statistics.</returns>
+            <param name="buyOffer">Buy offer to add</param>
+            <returns>backend statistics</returns>
         </member>
         <member name="M:GieldaL2.API.Controllers.OffersController.DeleteBuy(System.Int32)">
             <summary>
-            Deletes buy offer with the specified ID.
+            Deletes buy offer specified by id
             </summary>
-            <param name="id">ID of the buy offer which will be deleted.</param>
-            <returns>Backend statistics if success, otherwise 404 when ID was not found.</returns>
+            <param name="id">id of buy offer to delete</param>
+            <returns>backend statistics</returns>
         </member>
         <member name="T:GieldaL2.API.Controllers.SharesController">
             <summary>
