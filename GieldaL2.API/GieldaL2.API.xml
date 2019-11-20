@@ -163,24 +163,24 @@
         </member>
         <member name="T:GieldaL2.API.Controllers.TransactionsController">
             <summary>
-            Transactions controller containing endpoints to manage transactions.
+            Controller that includes endpoints for transactions
             </summary>
         </member>
         <member name="M:GieldaL2.API.Controllers.TransactionsController.Get">
             <summary>
-            Retrieves a list of all transactions.
+            Action that returns Collection of TransactionViewModels
             </summary>
-            <returns>List of the all transactions and backend statistics.</returns>
+            <returns>Collection of Transaction ViewModels</returns>
         </member>
         <member name="M:GieldaL2.API.Controllers.TransactionsController.Get(System.Int32)">
             <summary>
-            Retrieves transaction with the specified ID.
+            Action that returns specific TransactionViewModel
             </summary>
-            <param name="id">ID of the requested transaction.</param>
-            <returns>Transaction with the specified ID and backend statistics if success, otherwise 404 when not found.</returns>
+            <param name="id">identifier of transaction</param>
+            <returns>Singular Transaction ViewModel</returns>
         </member>
         <member name="M:GieldaL2.API.Controllers.TransactionsController.Post(GieldaL2.API.ViewModels.View.TransactionViewModel)">
-            <summary>T
+            <summary>
             Adds transaction passed in the request body.
             </summary>
             <param name="transaction">Transaction which will be added.</param>
