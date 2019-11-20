@@ -8,6 +8,8 @@ EXPOSE 80
 FROM mcr.microsoft.com/dotnet/core/sdk:2.2-nanoserver-1903 AS build
 WORKDIR /src
 COPY ["GieldaL2.API/GieldaL2.API.csproj", "GieldaL2.API/"]
+COPY ["GieldaL2.INFRASTRUCTURE/GieldaL2.INFRASTRUCTURE.csproj", "GieldaL2.INFRASTRUCTURE/"]
+COPY ["GieldaL2.DB/GieldaL2.DB.csproj", "GieldaL2.DB/"]
 RUN dotnet restore "GieldaL2.API/GieldaL2.API.csproj"
 COPY . .
 WORKDIR "/src/GieldaL2.API"
