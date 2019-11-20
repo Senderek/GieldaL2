@@ -79,6 +79,8 @@ namespace GieldaL2.API
             });
 
             services.AddDbContext<GieldaL2Context>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            //services.AddDbContext<GieldaL2Context>(options => options.UseSqlServer(Configuration.GetConnectionString("LocalConnection")));
+
             services.AddCors(o => o.AddPolicy("CorsPolicy", policyBuilder => policyBuilder
                 .AllowAnyOrigin()
                 .AllowAnyMethod()

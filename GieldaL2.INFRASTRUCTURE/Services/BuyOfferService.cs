@@ -56,14 +56,11 @@ namespace GieldaL2.INFRASTRUCTURE.Services
             {
                 return false;
             }
-            _buyOfferRepository.Remove(Mapper.Map<BuyOffer>(buyOffer));
+            _buyOfferRepository.Remove(buyOffer);
             statistics.SelectsTime += _buyOfferRepository.LastOperationTime;
             statistics.SelectsCount++;
             return true;
         }
-
-        
-
-        
+   
     }
 }

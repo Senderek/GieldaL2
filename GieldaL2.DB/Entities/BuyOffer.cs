@@ -10,7 +10,7 @@ namespace GieldaL2.DB.Entities
         /// <summary>
         /// Id of user who made buy offer
         /// </summary>
-        public int UserId { get; set; }
+        public int BuyerId { get; set; }
         /// <summary>
         /// User who created the offer
         /// </summary>

@@ -56,7 +56,7 @@ namespace GieldaL2.INFRASTRUCTURE.Services
             {
                 return false;
             }
-            _sellOfferRepository.Remove(Mapper.Map<SellOffer>(sellOffer));
+            _sellOfferRepository.Remove(sellOffer);
             statistics.SelectsTime += _sellOfferRepository.LastOperationTime;
             statistics.SelectsCount++;
             return true;

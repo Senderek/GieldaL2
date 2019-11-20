@@ -60,7 +60,7 @@ namespace GieldaL2.INFRASTRUCTURE.Mappers
             Mapper.AddMap<BuyOffer, BuyOfferDTO>(src => new BuyOfferDTO
             {
                 Id = src.Id,
-                UserId = src.UserId,
+                BuyerId = src.BuyerId,
                 StockId = src.StockId,
                 Amount = src.Amount,
                 Price = src.Price,
