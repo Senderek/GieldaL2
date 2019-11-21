@@ -3,9 +3,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using GieldaL2.API.ViewModels.Edit;
 using GieldaL2.API.ViewModels.View;
+using GieldaL2.INFRASTRUCTURE.Interfaces;
 using GieldaL2.DB;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using GieldaL2.INFRASTRUCTURE.DTO;
+using Omu.ValueInjecter;
 
 namespace GieldaL2.API.Controllers
 {
@@ -18,10 +21,10 @@ namespace GieldaL2.API.Controllers
     [Produces("application/json")]
     public class StocksController : ControllerBase
     {
-		GieldaL2Context context;
-		public StocksController(GieldaL2Context context)
+		IStockService service;
+		public StocksController(IStockService service)
 		{
-			this.context = context;
+			this.service = service;
 		}
 
         /// <summary>
@@ -33,20 +36,14 @@ namespace GieldaL2.API.Controllers
         [ProducesResponseType(500)]
         public ActionResult<StatisticsViewModel<IEnumerable<StockViewModel>>> Get()
         {
-			return new StatisticsViewModel<IEnumerable<StockViewModel>>()
-			{
-				//TODO: statistics
-				Data = (from s in context.Stocks
-						select new StockViewModel()
-						{
-							Id = s.Id,
-							Name = s.Name,
-							Abbreviation = s.Abbreviation,
-							CurrentPrice = s.CurrentPrice,
-							PriceDelta = s.PriceDelta
-						}).ToList()
-			};
-        }
+			var dto = new StatisticsDTO();
+			var data = service.GetAllStocks(dto).Select(p => Mapper.Map<StockViewModel>(p)).ToList();
+
+			var statistics = Mapper.Map<StatisticsViewModel<IEnumerable<StockViewModel>>>(dto);
+			statistics.Data = data;
+
+			return statistics;
+		}
 
         /// <summary>
         /// Retrieves stock with the specified ID.
@@ -59,19 +56,18 @@ namespace GieldaL2.API.Controllers
 		[ProducesResponseType(500)]
 		public ActionResult<StatisticsViewModel<StockViewModel>> Get(int id)
 		{
-			var s = context.Stocks.Find(id);
-			return new StatisticsViewModel<StockViewModel>()
+			var dto = new StatisticsDTO();
+			var stock = service.GetStockById(id, dto);
+
+			if (stock == null)
 			{
-				//TODO: statistics
-				Data = new StockViewModel()
-				{
-					Id = s.Id,
-					Name = s.Name,
-					Abbreviation = s.Abbreviation,
-					CurrentPrice = s.CurrentPrice,
-					PriceDelta = s.PriceDelta
-				}
-			};
+				return NotFound(Mapper.Map<StatisticsViewModel>(dto));
+			}
+
+			var statistics = Mapper.Map<StatisticsViewModel<StockViewModel>>(dto);
+			statistics.Data = Mapper.Map<StockViewModel>(stock);
+
+			return statistics;
 		}
 
         /// <summary>
@@ -84,21 +80,12 @@ namespace GieldaL2.API.Controllers
         [ProducesResponseType(500)]
         public ActionResult<StatisticsViewModel> Post([FromBody] EditStockViewModel model)
         {
-			DB.Entities.Stock stock = new DB.Entities.Stock()
-			{
-				Name = model.Name,
-				Abbreviation = model.Abbreviation,
-				//CurrentPrice = model.CurrentPrice,
-				//PriceDelta = model.PriceDelta
-			};
+			var statisticsDto = new StatisticsDTO();
+			service.AddStock(Mapper.Map<StockDTO>(model), statisticsDto);
 
-			context.Stocks.Add(stock);
-			context.SaveChangesAsync();
-            return new StatisticsViewModel()
-				{
-				//TODO: statistics
-			};
-        }
+			Response.StatusCode = 201;
+			return Mapper.Map<StatisticsViewModel>(statisticsDto);
+		}
 
         /// <summary>
         /// Edits stock with the specified ID.
@@ -110,30 +97,20 @@ namespace GieldaL2.API.Controllers
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
-        public async Task<ActionResult<StatisticsViewModel>> Put(int id, [FromBody] EditStockViewModel model)
+        public ActionResult<StatisticsViewModel> Put(int id, [FromBody] EditStockViewModel model)
         {
-			DB.Entities.Stock stock = context.Stocks.Find(id);
+			var dto = new StatisticsDTO();
+			var stock = service.GetStockById(id, dto);
 
-			if (stock == null) return NotFound();
-
-			stock.Name = model.Name;
-			stock.Abbreviation = model.Abbreviation;
-			//TODO: stock.CurrentPrice = 
-			//TODO: stock.PriceDelta = 
-
-			if (await TryUpdateModelAsync<DB.Entities.Stock>(stock))
+			if (stock == null)
 			{
-				await context.SaveChangesAsync();
+				return NotFound(Mapper.Map<StatisticsViewModel>(dto));
+			}
 
-				return new StatisticsViewModel()
-				{
-					//TODO: statistics
-				};
-			}
-			else
-			{
-				return StatusCode(500);
-			}
+			stock = Mapper.Map<StockDTO>(stock);
+			service.EditStock(id, stock, dto);
+
+			return Mapper.Map<StatisticsViewModel>(dto);
 		}
 
         /// <summary>
@@ -147,16 +124,13 @@ namespace GieldaL2.API.Controllers
         [ProducesResponseType(500)]
         public ActionResult<StatisticsViewModel> Delete(int id)
         {
-			DB.Entities.Stock stock = context.Stocks.Find(id);
-
-			if (stock == null) return NotFound();
-
-			context.Stocks.Remove(stock);
-			context.SaveChangesAsync();
-			return new StatisticsViewModel()
+			var dto = new StatisticsDTO();
+			if (!service.DeleteStock(id, dto))
 			{
-				//TODO: statistics
-			};
+				return NotFound(Mapper.Map<StatisticsViewModel>(dto));
+			}
+
+			return Mapper.Map<StatisticsViewModel>(dto);
 		}
     }
 }
