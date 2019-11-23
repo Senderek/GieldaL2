@@ -20,14 +20,20 @@ namespace GieldaL2.API.Controllers
     public class UsersController : ControllerBase
     {
         private readonly IUserService _userService;
+        private readonly IBuyOfferService _buyOfferService;
+        private readonly ISellOfferService _sellOfferService;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="UsersController"/> class.
         /// </summary>
         /// <param name="userService">User service.</param>
-        public UsersController(IUserService userService)
+        /// <param name="buyOfferService">Buy offers service.</param>
+        /// <param name="sellOfferService">Sell offers service.</param>
+        public UsersController(IUserService userService, IBuyOfferService buyOfferService, ISellOfferService sellOfferService)
         {
             _userService = userService;
+            _buyOfferService = buyOfferService;
+            _sellOfferService = sellOfferService;
         }
 
         /// <summary>
@@ -74,10 +80,10 @@ namespace GieldaL2.API.Controllers
         }
 
         /// <summary>
-        /// Adds user passed in the request body.
+        /// Retrieves shares assigned to the specified user.
         /// </summary>
-        /// <param name="id">Stock which will be added.</param>
-        /// <returns>Backend statistics.</returns>
+        /// <param name="id">User ID.</param>
+        /// <returns>Shares of the specified user.</returns>
         [HttpGet("{id}/shares")]
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
@@ -85,6 +91,56 @@ namespace GieldaL2.API.Controllers
         public ActionResult<StatisticsViewModel<IEnumerable<ShareViewModel>>> GetShares(int id)
         {
             return null;
+        }
+
+        /// <summary>
+        /// Retrieves sell offers assigned to the specified user.
+        /// </summary>
+        /// <param name="id">User ID.</param>
+        /// <returns>Sell offers of the specified user.</returns>
+        [HttpGet("{id}/offers/sell")]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(404)]
+        [ProducesResponseType(500)]
+        public ActionResult<StatisticsViewModel<IEnumerable<SellOfferViewModel>>> GetSellOffers(int id)
+        {
+            var statisticsDto = new StatisticsDTO();
+            var userDto = _userService.GetUserById(id, statisticsDto);
+            if (userDto == null)
+            {
+                return NotFound(statisticsDto);
+            }
+
+            var sellOffersDto = _sellOfferService.GetByUserId(userDto.Id, statisticsDto);
+            var statistics = Mapper.Map<StatisticsViewModel<IEnumerable<SellOfferViewModel>>>(statisticsDto);
+            statistics.Data = sellOffersDto.Select(p => Mapper.Map<SellOfferViewModel>(p)).ToList();
+
+            return statistics;
+        }
+
+        /// <summary>
+        /// Retrieves buy offers assigned to the specified user.
+        /// </summary>
+        /// <param name="id">User ID.</param>
+        /// <returns>Buy offers of the specified user.</returns>
+        [HttpGet("{id}/offers/buy")]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(404)]
+        [ProducesResponseType(500)]
+        public ActionResult<StatisticsViewModel<IEnumerable<BuyOfferViewModel>>> GetBuyOffers(int id)
+        {
+            var statisticsDto = new StatisticsDTO();
+            var userDto = _userService.GetUserById(id, statisticsDto);
+            if (userDto == null)
+            {
+                return NotFound(statisticsDto);
+            }
+
+            var buyOffersDto = _buyOfferService.GetByUserId(userDto.Id, statisticsDto);
+            var statistics = Mapper.Map<StatisticsViewModel<IEnumerable<BuyOfferViewModel>>>(statisticsDto);
+            statistics.Data = buyOffersDto.Select(p => Mapper.Map<BuyOfferViewModel>(p)).ToList();
+
+            return statistics;
         }
 
         /// <summary>
