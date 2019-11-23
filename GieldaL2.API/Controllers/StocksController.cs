@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using GieldaL2.API.ViewModels.Edit;
@@ -68,6 +69,34 @@ namespace GieldaL2.API.Controllers
 
 			return statistics;
 		}
+
+        /// <summary>
+        /// Retrieves buy offers in the stock stock with the specified ID.
+        /// </summary>
+        /// <param name="id">ID of the requested stock.</param>
+        /// <returns>Buy offers in the stock with the specified ID and backend statistics if success, otherwise 404 when not found.</returns>
+        [HttpGet("{id}/offers/buy")]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(404)]
+        [ProducesResponseType(500)]
+        public ActionResult<StatisticsViewModel<StockViewModel>> GetBuyOffers(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Retrieves sell offers in the stock stock with the specified ID.
+        /// </summary>
+        /// <param name="id">ID of the requested stock.</param>
+        /// <returns>Sell offers in the stock with the specified ID and backend statistics if success, otherwise 404 when not found.</returns>
+        [HttpGet("{id}/offers/sell")]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(404)]
+        [ProducesResponseType(500)]
+        public ActionResult<StatisticsViewModel<StockViewModel>> GetSellOffers(int id)
+        {
+            throw new NotImplementedException();
+        }
 
         /// <summary>
         /// Adds stock passed in the request body.

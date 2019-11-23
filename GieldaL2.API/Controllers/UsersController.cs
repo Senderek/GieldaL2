@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using GieldaL2.API.ViewModels.Edit;
 using GieldaL2.API.ViewModels.View;
@@ -90,7 +91,7 @@ namespace GieldaL2.API.Controllers
         [ProducesResponseType(500)]
         public ActionResult<StatisticsViewModel<IEnumerable<ShareViewModel>>> GetShares(int id)
         {
-            return null;
+            throw new NotImplementedException();
         }
 
         /// <summary>

@@ -158,6 +158,20 @@
             <param name="id">ID of the requested stock.</param>
             <returns>Stock with the specified ID and backend statistics if success, otherwise 404 when not found.</returns>
         </member>
+        <member name="M:GieldaL2.API.Controllers.StocksController.GetBuyOffers(System.Int32)">
+            <summary>
+            Retrieves buy offers in the stock stock with the specified ID.
+            </summary>
+            <param name="id">ID of the requested stock.</param>
+            <returns>Buy offers in the stock with the specified ID and backend statistics if success, otherwise 404 when not found.</returns>
+        </member>
+        <member name="M:GieldaL2.API.Controllers.StocksController.GetSellOffers(System.Int32)">
+            <summary>
+            Retrieves sell offers in the stock stock with the specified ID.
+            </summary>
+            <param name="id">ID of the requested stock.</param>
+            <returns>Sell offers in the stock with the specified ID and backend statistics if success, otherwise 404 when not found.</returns>
+        </member>
         <member name="M:GieldaL2.API.Controllers.StocksController.Post(GieldaL2.API.ViewModels.Edit.EditStockViewModel)">
             <summary>
             Adds stock passed in the request body.
