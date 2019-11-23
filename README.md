@@ -1,9 +1,6 @@
 # Azure
 https://dev.azure.com/EFL2/GieldaL2
 
-# Doxygen
-http://htmlpreview.github.io/?https://github.com/Senderek/GieldaL2/blob/feature/documentation/Documentation/html/index.html
-
 # Introduction 
 TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
 
