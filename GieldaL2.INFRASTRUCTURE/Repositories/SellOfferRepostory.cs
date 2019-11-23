@@ -37,6 +37,14 @@ namespace GieldaL2.INFRASTRUCTURE.Repositories
             return data;
         }
 
+        public ICollection<SellOffer> GetByUserId(int userId)
+        {
+            var watch = Stopwatch.StartNew();
+            var data = _context.SellOffers.Where(p => p.SellerId == userId).ToList();
+            LastOperationTime = (int)watch.ElapsedMilliseconds;
+            return data;
+        }
+
         /// <summary>
         /// Mehod that returns Collection of SellOffer entities
         /// </summary>

@@ -21,6 +21,14 @@ namespace GieldaL2.DB.Interfaces
         /// <param name="password">Password of User</param>
         /// <returns>Singular user entity</returns>
         User GetByUserNameAndPassword(string userName, string password);
+
+        /// <summary>
+        /// Retrieves an user with the specified name.
+        /// </summary>
+        /// <param name="name">Name of the requested user.</param>
+        /// <returns>User entity if found, otherwise null.</returns>
+        User GetByName(string name);
+
         /// <summary>
         /// Declaration of method that returns Collection of user entities
         /// </summary>

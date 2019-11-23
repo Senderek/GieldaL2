@@ -24,6 +24,14 @@ namespace GieldaL2.INFRASTRUCTURE.Interfaces
         UserDTO GetUserById(int id, StatisticsDTO statistics);
 
         /// <summary>
+        /// Retrieves an user with the specified name.
+        /// </summary>
+        /// <param name="name">Name of the requested user.</param>
+        /// <param name="statistics">DTO containing statistics which will be updated during work of this method.</param>
+        /// <returns>User DTO if found, otherwise null.</returns>
+        UserDTO GetUserByName(string name, StatisticsDTO statistics);
+
+        /// <summary>
         /// Adds user passed in the parameter to the database.
         /// </summary>
         /// <param name="user">User DTO which will be added to the database.</param>

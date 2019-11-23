@@ -44,6 +44,20 @@ namespace GieldaL2.INFRASTRUCTURE.Repositories
         }
 
         /// <summary>
+        /// Retrieves an user with the specified name.
+        /// </summary>
+        /// <param name="name">Name of the requested user.</param>
+        /// <returns>User entity if found, otherwise null.</returns>
+        public User GetByName(string name)
+        {
+            var watch = Stopwatch.StartNew();
+            var data = _context.Users.FirstOrDefault(user => user.UserName == name);
+            LastOperationTime = (int)watch.ElapsedMilliseconds;
+
+            return data;
+        }
+
+        /// <summary>
         /// Retrieves an user with the specified username and password.
         /// </summary>
         /// <param name="userName">Username</param>

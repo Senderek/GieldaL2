@@ -38,6 +38,18 @@ namespace GieldaL2.INFRASTRUCTURE.Repositories
         }
 
         /// <summary>
+        /// Method that returns Collection of BuyOffer entities for the specified user
+        /// </summary>
+        /// <returns>Collection of BuyOffer entities</returns>
+        public ICollection<BuyOffer> GetByUserId(int userId)
+        {
+            var watch = Stopwatch.StartNew();
+            var data = _context.BuyOffers.Where(p => p.BuyerId == userId).ToList();
+            LastOperationTime = (int)watch.ElapsedMilliseconds;
+            return data;
+        }
+
+        /// <summary>
         /// Method that returns Collection of BuyOffer entities
         /// </summary>
         /// <returns>Collection of BuyOffer entities</returns>
