@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using GieldaL2.API.ViewModels.Edit;
 using GieldaL2.API.ViewModels.View;
 using GieldaL2.INFRASTRUCTURE.DTO;
@@ -21,10 +22,13 @@ namespace GieldaL2.API.Controllers
     {
         private readonly ISellOfferService _sellOfferService;
         private readonly IBuyOfferService _buyOfferService;
-        public OffersController(ISellOfferService sellOfferService, IBuyOfferService buyOfferService)
+        private readonly IUserService _userService;
+
+        public OffersController(ISellOfferService sellOfferService, IBuyOfferService buyOfferService, IUserService userService)
         {
             _sellOfferService = sellOfferService;
             _buyOfferService = buyOfferService;
+            _userService = userService;
         }
 
         /// <summary>
@@ -82,7 +86,13 @@ namespace GieldaL2.API.Controllers
         public ActionResult<StatisticsViewModel> PostSell([FromBody] EditSellOfferViewModel sellOffer)
         {
             var statisticsDto = new StatisticsDTO();
-            _sellOfferService.Add(Mapper.Map<SellOfferDTO>(sellOffer), statisticsDto);
+            var currentUserName = User.FindFirst(ClaimTypes.Name).Value;
+            var currentUserDto = _userService.GetUserByName(currentUserName, statisticsDto);
+
+            var sellOfferDto = Mapper.Map<SellOfferDTO>(sellOffer);
+            sellOfferDto.SellerId = currentUserDto.Id;
+
+            _sellOfferService.Add(sellOfferDto, statisticsDto);
             return Mapper.Map<StatisticsViewModel>(statisticsDto);
         }
 
@@ -161,7 +171,13 @@ namespace GieldaL2.API.Controllers
         public ActionResult<StatisticsViewModel> PostBuy([FromBody] EditBuyOfferViewModel buyOffer)
         {
             var statisticsDto = new StatisticsDTO();
-            _buyOfferService.Add(Mapper.Map<BuyOfferDTO>(buyOffer), statisticsDto);
+            var currentUserName = User.FindFirst(ClaimTypes.Name).Value;
+            var currentUserDto = _userService.GetUserByName(currentUserName, statisticsDto);
+
+            var buyOfferDto = Mapper.Map<BuyOfferDTO>(buyOffer);
+            buyOfferDto.BuyerId = currentUserDto.Id;
+
+            _buyOfferService.Add(buyOfferDto, statisticsDto);
             return Mapper.Map<StatisticsViewModel>(statisticsDto);
         }
 
