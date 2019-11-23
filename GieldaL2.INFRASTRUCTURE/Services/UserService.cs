@@ -59,6 +59,26 @@ namespace GieldaL2.INFRASTRUCTURE.Services
         }
 
         /// <summary>
+        /// Retrieves an user with the specified name.
+        /// </summary>
+        /// <param name="name">Name of the requested user.</param>
+        /// <param name="statistics">DTO containing statistics which will be updated during work of this method.</param>
+        /// <returns>User DTO if found, otherwise null.</returns>
+        public UserDTO GetUserByName(string name, StatisticsDTO statistics)
+        {
+            var user = _userRepository.GetByName(name);
+            statistics.SelectsTime += _userRepository.LastOperationTime;
+            statistics.SelectsCount++;
+
+            if (user == null)
+            {
+                return null;
+            }
+
+            return Mapper.Map<UserDTO>(user);
+        }
+
+        /// <summary>
         /// Adds user passed in the parameter to the database.
         /// </summary>
         /// <param name="user">User DTO which will be added to the database.</param>

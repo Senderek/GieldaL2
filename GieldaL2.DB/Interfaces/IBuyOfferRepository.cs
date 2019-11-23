@@ -14,6 +14,13 @@ namespace GieldaL2.DB.Interfaces
         /// <param name="id">Identifier of offer to buy</param>
         /// <returns>Singular BuyOffer entity</returns>
         BuyOffer GetById(int id);
+
+        /// <summary>
+        /// Declaration of method that returns Collection of BuyOffer entities for the specified user
+        /// </summary>
+        /// <returns>Collection of BuyOffers</returns>
+        ICollection<BuyOffer> GetByUserId(int userId);
+
         /// <summary>
         /// Declaration of method that returns Collection of BuyOffer entities
         /// </summary>
