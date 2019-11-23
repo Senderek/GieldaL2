@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GieldaL2.DB.Migrations
 {
     [DbContext(typeof(GieldaL2Context))]
-    [Migration("20191115182012_InitialMigration")]
+    [Migration("20191123153257_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -29,13 +29,13 @@ namespace GieldaL2.DB.Migrations
 
                     b.Property<int>("Amount");
 
-                    b.Property<int?>("BuyerId");
+                    b.Property<int>("BuyerId");
 
                     b.Property<DateTime>("Date");
 
                     b.Property<decimal>("Price");
 
-                    b.Property<int?>("StockId");
+                    b.Property<int>("StockId");
 
                     b.HasKey("Id");
 
@@ -58,15 +58,15 @@ namespace GieldaL2.DB.Migrations
 
                     b.Property<decimal>("Price");
 
-                    b.Property<int?>("ShareId");
+                    b.Property<int>("SellerId");
 
-                    b.Property<int?>("UserId");
+                    b.Property<int>("ShareId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ShareId");
+                    b.HasIndex("SellerId");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("ShareId");
 
                     b.ToTable("SellOffers");
                 });
@@ -119,15 +119,15 @@ namespace GieldaL2.DB.Migrations
 
                     b.Property<int>("Amount");
 
-                    b.Property<int?>("BuyerId");
+                    b.Property<int>("BuyerId");
 
                     b.Property<DateTime>("Date");
 
                     b.Property<decimal>("Price");
 
-                    b.Property<int?>("SellerId");
+                    b.Property<int>("SellerId");
 
-                    b.Property<int?>("StockId");
+                    b.Property<int>("StockId");
 
                     b.HasKey("Id");
 
@@ -150,7 +150,11 @@ namespace GieldaL2.DB.Migrations
 
                     b.Property<decimal>("Money");
 
+                    b.Property<string>("Name");
+
                     b.Property<string>("Password");
+
+                    b.Property<string>("Surname");
 
                     b.Property<string>("UserName");
 
@@ -163,29 +167,34 @@ namespace GieldaL2.DB.Migrations
                 {
                     b.HasOne("GieldaL2.DB.Entities.User", "Buyer")
                         .WithMany("BuyOffers")
-                        .HasForeignKey("BuyerId");
+                        .HasForeignKey("BuyerId")
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("GieldaL2.DB.Entities.Stock", "Stock")
                         .WithMany()
-                        .HasForeignKey("StockId");
+                        .HasForeignKey("StockId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("GieldaL2.DB.Entities.SellOffer", b =>
                 {
+                    b.HasOne("GieldaL2.DB.Entities.User", "Seller")
+                        .WithMany("SellOffers")
+                        .HasForeignKey("SellerId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
                     b.HasOne("GieldaL2.DB.Entities.Share", "Share")
                         .WithMany()
-                        .HasForeignKey("ShareId");
-
-                    b.HasOne("GieldaL2.DB.Entities.User")
-                        .WithMany("SellOffers")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("ShareId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("GieldaL2.DB.Entities.Share", b =>
                 {
                     b.HasOne("GieldaL2.DB.Entities.User", "Owner")
                         .WithMany("Shares")
-                        .HasForeignKey("OwnerId");
+                        .HasForeignKey("OwnerId")
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("GieldaL2.DB.Entities.Stock", "Stock")
                         .WithMany("Shares")
@@ -196,15 +205,18 @@ namespace GieldaL2.DB.Migrations
                 {
                     b.HasOne("GieldaL2.DB.Entities.User", "Buyer")
                         .WithMany()
-                        .HasForeignKey("BuyerId");
+                        .HasForeignKey("BuyerId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("GieldaL2.DB.Entities.User", "Seller")
                         .WithMany()
-                        .HasForeignKey("SellerId");
+                        .HasForeignKey("SellerId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("GieldaL2.DB.Entities.Stock", "Stock")
                         .WithMany()
-                        .HasForeignKey("StockId");
+                        .HasForeignKey("StockId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

@@ -31,6 +31,8 @@ namespace GieldaL2.DB.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     UserName = table.Column<string>(nullable: true),
+                    Name = table.Column<string>(nullable: true),
+                    Surname = table.Column<string>(nullable: true),
                     Password = table.Column<string>(nullable: true),
                     EMail = table.Column<string>(nullable: true),
                     Money = table.Column<decimal>(nullable: false)
@@ -46,8 +48,8 @@ namespace GieldaL2.DB.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    BuyerId = table.Column<int>(nullable: true),
-                    StockId = table.Column<int>(nullable: true),
+                    BuyerId = table.Column<int>(nullable: false),
+                    StockId = table.Column<int>(nullable: false),
                     Amount = table.Column<int>(nullable: false),
                     Price = table.Column<decimal>(nullable: false),
                     Date = table.Column<DateTime>(nullable: false)
@@ -102,9 +104,9 @@ namespace GieldaL2.DB.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    BuyerId = table.Column<int>(nullable: true),
-                    SellerId = table.Column<int>(nullable: true),
-                    StockId = table.Column<int>(nullable: true),
+                    BuyerId = table.Column<int>(nullable: false),
+                    SellerId = table.Column<int>(nullable: false),
+                    StockId = table.Column<int>(nullable: false),
                     Amount = table.Column<int>(nullable: false),
                     Price = table.Column<decimal>(nullable: false),
                     Date = table.Column<DateTime>(nullable: false)
@@ -138,25 +140,25 @@ namespace GieldaL2.DB.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    ShareId = table.Column<int>(nullable: true),
+                    SellerId = table.Column<int>(nullable: false),
+                    ShareId = table.Column<int>(nullable: false),
                     Amount = table.Column<int>(nullable: false),
                     Price = table.Column<decimal>(nullable: false),
-                    Date = table.Column<DateTime>(nullable: false),
-                    UserId = table.Column<int>(nullable: true)
+                    Date = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_SellOffers", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_SellOffers_Shares_ShareId",
-                        column: x => x.ShareId,
-                        principalTable: "Shares",
+                        name: "FK_SellOffers_Users_SellerId",
+                        column: x => x.SellerId,
+                        principalTable: "Users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_SellOffers_Users_UserId",
-                        column: x => x.UserId,
-                        principalTable: "Users",
+                        name: "FK_SellOffers_Shares_ShareId",
+                        column: x => x.ShareId,
+                        principalTable: "Shares",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -172,14 +174,14 @@ namespace GieldaL2.DB.Migrations
                 column: "StockId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_SellOffers_SellerId",
+                table: "SellOffers",
+                column: "SellerId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_SellOffers_ShareId",
                 table: "SellOffers",
                 column: "ShareId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_SellOffers_UserId",
-                table: "SellOffers",
-                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Shares_OwnerId",
