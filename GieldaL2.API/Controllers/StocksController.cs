@@ -15,7 +15,6 @@ namespace GieldaL2.API.Controllers
     /// <summary>
     /// Stocks controller containing endpoints to manage stocks.
     /// </summary>
-    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     [Produces("application/json")]
@@ -76,6 +75,7 @@ namespace GieldaL2.API.Controllers
         /// <param name="model">Stock which will be added.</param>
         /// <returns>Backend statistics.</returns>
         [HttpPost]
+        [Authorize]
         [ProducesResponseType(201)]
         [ProducesResponseType(500)]
         public ActionResult<StatisticsViewModel> Post([FromBody] EditStockViewModel model)
@@ -94,6 +94,7 @@ namespace GieldaL2.API.Controllers
         /// <param name="model">New data which will be applied to the stock.</param>
         /// <returns>Backend statistics if stock has been modified with success, otherwise 404 if not found.</returns>
         [HttpPut("{id}")]
+        [Authorize]
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
@@ -119,6 +120,7 @@ namespace GieldaL2.API.Controllers
         /// <param name="id">ID of the stock which will be deleted.</param>
         /// <returns>Backend statistics if stock has been deleted with success, otherwise 404 if not found.</returns>
         [HttpDelete("{id}")]
+        [Authorize]
         [ProducesResponseType(204)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
