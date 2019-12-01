@@ -137,7 +137,7 @@ namespace GieldaL2.API.Controllers
 				return NotFound(Mapper.Map<StatisticsViewModel>(dto));
 			}
 
-			stock = Mapper.Map<StockDTO>(stock);
+			stock = Mapper.Map<StockDTO>(model);
 			service.EditStock(id, stock, dto);
 
 			return Mapper.Map<StatisticsViewModel>(dto);

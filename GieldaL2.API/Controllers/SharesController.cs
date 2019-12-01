@@ -4,8 +4,11 @@ using System.Threading.Tasks;
 using GieldaL2.API.ViewModels.Edit;
 using GieldaL2.API.ViewModels.View;
 using GieldaL2.DB;
+using GieldaL2.INFRASTRUCTURE.DTO;
+using GieldaL2.INFRASTRUCTURE.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Omu.ValueInjecter;
 
 namespace GieldaL2.API.Controllers
 {
@@ -18,11 +21,11 @@ namespace GieldaL2.API.Controllers
     [Produces("application/json")]
     public class SharesController : ControllerBase
     {
-		GieldaL2Context context;
+		IShareService service;
 
-		public SharesController(GieldaL2Context context)
+		public SharesController(IShareService service)
 		{
-			this.context = context;
+			this.service = service;
 		}
 
         /// <summary>
@@ -34,18 +37,13 @@ namespace GieldaL2.API.Controllers
         [ProducesResponseType(500)]
 		public ActionResult<StatisticsViewModel<IEnumerable<ShareViewModel>>> Get()
 		{
-			return new StatisticsViewModel<IEnumerable<ShareViewModel>>()
-			{
-				//TODO: statistics
-				Data = (from s in context.Shares
-						select new ShareViewModel()
-						{
-							Id = s.Id,
-							UserId = 0,//TODO: s.Owner.Id,
-							Amount = s.Amount,
-							StockId = s.Stock.Id
-						}).ToList()
-			};
+			var dto = new StatisticsDTO();
+			var data = service.GetAllShares(dto).Select(p => Mapper.Map<ShareViewModel>(p)).ToList();
+
+			var statistics = Mapper.Map<StatisticsViewModel<IEnumerable<ShareViewModel>>>(dto);
+			statistics.Data = data;
+
+			return statistics;
 		}
 
         /// <summary>
@@ -59,18 +57,18 @@ namespace GieldaL2.API.Controllers
         [ProducesResponseType(500)]
 		public ActionResult<StatisticsViewModel<ShareViewModel>> Get(int id)
 		{
-			var s = context.Shares.Find(id);
-			return new StatisticsViewModel<ShareViewModel>()
+			var dto = new StatisticsDTO();
+			var share = service.GetShareById(id, dto);
+
+			if (share == null)
 			{
-				//TODO: statistics
-				Data = new ShareViewModel()
-				{
-					Id = s.Id,
-					UserId = 0,//TODO: s.Owner.Id,
-					Amount = s.Amount,
-					StockId = s.Stock.Id
-				}
-			};
+				return NotFound(Mapper.Map<StatisticsViewModel>(dto));
+			}
+
+			var statistics = Mapper.Map<StatisticsViewModel<ShareViewModel>>(dto);
+			statistics.Data = Mapper.Map<ShareViewModel>(share);
+
+			return statistics;
 		}
 
         /// <summary>
@@ -83,24 +81,11 @@ namespace GieldaL2.API.Controllers
         [ProducesResponseType(500)]
 		public ActionResult<StatisticsViewModel> Post([FromBody] EditShareViewModel model)
 		{
-			DB.Entities.User owner = context.Users.Find(model.UserId);
-			DB.Entities.Stock stock = context.Stocks.Find(model.StockId);
+			var statisticsDto = new StatisticsDTO();
+			service.AddShare(Mapper.Map<ShareDTO>(model), statisticsDto);
 
-			if (owner == null || stock == null) return StatusCode(500);
-
-			DB.Entities.Share Share = new DB.Entities.Share()
-			{
-				Owner = owner,
-				Amount = model.Amount,
-				Stock = stock
-			};
-
-			context.Shares.Add(Share);
-			context.SaveChangesAsync();
-			return new StatisticsViewModel()
-			{
-				//TODO: statistics
-			};
+			Response.StatusCode = 201;
+			return Mapper.Map<StatisticsViewModel>(statisticsDto);
 		}
 
         /// <summary>
@@ -113,36 +98,20 @@ namespace GieldaL2.API.Controllers
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
-		public async Task<ActionResult<StatisticsViewModel>> Put(int id, [FromBody] EditShareViewModel model)
+		public ActionResult<StatisticsViewModel> Put(int id, [FromBody] EditShareViewModel model)
 		{
-			DB.Entities.Share shares = context.Shares.Find(id);
+			var dto = new StatisticsDTO();
+			var share = service.GetShareById(id, dto);
 
-			if (shares == null) return NotFound();
-
-			shares.Amount = model.Amount;
-
-			DB.Entities.User owner = context.Users.Find(model.UserId);
-			DB.Entities.Stock stock = context.Stocks.Find(model.StockId);
-
-			if (owner == null || stock == null) return NotFound();
-
-			shares.Owner = owner;
-			shares.Stock = stock;
-
-
-			if (await TryUpdateModelAsync<DB.Entities.Share>(shares))
+			if (share == null)
 			{
-				await context.SaveChangesAsync();
+				return NotFound(Mapper.Map<StatisticsViewModel>(dto));
+			}
 
-				return new StatisticsViewModel()
-				{
-					//TODO: statistics
-				};
-			}
-			else
-			{
-				return StatusCode(500);
-			}
+			share = Mapper.Map<ShareDTO>(model);
+			service.EditShare(id, share, dto);
+
+			return Mapper.Map<StatisticsViewModel>(dto);
 		}
 
         /// <summary>
@@ -156,16 +125,13 @@ namespace GieldaL2.API.Controllers
         [ProducesResponseType(500)]
 		public ActionResult<StatisticsViewModel> Delete(int id)
 		{
-			DB.Entities.Share shares = context.Shares.Find(id);
-
-			if (shares == null) return NotFound();
-
-			context.Shares.Remove(shares);
-			context.SaveChangesAsync();
-			return new StatisticsViewModel()
+			var dto = new StatisticsDTO();
+			if (!service.DeleteShare(id, dto))
 			{
-				//TODO: statistics
-			};
+				return NotFound(Mapper.Map<StatisticsViewModel>(dto));
+			}
+
+			return Mapper.Map<StatisticsViewModel>(dto);
 		}
 	}
 }
