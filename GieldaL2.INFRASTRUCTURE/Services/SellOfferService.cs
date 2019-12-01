@@ -33,6 +33,15 @@ namespace GieldaL2.INFRASTRUCTURE.Services
             return Mapper.Map<SellOfferDTO>(sellOffer);
         }
 
+        public ICollection<BuyOfferDTO> GetByUserId(int userId, StatisticsDTO statistics)
+        {
+            var buyOffer = _sellOfferRepository.GetByUserId(userId).Select(s => Mapper.Map<BuyOfferDTO>(s)).ToList();
+            statistics.SelectsTime += _sellOfferRepository.LastOperationTime;
+            statistics.SelectsCount++;
+
+            return buyOffer;
+        }
+
         public ICollection<SellOfferDTO> GetAll(StatisticsDTO statistics)
         {
             var sellOffer = _sellOfferRepository.GetAll().Select(s => Mapper.Map<SellOfferDTO>(s)).ToList();

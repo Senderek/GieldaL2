@@ -28,14 +28,10 @@ namespace GieldaL2.API.Filters
         public void OnActionExecuted(ActionExecutedContext context)
         {
             var executionTime = (int)_stopWatch.ElapsedMilliseconds;
-
-            if (!(context.Result is NotFoundResult))
-            {
-                var responseObject = (ObjectResult)context.Result;
-                var backendTimeProperty = responseObject.Value.GetType().GetProperty("BackendTime");
-
-                backendTimeProperty?.SetValue(responseObject.Value, executionTime);
-            }
+            var responseObject = (ObjectResult)context.Result;
+            var backendTimeProperty = responseObject?.Value.GetType().GetProperty("BackendTime");
+            
+            backendTimeProperty?.SetValue(responseObject.Value, executionTime);
         }
     }
 }

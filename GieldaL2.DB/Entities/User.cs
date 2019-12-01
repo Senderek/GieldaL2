@@ -31,14 +31,14 @@ namespace GieldaL2.DB.Entities
 		/// <summary>
 		/// Shares owned by a user
 		/// </summary>
-		public List<Share> Shares { get; set; }
+		public virtual List<Share> Shares { get; set; }
 		/// <summary>
 		/// Buy offers added by user
 		/// </summary>
-		public List<BuyOffer> BuyOffers { get; set; }
+		public virtual List<BuyOffer> BuyOffers { get; set; }
 		/// <summary>
 		/// Sell offers added by user
 		/// </summary>
-		public List<SellOffer> SellOffers { get; set; }
+		public virtual List<SellOffer> SellOffers { get; set; }
 	}
 }

@@ -14,6 +14,13 @@ namespace GieldaL2.DB.Interfaces
         /// <param name="id">Identifier of offer to sell</param>
         /// <returns>Singular SellOffer entity</returns>
         SellOffer GetById(int id);
+
+        /// <summary>
+        /// Declaration of method that returns Collection of SellOffer entities for the specified user
+        /// </summary>
+        /// <returns>Collection of SellOffers</returns>
+        ICollection<SellOffer> GetByUserId(int userId);
+
         /// <summary>
         /// Declaration of method that returns Collection of SellOffer entities
         /// </summary>

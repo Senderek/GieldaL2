@@ -1,5 +1,5 @@
 [![Build Status](https://dev.azure.com/EFL2/GieldaL2/_apis/build/status/Builds/GieldaL2.Frontend?branchName=master)](https://dev.azure.com/EFL2/GieldaL2/_build/latest?definitionId=5&branchName=master)
-# Azure:
+# Azure
 https://dev.azure.com/EFL2/GieldaL2
 
 # Introduction 

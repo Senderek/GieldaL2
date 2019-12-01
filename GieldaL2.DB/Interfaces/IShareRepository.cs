@@ -35,5 +35,19 @@ namespace GieldaL2.DB.Interfaces
         /// </summary>
         /// <param name="share">Share entity to remove</param>
         void Remove(Share share);
-    }
+
+		/// <summary>
+		/// Sets share owner by id. (does not save changes)
+		/// </summary>
+		/// <param name="share"></param>
+		/// <param name="ownerid"></param>
+		void SetShareOwnerById(Share share, int ownerid);
+
+		/// <summary>
+		/// Sets share stock by id. (does not save changes)
+		/// </summary>
+		/// <param name="share"></param>
+		/// <param name="ownerid"></param>
+		void SetShareStockById(Share share, int stockid);
+	}
 }

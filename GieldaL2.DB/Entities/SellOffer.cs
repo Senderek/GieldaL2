@@ -5,6 +5,17 @@ namespace GieldaL2.DB.Entities
 	public class SellOffer
 	{
 		public int Id { get; set; }
+
+        /// <summary>
+        /// Id of the seller
+        /// </summary>
+        public int SellerId { get; set; }
+
+        /// <summary>
+        /// Seller which created this offer
+        /// </summary>
+        public virtual User Seller { get; set; }
+
         /// <summary>
         /// Id of offers share
         /// </summary>
