@@ -312,5 +312,35 @@
             </summary>
             <param name="context">The <see cref="T:Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext" />.</param>
         </member>
+        <member name="P:GieldaL2.API.ViewModels.View.StatisticsViewModel`1.BackendTime">
+            <summary>
+            Time the request been processed. **This field is populated automatically by BackendTimeFilter**
+            </summary>
+        </member>
+        <member name="P:GieldaL2.API.ViewModels.View.StatisticsViewModel`1.SelectsTime">
+            <summary>
+            Represents time it took DB to perform SELECT queries.
+            </summary>
+        </member>
+        <member name="P:GieldaL2.API.ViewModels.View.StatisticsViewModel`1.UpdatesTime">
+            <summary>
+            Represents time it took DB to perform UPDATE queries.
+            </summary>
+        </member>
+        <member name="P:GieldaL2.API.ViewModels.View.StatisticsViewModel`1.InsertsTime">
+            <summary>
+            Represents time it took DB to perform INSERT queries.
+            </summary>
+        </member>
+        <member name="P:GieldaL2.API.ViewModels.View.StatisticsViewModel`1.DeletesTime">
+            <summary>
+            Represents time it took DB to perform DELETE queries.
+            </summary>
+        </member>
+        <member name="P:GieldaL2.API.ViewModels.View.StatisticsViewModel`1.Data">
+            <summary>
+            Actual data of a response
+            </summary>
+        </member>
     </members>
 </doc>
