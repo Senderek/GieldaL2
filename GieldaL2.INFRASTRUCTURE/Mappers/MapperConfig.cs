@@ -50,6 +50,7 @@ namespace GieldaL2.INFRASTRUCTURE.Mappers
             Mapper.AddMap<SellOffer, SellOfferDTO>(src => new SellOfferDTO
             {
                 Id = src.Id,
+                SellerId = src.SellerId,
                 ShareId = src.ShareId,
                 Amount = src.Amount,
                 Price = src.Price,
