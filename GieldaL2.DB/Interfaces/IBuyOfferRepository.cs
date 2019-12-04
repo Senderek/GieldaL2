@@ -32,6 +32,9 @@ namespace GieldaL2.DB.Interfaces
         /// </summary>
         /// <param name="buyOffer">BuyOffer entity to add</param>
         void Add(BuyOffer buyOffer);
+
+        void Edit(BuyOffer buyOffer);
+
         /// <summary>
         /// Declaration of method for removing offer from database
         /// </summary>

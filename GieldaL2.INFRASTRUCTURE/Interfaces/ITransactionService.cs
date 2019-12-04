@@ -23,5 +23,7 @@ namespace GieldaL2.INFRASTRUCTURE.Interfaces
         /// <param name="statistics">Statistics DTO</param>
         /// <returns>Collection of transaction DTOs</returns>
         ICollection<TransactionDTO> GetAll(StatisticsDTO statistics);
+
+        void Add(TransactionDTO transaction, StatisticsDTO statistics);
     }
 }

@@ -25,14 +25,16 @@ namespace GieldaL2.API.Controllers
         private readonly IUserService _userService;
         private readonly IShareService _shareService;
         private readonly IStockService _stockService;
+        private readonly IStockExchangeLogic _stockExchangeLogic;
 
-        public OffersController(ISellOfferService sellOfferService, IBuyOfferService buyOfferService, IUserService userService, IShareService shareService, IStockService stockService)
+        public OffersController(ISellOfferService sellOfferService, IBuyOfferService buyOfferService, IUserService userService, IShareService shareService, IStockService stockService, IStockExchangeLogic stockExchangeLogic)
         {
             _sellOfferService = sellOfferService;
             _buyOfferService = buyOfferService;
             _userService = userService;
             _shareService = shareService;
             _stockService = stockService;
+            _stockExchangeLogic = stockExchangeLogic;
         }
 
         /// <summary>
@@ -92,24 +94,6 @@ namespace GieldaL2.API.Controllers
             var statisticsDto = new StatisticsDTO();
             var currentUserName = User.FindFirst(ClaimTypes.Name).Value;
             var currentUserDto = _userService.GetUserByName(currentUserName, statisticsDto);
-
-            //get share entry for created offer
-            var shareDTO = _shareService.GetShareById(sellOffer.ShareId, statisticsDto);
-
-            if (currentUserDto.Id == shareDTO.OwnerId)
-            {
-                if (sellOffer.Amount <= shareDTO.Amount)
-                {
-                    var sellOfferDto = Mapper.Map<SellOfferDTO>(sellOffer);
-                    sellOfferDto.SellerId = currentUserDto.Id;
-                    shareDTO.Amount = shareDTO.Amount - sellOffer.Amount;
-
-                    //remove certain amount of shares from user
-                    _shareService.EditShare(shareDTO.Id, shareDTO, statisticsDto);
-                    _sellOfferService.Add(sellOfferDto, statisticsDto);
-                    return Mapper.Map<StatisticsViewModel>(statisticsDto);
-                }
-            }
 
             return NotFound(Mapper.Map<StatisticsViewModel>(statisticsDto));
         }
@@ -207,29 +191,11 @@ namespace GieldaL2.API.Controllers
             var statisticsDto = new StatisticsDTO();
             var currentUserName = User.FindFirst(ClaimTypes.Name).Value;
             var currentUserDto = _userService.GetUserByName(currentUserName, statisticsDto);
-            
-            if (_stockService.GetStockById(buyOffer.StockId, statisticsDto) != null)
-            {
-                //TODO verify price calcualtion rules
-                if (buyOffer.Price <= currentUserDto.Value)
-                {
-                    //map offer and add current user id
-                    var buyOfferDto = Mapper.Map<BuyOfferDTO>(buyOffer);
-                    buyOfferDto.BuyerId = currentUserDto.Id;
 
-                    //modify local user instance
-                    currentUserDto.Value -= buyOffer.Price;
+            _stockExchangeLogic.ExecuteSellOffers(Mapper.Map<BuyOfferDTO>(buyOffer), currentUserDto, statisticsDto);
 
-                    //if error occurs while editing user don't add offer
-                    if (_userService.EditUser(currentUserDto.Id, currentUserDto, statisticsDto))
-                    {
-                        _buyOfferService.Add(buyOfferDto, statisticsDto);
-                        return Mapper.Map<StatisticsViewModel>(statisticsDto);
-                    }
-                }
-            }         
+            return Mapper.Map<StatisticsViewModel>(statisticsDto);
 
-            return NotFound(statisticsDto);
         }
 
         /// <summary>
@@ -255,7 +221,7 @@ namespace GieldaL2.API.Controllers
                 {
                     if (_buyOfferService.Delete(buyOfferToDelete.Id, statisticsDto))
                     {
-                        currentUserDto.Value += buyOfferToDelete.Price;
+                        currentUserDto.Value += buyOfferToDelete.Price * buyOfferToDelete.Amount;
                         if (_userService.EditUser(currentUserDto.Id, currentUserDto, statisticsDto))
                         {
                             return Mapper.Map<StatisticsViewModel>(statisticsDto);

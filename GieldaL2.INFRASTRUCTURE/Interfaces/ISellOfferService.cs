@@ -11,6 +11,7 @@ namespace GieldaL2.INFRASTRUCTURE.Interfaces
         ICollection<BuyOfferDTO> GetByUserId(int userId, StatisticsDTO statistics);
         ICollection<SellOfferDTO> GetAll(StatisticsDTO statistics);
         void Add(SellOfferDTO sellOffer, StatisticsDTO statistics);
+        bool Edit(SellOfferDTO sellOffer, StatisticsDTO statistics);
         bool Delete(int id, StatisticsDTO statistics);
     }
 }
