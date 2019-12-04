@@ -70,6 +70,11 @@ namespace GieldaL2.INFRASTRUCTURE.Repositories
 
         }
 
+        public void Edit(SellOffer sellOffer)
+        {
+            _context.SaveChanges();
+        }
+
         /// <summary>
         /// Method for removing SellOffer entity from database
         /// </summary>

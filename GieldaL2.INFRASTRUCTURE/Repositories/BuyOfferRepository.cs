@@ -72,6 +72,11 @@ namespace GieldaL2.INFRASTRUCTURE.Repositories
             _context.SaveChanges();
             LastOperationTime = (int)watch.ElapsedMilliseconds;
         }
+
+        public void Edit(BuyOffer buyOffer)
+        {
+            _context.SaveChanges();
+        }
        
         /// <summary>
         /// Method for removing BuyOffer entity from database
