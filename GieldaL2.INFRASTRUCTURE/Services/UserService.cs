@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using GieldaL2.DB.Entities;
 using GieldaL2.DB.Interfaces;
 using GieldaL2.INFRASTRUCTURE.DTO;
@@ -14,14 +16,16 @@ namespace GieldaL2.INFRASTRUCTURE.Services
     public class UserService : IService, IUserService
     {
         private readonly IUserRepository _userRepository;
+        private readonly IAuthService _authService;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="UserService"/> class.
         /// </summary>
         /// <param name="userRepository">Repository containing users.</param>
-        public UserService(IUserRepository userRepository)
+        public UserService(IUserRepository userRepository, IAuthService authService)
         {
             _userRepository = userRepository;
+            _authService = authService;
         }
 
         /// <summary>
@@ -85,6 +89,9 @@ namespace GieldaL2.INFRASTRUCTURE.Services
         /// <param name="statistics">DTO containing statistics which will be updated during work of this method.</param>
         public void AddUser(UserDTO user, StatisticsDTO statistics)
         {
+            var mappedUser = Mapper.Map<User>(user);
+            mappedUser.Password = _authService.HashPassword(user.Password);
+
             _userRepository.Add(Mapper.Map<User>(user));
             statistics.InsertsTime += _userRepository.LastOperationTime;
             statistics.InsertsCount++;
@@ -115,7 +122,7 @@ namespace GieldaL2.INFRASTRUCTURE.Services
 
             if (user.Password != null)
             {
-                userToEdit.Password = user.Password;
+                userToEdit.Password = _authService.HashPassword(user.Password);
             }
 
             userToEdit.Money = user.Value;
