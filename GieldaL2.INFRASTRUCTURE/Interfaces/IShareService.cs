@@ -14,13 +14,21 @@ namespace GieldaL2.INFRASTRUCTURE.Interfaces
 		/// <returns>Collection of retrieved shares from the database.</returns>
 		ICollection<ShareDTO> GetAllShares(StatisticsDTO statistics);
 
-		/// <summary>
-		/// Retrieves an share with the specified ID.
-		/// </summary>
-		/// <param name="id">ID of the requested share.</param>
-		/// <param name="statistics">DTO containing statistics which will be updated during work of this method.</param>
-		/// <returns>Share DTO if found, otherwise null.</returns>
-		ShareDTO GetShareById(int id, StatisticsDTO statistics);
+        /// <summary>
+        /// Retrieves all shares from the database for the specified user.
+        /// </summary>
+        /// <param name="userId">ID if the user.</param>
+        /// <param name="statistics">DTO containing statistics which will be updated during work of this method.</param>
+        /// <returns>Collection of retrieved shares from the database for the specified user.</returns>
+        ICollection<ShareDTO> GetByUserId(int userId, StatisticsDTO statistics);
+
+        /// <summary>
+        /// Retrieves an share with the specified ID.
+        /// </summary>
+        /// <param name="id">ID of the requested share.</param>
+        /// <param name="statistics">DTO containing statistics which will be updated during work of this method.</param>
+        /// <returns>Share DTO if found, otherwise null.</returns>
+        ShareDTO GetShareById(int id, StatisticsDTO statistics);
 
 		/// <summary>
 		/// Adds share passed in the parameter to the database.

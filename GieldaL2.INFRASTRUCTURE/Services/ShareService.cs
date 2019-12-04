@@ -78,7 +78,16 @@ namespace GieldaL2.INFRASTRUCTURE.Services
 			return shares;
 		}
 
-		public ShareDTO GetShareById(int id, StatisticsDTO statistics)
+        public ICollection<ShareDTO> GetByUserId(int userId, StatisticsDTO statistics)
+        {
+            var shares = repo.GetByUserId(userId).Select(p => Mapper.Map<ShareDTO>(p)).ToList();
+            statistics.SelectsTime += repo.LastOperationTime;
+            statistics.SelectsCount++;
+
+            return shares;
+        }
+
+        public ShareDTO GetShareById(int id, StatisticsDTO statistics)
 		{
 			var share = repo.GetById(id);
 			statistics.SelectsTime += repo.LastOperationTime;
