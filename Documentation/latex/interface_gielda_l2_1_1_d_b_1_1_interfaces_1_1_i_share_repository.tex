@@ -23,7 +23,11 @@ void \mbox{\hyperlink{interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_share_rep
 void \mbox{\hyperlink{interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_share_repository_a68449340553ab4702be8f3559ea50131}{Edit}} (\mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_entities_1_1_share}{Share}} share)
 \begin{DoxyCompactList}\small\item\em Declaration of method for modifying Share \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_share_repository_a270dc411526d961bac26e1df19ae2563}{Remove}} (\mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_entities_1_1_share}{Share}} share)
-\begin{DoxyCompactList}\small\item\em Declaration of method for removing Share \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Declaration of method for removing Share \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_share_repository_a9670fbeb44bb7ac102fdff4b6a38e24f}{Set\+Share\+Owner\+By\+Id}} (\mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_entities_1_1_share}{Share}} share, int ownerid)
+\begin{DoxyCompactList}\small\item\em Sets share owner by id. (does not save changes) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_share_repository_ac790aa8aa9cb7cbaeb91b0c6201abf76}{Set\+Share\+Stock\+By\+Id}} (\mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_entities_1_1_share}{Share}} share, int stockid)
+\begin{DoxyCompactList}\small\item\em Sets share stock by id. (does not save changes) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
@@ -131,8 +135,50 @@ Declaration of method for removing Share
 
 Implemented in \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_share_repository_a76ee0cf8f78b19983167a3bcdff4e405}{Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Repositories.\+Share\+Repository}}.
 
+\mbox{\Hypertarget{interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_share_repository_a9670fbeb44bb7ac102fdff4b6a38e24f}\label{interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_share_repository_a9670fbeb44bb7ac102fdff4b6a38e24f}} 
+\index{GieldaL2.DB.Interfaces.IShareRepository@{GieldaL2.DB.Interfaces.IShareRepository}!SetShareOwnerById@{SetShareOwnerById}}
+\index{SetShareOwnerById@{SetShareOwnerById}!GieldaL2.DB.Interfaces.IShareRepository@{GieldaL2.DB.Interfaces.IShareRepository}}
+\subsubsection{\texorpdfstring{SetShareOwnerById()}{SetShareOwnerById()}}
+{\footnotesize\ttfamily void Gielda\+L2.\+D\+B.\+Interfaces.\+I\+Share\+Repository.\+Set\+Share\+Owner\+By\+Id (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_entities_1_1_share}{Share}}}]{share,  }\item[{int}]{ownerid }\end{DoxyParamCaption})}
+
+
+
+Sets share owner by id. (does not save changes) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em share} & \\
+\hline
+{\em ownerid} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_share_repository_a6843f1b6e31ecc35b15c6b677ed098a9}{Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Repositories.\+Share\+Repository}}.
+
+\mbox{\Hypertarget{interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_share_repository_ac790aa8aa9cb7cbaeb91b0c6201abf76}\label{interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_share_repository_ac790aa8aa9cb7cbaeb91b0c6201abf76}} 
+\index{GieldaL2.DB.Interfaces.IShareRepository@{GieldaL2.DB.Interfaces.IShareRepository}!SetShareStockById@{SetShareStockById}}
+\index{SetShareStockById@{SetShareStockById}!GieldaL2.DB.Interfaces.IShareRepository@{GieldaL2.DB.Interfaces.IShareRepository}}
+\subsubsection{\texorpdfstring{SetShareStockById()}{SetShareStockById()}}
+{\footnotesize\ttfamily void Gielda\+L2.\+D\+B.\+Interfaces.\+I\+Share\+Repository.\+Set\+Share\+Stock\+By\+Id (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_entities_1_1_share}{Share}}}]{share,  }\item[{int}]{stockid }\end{DoxyParamCaption})}
+
+
+
+Sets share stock by id. (does not save changes) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em share} & \\
+\hline
+{\em ownerid} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_share_repository_a9ab77adf00ff67d057e01c6fa2c8278c}{Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Repositories.\+Share\+Repository}}.
+
 
 
 The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Gielda\+L2.\+D\+B/\+Interfaces/I\+Share\+Repository.\+cs\end{DoxyCompactItemize}
+C\+:/\+Users/\+Pawel/\+Desktop/\+Git\+Hub/\+Gielda\+L2/\+Gielda\+L2.\+D\+B/\+Interfaces/I\+Share\+Repository.\+cs\end{DoxyCompactItemize}

@@ -11,11 +11,14 @@ Represents some number of shares of a company owned by a particular user
 \mbox{\Hypertarget{class_gielda_l2_1_1_d_b_1_1_entities_1_1_share_ad96300d51d24b7675f6afc8a554cce9d}\label{class_gielda_l2_1_1_d_b_1_1_entities_1_1_share_ad96300d51d24b7675f6afc8a554cce9d}} 
 int {\bfseries Id}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
+int \mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_entities_1_1_share_ac7337a0376096943144bb77d197b2cfd}{Owner\+Id}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em ID of the owner of the shares \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_entities_1_1_user}{User}} \mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_entities_1_1_share_ae2ad308ad36837a00e09d1bf49e6890b}{Owner}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em Owner of the shares \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_gielda_l2_1_1_d_b_1_1_entities_1_1_share_a7090c17c53c51b579b138b3b08d3bf67}\label{class_gielda_l2_1_1_d_b_1_1_entities_1_1_share_a7090c17c53c51b579b138b3b08d3bf67}} 
-int {\bfseries Amount}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
+int \mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_entities_1_1_share_a7090c17c53c51b579b138b3b08d3bf67}{Amount}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Amount of the shares owned by a specific user \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_entities_1_1_share_af47897e74933c9bf8bb31dbae924cf8b}{Stock\+Id}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em ID of the stock the shares are part of. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_entities_1_1_stock}{Stock}} \mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_entities_1_1_share_a9cf67a983e7ae7ba34ef200c971afe61}{Stock}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em Represents a company which the shares represent \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -26,6 +29,16 @@ Represents some number of shares of a company owned by a particular user
 
 
 \subsection{Property Documentation}
+\mbox{\Hypertarget{class_gielda_l2_1_1_d_b_1_1_entities_1_1_share_a7090c17c53c51b579b138b3b08d3bf67}\label{class_gielda_l2_1_1_d_b_1_1_entities_1_1_share_a7090c17c53c51b579b138b3b08d3bf67}} 
+\index{GieldaL2.DB.Entities.Share@{GieldaL2.DB.Entities.Share}!Amount@{Amount}}
+\index{Amount@{Amount}!GieldaL2.DB.Entities.Share@{GieldaL2.DB.Entities.Share}}
+\subsubsection{\texorpdfstring{Amount}{Amount}}
+{\footnotesize\ttfamily int Gielda\+L2.\+D\+B.\+Entities.\+Share.\+Amount\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Amount of the shares owned by a specific user 
+
 \mbox{\Hypertarget{class_gielda_l2_1_1_d_b_1_1_entities_1_1_share_ae2ad308ad36837a00e09d1bf49e6890b}\label{class_gielda_l2_1_1_d_b_1_1_entities_1_1_share_ae2ad308ad36837a00e09d1bf49e6890b}} 
 \index{GieldaL2.DB.Entities.Share@{GieldaL2.DB.Entities.Share}!Owner@{Owner}}
 \index{Owner@{Owner}!GieldaL2.DB.Entities.Share@{GieldaL2.DB.Entities.Share}}
@@ -35,6 +48,16 @@ Represents some number of shares of a company owned by a particular user
 
 
 Owner of the shares 
+
+\mbox{\Hypertarget{class_gielda_l2_1_1_d_b_1_1_entities_1_1_share_ac7337a0376096943144bb77d197b2cfd}\label{class_gielda_l2_1_1_d_b_1_1_entities_1_1_share_ac7337a0376096943144bb77d197b2cfd}} 
+\index{GieldaL2.DB.Entities.Share@{GieldaL2.DB.Entities.Share}!OwnerId@{OwnerId}}
+\index{OwnerId@{OwnerId}!GieldaL2.DB.Entities.Share@{GieldaL2.DB.Entities.Share}}
+\subsubsection{\texorpdfstring{OwnerId}{OwnerId}}
+{\footnotesize\ttfamily int Gielda\+L2.\+D\+B.\+Entities.\+Share.\+Owner\+Id\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+ID of the owner of the shares 
 
 \mbox{\Hypertarget{class_gielda_l2_1_1_d_b_1_1_entities_1_1_share_a9cf67a983e7ae7ba34ef200c971afe61}\label{class_gielda_l2_1_1_d_b_1_1_entities_1_1_share_a9cf67a983e7ae7ba34ef200c971afe61}} 
 \index{GieldaL2.DB.Entities.Share@{GieldaL2.DB.Entities.Share}!Stock@{Stock}}
@@ -46,8 +69,18 @@ Owner of the shares
 
 Represents a company which the shares represent 
 
+\mbox{\Hypertarget{class_gielda_l2_1_1_d_b_1_1_entities_1_1_share_af47897e74933c9bf8bb31dbae924cf8b}\label{class_gielda_l2_1_1_d_b_1_1_entities_1_1_share_af47897e74933c9bf8bb31dbae924cf8b}} 
+\index{GieldaL2.DB.Entities.Share@{GieldaL2.DB.Entities.Share}!StockId@{StockId}}
+\index{StockId@{StockId}!GieldaL2.DB.Entities.Share@{GieldaL2.DB.Entities.Share}}
+\subsubsection{\texorpdfstring{StockId}{StockId}}
+{\footnotesize\ttfamily int Gielda\+L2.\+D\+B.\+Entities.\+Share.\+Stock\+Id\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+ID of the stock the shares are part of. 
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Gielda\+L2.\+D\+B/\+Entities/Share.\+cs\end{DoxyCompactItemize}
+C\+:/\+Users/\+Pawel/\+Desktop/\+Git\+Hub/\+Gielda\+L2/\+Gielda\+L2.\+D\+B/\+Entities/Share.\+cs\end{DoxyCompactItemize}

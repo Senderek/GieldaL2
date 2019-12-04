@@ -112,7 +112,12 @@ namespace GieldaL2.INFRASTRUCTURE.Services
             userToEdit.Name = user.Name;
             userToEdit.Surname = user.Surname;
             userToEdit.EMail = user.EMail;
-            userToEdit.Password = user.Password;
+
+            if (user.Password != null)
+            {
+                userToEdit.Password = user.Password;
+            }
+
             userToEdit.Money = user.Value;
 
             _userRepository.Edit(userToEdit);

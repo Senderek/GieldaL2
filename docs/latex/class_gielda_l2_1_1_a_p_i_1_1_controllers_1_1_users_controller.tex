@@ -1,0 +1,166 @@
+\hypertarget{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_users_controller}{}\section{Gielda\+L2.\+A\+P\+I.\+Controllers.\+Users\+Controller Class Reference}
+\label{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_users_controller}\index{GieldaL2.API.Controllers.UsersController@{GieldaL2.API.Controllers.UsersController}}
+
+
+Users controller containing endpoints to manage users.  
+
+
+Inheritance diagram for Gielda\+L2.\+A\+P\+I.\+Controllers.\+Users\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_users_controller}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_users_controller_a71d11bc5956c6dc52711977870a28f16}{Users\+Controller}} (\mbox{\hyperlink{interface_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_interfaces_1_1_i_user_service}{I\+User\+Service}} user\+Service)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_users_controller}{Users\+Controller}} class. \end{DoxyCompactList}\item 
+Action\+Result$<$ \mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_view_1_1_statistics_view_model}{Statistics\+View\+Model}}$<$ I\+Enumerable$<$ \mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_view_1_1_user_view_model}{User\+View\+Model}} $>$ $>$ $>$ \mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_users_controller_a763e7ce08170f2681cb87b0a4cd2350a}{Get}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves a list of all users. \end{DoxyCompactList}\item 
+Action\+Result$<$ \mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_view_1_1_statistics_view_model}{Statistics\+View\+Model}}$<$ \mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_view_1_1_user_view_model}{User\+View\+Model}} $>$ $>$ \mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_users_controller_a0957a53f250fa14681018808613610fe}{Get}} (int id)
+\begin{DoxyCompactList}\small\item\em Retrieves user with the specified ID. \end{DoxyCompactList}\item 
+Action\+Result$<$ \mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_view_1_1_statistics_view_model}{Statistics\+View\+Model}}$<$ I\+Enumerable$<$ \mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_view_1_1_share_view_model}{Share\+View\+Model}} $>$ $>$ $>$ \mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_users_controller_adbf0440fe0cc3b28ce771a1808e21d8c}{Get\+Shares}} (int id)
+\begin{DoxyCompactList}\small\item\em Adds user passed in the request body. \end{DoxyCompactList}\item 
+Action\+Result$<$ \mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_view_1_1_statistics_view_model}{Statistics\+View\+Model}} $>$ \mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_users_controller_a75e8fafc661b2159421b40427f627a92}{Post}} (\mbox{[}From\+Body\mbox{]} \mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_edit_1_1_edit_user_view_model}{Edit\+User\+View\+Model}} user)
+\begin{DoxyCompactList}\small\item\em Adds user passed in the request body. \end{DoxyCompactList}\item 
+Action\+Result$<$ \mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_view_1_1_statistics_view_model}{Statistics\+View\+Model}} $>$ \mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_users_controller_abe00d21f9abb32cb07ada5815bec4e0a}{Put}} (int id, \mbox{[}From\+Body\mbox{]} \mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_edit_1_1_edit_user_view_model}{Edit\+User\+View\+Model}} user)
+\begin{DoxyCompactList}\small\item\em Edits user with the specified ID. \end{DoxyCompactList}\item 
+Action\+Result$<$ \mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_view_1_1_statistics_view_model}{Statistics\+View\+Model}} $>$ \mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_users_controller_afab7b766c848638cb06d1a668a7f417c}{Delete}} (int id)
+\begin{DoxyCompactList}\small\item\em Deletes user with the specified ID. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Users controller containing endpoints to manage users. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_users_controller_a71d11bc5956c6dc52711977870a28f16}\label{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_users_controller_a71d11bc5956c6dc52711977870a28f16}} 
+\index{GieldaL2.API.Controllers.UsersController@{GieldaL2.API.Controllers.UsersController}!UsersController@{UsersController}}
+\index{UsersController@{UsersController}!GieldaL2.API.Controllers.UsersController@{GieldaL2.API.Controllers.UsersController}}
+\subsubsection{\texorpdfstring{UsersController()}{UsersController()}}
+{\footnotesize\ttfamily Gielda\+L2.\+A\+P\+I.\+Controllers.\+Users\+Controller.\+Users\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_interfaces_1_1_i_user_service}{I\+User\+Service}}}]{user\+Service }\end{DoxyParamCaption})}
+
+
+
+Initializes a new instance of the \mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_users_controller}{Users\+Controller}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Service} & User service.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_users_controller_afab7b766c848638cb06d1a668a7f417c}\label{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_users_controller_afab7b766c848638cb06d1a668a7f417c}} 
+\index{GieldaL2.API.Controllers.UsersController@{GieldaL2.API.Controllers.UsersController}!Delete@{Delete}}
+\index{Delete@{Delete}!GieldaL2.API.Controllers.UsersController@{GieldaL2.API.Controllers.UsersController}}
+\subsubsection{\texorpdfstring{Delete()}{Delete()}}
+{\footnotesize\ttfamily Action\+Result$<$\mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_view_1_1_statistics_view_model}{Statistics\+View\+Model}}$>$ Gielda\+L2.\+A\+P\+I.\+Controllers.\+Users\+Controller.\+Delete (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Deletes user with the specified ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID of the user which will be deleted.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Backend statistics if user has been deleted with success, otherwise 404 if not found.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_users_controller_a763e7ce08170f2681cb87b0a4cd2350a}\label{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_users_controller_a763e7ce08170f2681cb87b0a4cd2350a}} 
+\index{GieldaL2.API.Controllers.UsersController@{GieldaL2.API.Controllers.UsersController}!Get@{Get}}
+\index{Get@{Get}!GieldaL2.API.Controllers.UsersController@{GieldaL2.API.Controllers.UsersController}}
+\subsubsection{\texorpdfstring{Get()}{Get()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result$<$\mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_view_1_1_statistics_view_model}{Statistics\+View\+Model}}$<$I\+Enumerable$<$\mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_view_1_1_user_view_model}{User\+View\+Model}}$>$ $>$ $>$ Gielda\+L2.\+A\+P\+I.\+Controllers.\+Users\+Controller.\+Get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieves a list of all users. 
+
+\begin{DoxyReturn}{Returns}
+List of the all users and backend statistics.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_users_controller_a0957a53f250fa14681018808613610fe}\label{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_users_controller_a0957a53f250fa14681018808613610fe}} 
+\index{GieldaL2.API.Controllers.UsersController@{GieldaL2.API.Controllers.UsersController}!Get@{Get}}
+\index{Get@{Get}!GieldaL2.API.Controllers.UsersController@{GieldaL2.API.Controllers.UsersController}}
+\subsubsection{\texorpdfstring{Get()}{Get()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Action\+Result$<$\mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_view_1_1_statistics_view_model}{Statistics\+View\+Model}}$<$\mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_view_1_1_user_view_model}{User\+View\+Model}}$>$ $>$ Gielda\+L2.\+A\+P\+I.\+Controllers.\+Users\+Controller.\+Get (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Retrieves user with the specified ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID of the requested user.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+User with the specified ID and backend statistics if success, otherwise 404 when not found.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_users_controller_adbf0440fe0cc3b28ce771a1808e21d8c}\label{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_users_controller_adbf0440fe0cc3b28ce771a1808e21d8c}} 
+\index{GieldaL2.API.Controllers.UsersController@{GieldaL2.API.Controllers.UsersController}!GetShares@{GetShares}}
+\index{GetShares@{GetShares}!GieldaL2.API.Controllers.UsersController@{GieldaL2.API.Controllers.UsersController}}
+\subsubsection{\texorpdfstring{GetShares()}{GetShares()}}
+{\footnotesize\ttfamily Action\+Result$<$\mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_view_1_1_statistics_view_model}{Statistics\+View\+Model}}$<$I\+Enumerable$<$\mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_view_1_1_share_view_model}{Share\+View\+Model}}$>$ $>$ $>$ Gielda\+L2.\+A\+P\+I.\+Controllers.\+Users\+Controller.\+Get\+Shares (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Adds user passed in the request body. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Stock which will be added.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Backend statistics.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_users_controller_a75e8fafc661b2159421b40427f627a92}\label{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_users_controller_a75e8fafc661b2159421b40427f627a92}} 
+\index{GieldaL2.API.Controllers.UsersController@{GieldaL2.API.Controllers.UsersController}!Post@{Post}}
+\index{Post@{Post}!GieldaL2.API.Controllers.UsersController@{GieldaL2.API.Controllers.UsersController}}
+\subsubsection{\texorpdfstring{Post()}{Post()}}
+{\footnotesize\ttfamily Action\+Result$<$\mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_view_1_1_statistics_view_model}{Statistics\+View\+Model}}$>$ Gielda\+L2.\+A\+P\+I.\+Controllers.\+Users\+Controller.\+Post (\begin{DoxyParamCaption}\item[{\mbox{[}\+From\+Body\mbox{]} \mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_edit_1_1_edit_user_view_model}{Edit\+User\+View\+Model}}}]{user }\end{DoxyParamCaption})}
+
+
+
+Adds user passed in the request body. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & User which will be added.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Backend statistics.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_users_controller_abe00d21f9abb32cb07ada5815bec4e0a}\label{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_users_controller_abe00d21f9abb32cb07ada5815bec4e0a}} 
+\index{GieldaL2.API.Controllers.UsersController@{GieldaL2.API.Controllers.UsersController}!Put@{Put}}
+\index{Put@{Put}!GieldaL2.API.Controllers.UsersController@{GieldaL2.API.Controllers.UsersController}}
+\subsubsection{\texorpdfstring{Put()}{Put()}}
+{\footnotesize\ttfamily Action\+Result$<$\mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_view_1_1_statistics_view_model}{Statistics\+View\+Model}}$>$ Gielda\+L2.\+A\+P\+I.\+Controllers.\+Users\+Controller.\+Put (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{\mbox{[}\+From\+Body\mbox{]} \mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_edit_1_1_edit_user_view_model}{Edit\+User\+View\+Model}}}]{user }\end{DoxyParamCaption})}
+
+
+
+Edits user with the specified ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID of the user which will be edited.\\
+\hline
+{\em user} & New data which will be applied to the user.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Backend statistics if user has been modified with success, otherwise 404 if not found.
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Gielda\+L2.\+A\+P\+I/\+Controllers/Users\+Controller.\+cs\end{DoxyCompactItemize}

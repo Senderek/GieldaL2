@@ -18,6 +18,8 @@ Inheritance diagram for Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+
 \begin{DoxyCompactList}\small\item\em Initializes a new instance of the \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_user_repository}{User\+Repository}} class. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_entities_1_1_user}{User}} \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_user_repository_a59783783c8210efff03a749d4f63fadf}{Get\+By\+Id}} (int id)
 \begin{DoxyCompactList}\small\item\em Retrieves an user with the specified ID. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_entities_1_1_user}{User}} \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_user_repository_af81e3935a282ab7b2e4d8bdf7b379771}{Get\+By\+Name}} (string name)
+\begin{DoxyCompactList}\small\item\em Retrieves an user with the specified name. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_entities_1_1_user}{User}} \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_user_repository_a6ddb02c156ab0944804a41a5a9531482}{Get\+By\+User\+Name\+And\+Password}} (string user\+Name, string password)
 \begin{DoxyCompactList}\small\item\em Retrieves an user with the specified username and password. \end{DoxyCompactList}\item 
 I\+Collection$<$ \mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_entities_1_1_user}{User}} $>$ \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_user_repository_ab9a56b5b0dfe9cf6350eebcf751adcfc}{Get\+All}} ()
@@ -136,6 +138,28 @@ User entity if found, otherwise null.
 
 Implements \mbox{\hyperlink{interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_user_repository_ae3b2e6d986054c6b336887b4d0d1cfac}{Gielda\+L2.\+D\+B.\+Interfaces.\+I\+User\+Repository}}.
 
+\mbox{\Hypertarget{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_user_repository_af81e3935a282ab7b2e4d8bdf7b379771}\label{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_user_repository_af81e3935a282ab7b2e4d8bdf7b379771}} 
+\index{GieldaL2.INFRASTRUCTURE.Repositories.UserRepository@{GieldaL2.INFRASTRUCTURE.Repositories.UserRepository}!GetByName@{GetByName}}
+\index{GetByName@{GetByName}!GieldaL2.INFRASTRUCTURE.Repositories.UserRepository@{GieldaL2.INFRASTRUCTURE.Repositories.UserRepository}}
+\subsubsection{\texorpdfstring{GetByName()}{GetByName()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_entities_1_1_user}{User}} Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Repositories.\+User\+Repository.\+Get\+By\+Name (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})}
+
+
+
+Retrieves an user with the specified name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the requested user.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+User entity if found, otherwise null.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_user_repository_a6bcf2b383638bfded753b394d1f4de0b}{Gielda\+L2.\+D\+B.\+Interfaces.\+I\+User\+Repository}}.
+
 \mbox{\Hypertarget{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_user_repository_a6ddb02c156ab0944804a41a5a9531482}\label{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_user_repository_a6ddb02c156ab0944804a41a5a9531482}} 
 \index{GieldaL2.INFRASTRUCTURE.Repositories.UserRepository@{GieldaL2.INFRASTRUCTURE.Repositories.UserRepository}!GetByUserNameAndPassword@{GetByUserNameAndPassword}}
 \index{GetByUserNameAndPassword@{GetByUserNameAndPassword}!GieldaL2.INFRASTRUCTURE.Repositories.UserRepository@{GieldaL2.INFRASTRUCTURE.Repositories.UserRepository}}
@@ -196,4 +220,4 @@ Time of the last database operation (it was easier to do it this way instead of 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E/\+Repositories/User\+Repository.\+cs\end{DoxyCompactItemize}
+C\+:/\+Users/\+Pawel/\+Desktop/\+Git\+Hub/\+Gielda\+L2/\+Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E/\+Repositories/User\+Repository.\+cs\end{DoxyCompactItemize}

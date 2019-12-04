@@ -27,7 +27,7 @@
             Context controller containing endpoints which retrieves full data about the user.
             </summary>
         </member>
-        <member name="M:GieldaL2.API.Controllers.ContextController.#ctor(GieldaL2.INFRASTRUCTURE.Interfaces.IUserService,GieldaL2.INFRASTRUCTURE.Interfaces.IBuyOfferService,GieldaL2.INFRASTRUCTURE.Interfaces.ISellOfferService)">
+        <member name="M:GieldaL2.API.Controllers.ContextController.#ctor(GieldaL2.INFRASTRUCTURE.Interfaces.IUserService,GieldaL2.INFRASTRUCTURE.Interfaces.IBuyOfferService,GieldaL2.INFRASTRUCTURE.Interfaces.ISellOfferService,GieldaL2.INFRASTRUCTURE.Interfaces.IShareService)">
             <summary>
             Initializes a new instance of the <see cref="T:GieldaL2.API.Controllers.ContextController"/> class.
             </summary>

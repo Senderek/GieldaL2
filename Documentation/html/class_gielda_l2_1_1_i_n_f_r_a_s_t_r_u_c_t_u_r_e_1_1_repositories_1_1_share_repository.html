@@ -98,6 +98,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab72f6f527449750b41956b564c892a7c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_share_repository.html#ab72f6f527449750b41956b564c892a7c">Add</a> (<a class="el" href="class_gielda_l2_1_1_d_b_1_1_entities_1_1_share.html">Share</a> share)</td></tr>
 <tr class="memdesc:ab72f6f527449750b41956b564c892a7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method for adding Share entity to database  <a href="#ab72f6f527449750b41956b564c892a7c">More...</a><br /></td></tr>
 <tr class="separator:ab72f6f527449750b41956b564c892a7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6843f1b6e31ecc35b15c6b677ed098a9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_share_repository.html#a6843f1b6e31ecc35b15c6b677ed098a9">SetShareOwnerById</a> (<a class="el" href="class_gielda_l2_1_1_d_b_1_1_entities_1_1_share.html">Share</a> share, int ownerid)</td></tr>
+<tr class="memdesc:a6843f1b6e31ecc35b15c6b677ed098a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets share owner by id. (does not save changes)  <a href="#a6843f1b6e31ecc35b15c6b677ed098a9">More...</a><br /></td></tr>
+<tr class="separator:a6843f1b6e31ecc35b15c6b677ed098a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ab77adf00ff67d057e01c6fa2c8278c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_share_repository.html#a9ab77adf00ff67d057e01c6fa2c8278c">SetShareStockById</a> (<a class="el" href="class_gielda_l2_1_1_d_b_1_1_entities_1_1_share.html">Share</a> share, int stockid)</td></tr>
+<tr class="memdesc:a9ab77adf00ff67d057e01c6fa2c8278c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets share stock by id. (does not save changes)  <a href="#a9ab77adf00ff67d057e01c6fa2c8278c">More...</a><br /></td></tr>
+<tr class="separator:a9ab77adf00ff67d057e01c6fa2c8278c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac3b39b1ed8794698ad74054688667e6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_share_repository.html#ac3b39b1ed8794698ad74054688667e6a">Edit</a> (<a class="el" href="class_gielda_l2_1_1_d_b_1_1_entities_1_1_share.html">Share</a> share)</td></tr>
 <tr class="memdesc:ac3b39b1ed8794698ad74054688667e6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method for modifying Share entity  <a href="#ac3b39b1ed8794698ad74054688667e6a">More...</a><br /></td></tr>
 <tr class="separator:ac3b39b1ed8794698ad74054688667e6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -251,6 +257,84 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a id="a6843f1b6e31ecc35b15c6b677ed098a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6843f1b6e31ecc35b15c6b677ed098a9">&#9670;&nbsp;</a></span>SetShareOwnerById()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GieldaL2.INFRASTRUCTURE.Repositories.ShareRepository.SetShareOwnerById </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_gielda_l2_1_1_d_b_1_1_entities_1_1_share.html">Share</a>&#160;</td>
+          <td class="paramname"><em>share</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ownerid</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets share owner by id. (does not save changes) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">share</td><td></td></tr>
+    <tr><td class="paramname">ownerid</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_share_repository.html#a9670fbeb44bb7ac102fdff4b6a38e24f">GieldaL2.DB.Interfaces.IShareRepository</a>.</p>
+
+</div>
+</div>
+<a id="a9ab77adf00ff67d057e01c6fa2c8278c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ab77adf00ff67d057e01c6fa2c8278c">&#9670;&nbsp;</a></span>SetShareStockById()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GieldaL2.INFRASTRUCTURE.Repositories.ShareRepository.SetShareStockById </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_gielda_l2_1_1_d_b_1_1_entities_1_1_share.html">Share</a>&#160;</td>
+          <td class="paramname"><em>share</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>stockid</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets share stock by id. (does not save changes) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">share</td><td></td></tr>
+    <tr><td class="paramname">ownerid</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_share_repository.html#ac790aa8aa9cb7cbaeb91b0c6201abf76">GieldaL2.DB.Interfaces.IShareRepository</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Property Documentation</h2>
 <a id="ad778ea8d672a171a35af26957efe3c88"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad778ea8d672a171a35af26957efe3c88">&#9670;&nbsp;</a></span>LastOperationTime</h2>
@@ -277,7 +361,7 @@ Properties</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>GieldaL2.INFRASTRUCTURE/Repositories/ShareRepository.cs</li>
+<li>C:/Users/Pawel/Desktop/GitHub/GieldaL2/GieldaL2.INFRASTRUCTURE/Repositories/ShareRepository.cs</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

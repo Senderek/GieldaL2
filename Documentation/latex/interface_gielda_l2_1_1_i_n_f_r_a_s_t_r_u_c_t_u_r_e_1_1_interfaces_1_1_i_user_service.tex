@@ -18,6 +18,8 @@ I\+Collection$<$ \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_
 \begin{DoxyCompactList}\small\item\em Retrieves all users from the database. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_user_d_t_o}{User\+D\+TO}} \mbox{\hyperlink{interface_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_interfaces_1_1_i_user_service_a2fd0719208e4bd393517dece3b039564}{Get\+User\+By\+Id}} (int id, \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_statistics_d_t_o}{Statistics\+D\+TO}} statistics)
 \begin{DoxyCompactList}\small\item\em Retrieves an user with the specified ID. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_user_d_t_o}{User\+D\+TO}} \mbox{\hyperlink{interface_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_interfaces_1_1_i_user_service_a438bd5d0424677c7797ce1ec00d132dc}{Get\+User\+By\+Name}} (string name, \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_statistics_d_t_o}{Statistics\+D\+TO}} statistics)
+\begin{DoxyCompactList}\small\item\em Retrieves an user with the specified name. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{interface_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_interfaces_1_1_i_user_service_a964c730457bbce497d33fed5fda0b103}{Add\+User}} (\mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_user_d_t_o}{User\+D\+TO}} user, \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_statistics_d_t_o}{Statistics\+D\+TO}} statistics)
 \begin{DoxyCompactList}\small\item\em Adds user passed in the parameter to the database. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{interface_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_interfaces_1_1_i_user_service_ab4f5c1c2ac78ee462e0a488b7f2ea50e}{Edit\+User}} (int id, \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_user_d_t_o}{User\+D\+TO}} user, \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_statistics_d_t_o}{Statistics\+D\+TO}} statistics)
@@ -149,8 +151,32 @@ User \mbox{\hyperlink{namespace_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_
 
 Implemented in \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_user_service_a92394250a4617bc33dce562feabb6296}{Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Services.\+User\+Service}}.
 
+\mbox{\Hypertarget{interface_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_interfaces_1_1_i_user_service_a438bd5d0424677c7797ce1ec00d132dc}\label{interface_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_interfaces_1_1_i_user_service_a438bd5d0424677c7797ce1ec00d132dc}} 
+\index{GieldaL2.INFRASTRUCTURE.Interfaces.IUserService@{GieldaL2.INFRASTRUCTURE.Interfaces.IUserService}!GetUserByName@{GetUserByName}}
+\index{GetUserByName@{GetUserByName}!GieldaL2.INFRASTRUCTURE.Interfaces.IUserService@{GieldaL2.INFRASTRUCTURE.Interfaces.IUserService}}
+\subsubsection{\texorpdfstring{GetUserByName()}{GetUserByName()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_user_d_t_o}{User\+D\+TO}} Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Interfaces.\+I\+User\+Service.\+Get\+User\+By\+Name (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{\mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_statistics_d_t_o}{Statistics\+D\+TO}}}]{statistics }\end{DoxyParamCaption})}
+
+
+
+Retrieves an user with the specified name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the requested user.\\
+\hline
+{\em statistics} & \mbox{\hyperlink{namespace_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o}{D\+TO}} containing statistics which will be updated during work of this method.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+User \mbox{\hyperlink{namespace_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o}{D\+TO}} if found, otherwise null.
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_user_service_aea2901aafb86692c9aa8efa24b8801ee}{Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Services.\+User\+Service}}.
+
 
 
 The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E/\+Interfaces/I\+User\+Service.\+cs\end{DoxyCompactItemize}
+C\+:/\+Users/\+Pawel/\+Desktop/\+Git\+Hub/\+Gielda\+L2/\+Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E/\+Interfaces/I\+User\+Service.\+cs\end{DoxyCompactItemize}
