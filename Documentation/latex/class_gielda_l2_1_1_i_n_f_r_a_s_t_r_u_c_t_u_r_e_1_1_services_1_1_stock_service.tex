@@ -1,0 +1,166 @@
+\hypertarget{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_stock_service}{}\section{Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Services.\+Stock\+Service Class Reference}
+\label{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_stock_service}\index{GieldaL2.INFRASTRUCTURE.Services.StockService@{GieldaL2.INFRASTRUCTURE.Services.StockService}}
+Inheritance diagram for Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Services.\+Stock\+Service\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_stock_service}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_stock_service_a19aeb6c6d5729c8333bd37c3dfe41b2d}{Stock\+Service}} (\mbox{\hyperlink{interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_stock_repository}{I\+Stock\+Repository}} repository)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_user_service}{User\+Service}} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_stock_service_a6d019e5819834d6f1636180026d11dab}{Add\+Stock}} (\mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_stock_d_t_o}{Stock\+D\+TO}} stock, \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_statistics_d_t_o}{Statistics\+D\+TO}} statistics)
+\begin{DoxyCompactList}\small\item\em Adds stock passed in the parameter to the database. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_stock_service_af134b397a338fcd778177bb0a4960060}{Delete\+Stock}} (int id, \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_statistics_d_t_o}{Statistics\+D\+TO}} statistics)
+\begin{DoxyCompactList}\small\item\em Deletes stock with the specified ID. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_stock_service_a5f14ef809d7aa93ee952adb311bc1d32}{Edit\+Stock}} (int id, \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_stock_d_t_o}{Stock\+D\+TO}} stock, \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_statistics_d_t_o}{Statistics\+D\+TO}} statistics)
+\begin{DoxyCompactList}\small\item\em Edits stock with the specified ID. \end{DoxyCompactList}\item 
+I\+Collection$<$ \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_stock_d_t_o}{Stock\+D\+TO}} $>$ \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_stock_service_a1923e787cf70d1442d2108c064087202}{Get\+All\+Stocks}} (\mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_statistics_d_t_o}{Statistics\+D\+TO}} statistics)
+\begin{DoxyCompactList}\small\item\em Retrieves all stocks from the database. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_stock_d_t_o}{Stock\+D\+TO}} \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_stock_service_ae8c734f66dfb438f446422df01ec994e}{Get\+Stock\+By\+Id}} (int id, \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_statistics_d_t_o}{Statistics\+D\+TO}} statistics)
+\begin{DoxyCompactList}\small\item\em Retrieves an stock with the specified ID. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_stock_service_a19aeb6c6d5729c8333bd37c3dfe41b2d}\label{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_stock_service_a19aeb6c6d5729c8333bd37c3dfe41b2d}} 
+\index{GieldaL2.INFRASTRUCTURE.Services.StockService@{GieldaL2.INFRASTRUCTURE.Services.StockService}!StockService@{StockService}}
+\index{StockService@{StockService}!GieldaL2.INFRASTRUCTURE.Services.StockService@{GieldaL2.INFRASTRUCTURE.Services.StockService}}
+\subsubsection{\texorpdfstring{StockService()}{StockService()}}
+{\footnotesize\ttfamily Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Services.\+Stock\+Service.\+Stock\+Service (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_stock_repository}{I\+Stock\+Repository}}}]{repository }\end{DoxyParamCaption})}
+
+
+
+Initializes a new instance of the \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_user_service}{User\+Service}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Repository} & Repository containing users.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_stock_service_a6d019e5819834d6f1636180026d11dab}\label{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_stock_service_a6d019e5819834d6f1636180026d11dab}} 
+\index{GieldaL2.INFRASTRUCTURE.Services.StockService@{GieldaL2.INFRASTRUCTURE.Services.StockService}!AddStock@{AddStock}}
+\index{AddStock@{AddStock}!GieldaL2.INFRASTRUCTURE.Services.StockService@{GieldaL2.INFRASTRUCTURE.Services.StockService}}
+\subsubsection{\texorpdfstring{AddStock()}{AddStock()}}
+{\footnotesize\ttfamily void Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Services.\+Stock\+Service.\+Add\+Stock (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_stock_d_t_o}{Stock\+D\+TO}}}]{stock,  }\item[{\mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_statistics_d_t_o}{Statistics\+D\+TO}}}]{statistics }\end{DoxyParamCaption})}
+
+
+
+Adds stock passed in the parameter to the database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stock} & Stock \mbox{\hyperlink{namespace_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o}{D\+TO}} which will be added to the database.\\
+\hline
+{\em statistics} & \mbox{\hyperlink{namespace_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o}{D\+TO}} containing statistics which will be updated during work of this method.\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interface_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_interfaces_1_1_i_stock_service_a6f46f5fa67e7cc83b8b7cbb3a68345ea}{Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Interfaces.\+I\+Stock\+Service}}.
+
+\mbox{\Hypertarget{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_stock_service_af134b397a338fcd778177bb0a4960060}\label{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_stock_service_af134b397a338fcd778177bb0a4960060}} 
+\index{GieldaL2.INFRASTRUCTURE.Services.StockService@{GieldaL2.INFRASTRUCTURE.Services.StockService}!DeleteStock@{DeleteStock}}
+\index{DeleteStock@{DeleteStock}!GieldaL2.INFRASTRUCTURE.Services.StockService@{GieldaL2.INFRASTRUCTURE.Services.StockService}}
+\subsubsection{\texorpdfstring{DeleteStock()}{DeleteStock()}}
+{\footnotesize\ttfamily bool Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Services.\+Stock\+Service.\+Delete\+Stock (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{\mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_statistics_d_t_o}{Statistics\+D\+TO}}}]{statistics }\end{DoxyParamCaption})}
+
+
+
+Deletes stock with the specified ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID of the stock which will be deleted.\\
+\hline
+{\em statistics} & \mbox{\hyperlink{namespace_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o}{D\+TO}} containing statistics which will be updated during work of this method.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if stock with the specified ID has been found and deleted, otherwise false.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_interfaces_1_1_i_stock_service_aaee8771ad67aa0e4ecd5a53a1defa1aa}{Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Interfaces.\+I\+Stock\+Service}}.
+
+\mbox{\Hypertarget{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_stock_service_a5f14ef809d7aa93ee952adb311bc1d32}\label{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_stock_service_a5f14ef809d7aa93ee952adb311bc1d32}} 
+\index{GieldaL2.INFRASTRUCTURE.Services.StockService@{GieldaL2.INFRASTRUCTURE.Services.StockService}!EditStock@{EditStock}}
+\index{EditStock@{EditStock}!GieldaL2.INFRASTRUCTURE.Services.StockService@{GieldaL2.INFRASTRUCTURE.Services.StockService}}
+\subsubsection{\texorpdfstring{EditStock()}{EditStock()}}
+{\footnotesize\ttfamily bool Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Services.\+Stock\+Service.\+Edit\+Stock (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{\mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_stock_d_t_o}{Stock\+D\+TO}}}]{stock,  }\item[{\mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_statistics_d_t_o}{Statistics\+D\+TO}}}]{statistics }\end{DoxyParamCaption})}
+
+
+
+Edits stock with the specified ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID of the stock which will be edited.\\
+\hline
+{\em stock} & Stock data which will be applied.\\
+\hline
+{\em statistics} & \mbox{\hyperlink{namespace_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o}{D\+TO}} containing statistics which will be updated during work of this method.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if stock with the specified ID has been found and edited, otherwise false.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_interfaces_1_1_i_stock_service_a212f9f1d1da1a59c0e0307ebffdc28ff}{Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Interfaces.\+I\+Stock\+Service}}.
+
+\mbox{\Hypertarget{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_stock_service_a1923e787cf70d1442d2108c064087202}\label{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_stock_service_a1923e787cf70d1442d2108c064087202}} 
+\index{GieldaL2.INFRASTRUCTURE.Services.StockService@{GieldaL2.INFRASTRUCTURE.Services.StockService}!GetAllStocks@{GetAllStocks}}
+\index{GetAllStocks@{GetAllStocks}!GieldaL2.INFRASTRUCTURE.Services.StockService@{GieldaL2.INFRASTRUCTURE.Services.StockService}}
+\subsubsection{\texorpdfstring{GetAllStocks()}{GetAllStocks()}}
+{\footnotesize\ttfamily I\+Collection$<$\mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_stock_d_t_o}{Stock\+D\+TO}}$>$ Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Services.\+Stock\+Service.\+Get\+All\+Stocks (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_statistics_d_t_o}{Statistics\+D\+TO}}}]{statistics }\end{DoxyParamCaption})}
+
+
+
+Retrieves all stocks from the database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em statistics} & \mbox{\hyperlink{namespace_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o}{D\+TO}} containing statistics which will be updated during work of this method.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Collection of retrieved stocks from the database.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_interfaces_1_1_i_stock_service_ae94c4404091898a36f0d5eafa5b0b7d9}{Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Interfaces.\+I\+Stock\+Service}}.
+
+\mbox{\Hypertarget{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_stock_service_ae8c734f66dfb438f446422df01ec994e}\label{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_stock_service_ae8c734f66dfb438f446422df01ec994e}} 
+\index{GieldaL2.INFRASTRUCTURE.Services.StockService@{GieldaL2.INFRASTRUCTURE.Services.StockService}!GetStockById@{GetStockById}}
+\index{GetStockById@{GetStockById}!GieldaL2.INFRASTRUCTURE.Services.StockService@{GieldaL2.INFRASTRUCTURE.Services.StockService}}
+\subsubsection{\texorpdfstring{GetStockById()}{GetStockById()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_stock_d_t_o}{Stock\+D\+TO}} Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Services.\+Stock\+Service.\+Get\+Stock\+By\+Id (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{\mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_statistics_d_t_o}{Statistics\+D\+TO}}}]{statistics }\end{DoxyParamCaption})}
+
+
+
+Retrieves an stock with the specified ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID of the requested stock.\\
+\hline
+{\em statistics} & \mbox{\hyperlink{namespace_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o}{D\+TO}} containing statistics which will be updated during work of this method.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Stock \mbox{\hyperlink{namespace_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o}{D\+TO}} if found, otherwise null.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_interfaces_1_1_i_stock_service_ae04641f95a30ef6f62d499ef921646f7}{Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Interfaces.\+I\+Stock\+Service}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Pawel/\+Desktop/\+Git\+Hub/\+Gielda\+L2/\+Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E/\+Services/Stock\+Service.\+cs\end{DoxyCompactItemize}

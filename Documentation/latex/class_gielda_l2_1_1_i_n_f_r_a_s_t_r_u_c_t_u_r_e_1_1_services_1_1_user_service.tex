@@ -1,0 +1,202 @@
+\hypertarget{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_user_service}{}\section{Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Services.\+User\+Service Class Reference}
+\label{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_user_service}\index{GieldaL2.INFRASTRUCTURE.Services.UserService@{GieldaL2.INFRASTRUCTURE.Services.UserService}}
+
+
+Service containing methods to manage users  
+
+
+Inheritance diagram for Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Services.\+User\+Service\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.755486cm]{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_user_service}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_user_service_a0aab5959c1782b51e9343faae0b76305}{User\+Service}} (\mbox{\hyperlink{interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_user_repository}{I\+User\+Repository}} user\+Repository)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_user_service}{User\+Service}} class. \end{DoxyCompactList}\item 
+I\+Collection$<$ \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_user_d_t_o}{User\+D\+TO}} $>$ \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_user_service_a448582ca4e54e603f4dd8a5a12c4bed4}{Get\+All\+Users}} (\mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_statistics_d_t_o}{Statistics\+D\+TO}} statistics)
+\begin{DoxyCompactList}\small\item\em Retrieves all users from the database. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_user_d_t_o}{User\+D\+TO}} \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_user_service_a92394250a4617bc33dce562feabb6296}{Get\+User\+By\+Id}} (int id, \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_statistics_d_t_o}{Statistics\+D\+TO}} statistics)
+\begin{DoxyCompactList}\small\item\em Retrieves an user with the specified ID. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_user_d_t_o}{User\+D\+TO}} \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_user_service_aea2901aafb86692c9aa8efa24b8801ee}{Get\+User\+By\+Name}} (string name, \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_statistics_d_t_o}{Statistics\+D\+TO}} statistics)
+\begin{DoxyCompactList}\small\item\em Retrieves an user with the specified name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_user_service_a0758f1bb59fe3430fc4122347e82bccf}{Add\+User}} (\mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_user_d_t_o}{User\+D\+TO}} user, \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_statistics_d_t_o}{Statistics\+D\+TO}} statistics)
+\begin{DoxyCompactList}\small\item\em Adds user passed in the parameter to the database. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_user_service_aa50409112230c2fedfeb3f358665496d}{Edit\+User}} (int id, \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_user_d_t_o}{User\+D\+TO}} user, \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_statistics_d_t_o}{Statistics\+D\+TO}} statistics)
+\begin{DoxyCompactList}\small\item\em Edits user with the specified ID. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_user_service_ae318cd1c42a95c89d736e3dc1151dddc}{Delete\+User}} (int id, \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_statistics_d_t_o}{Statistics\+D\+TO}} statistics)
+\begin{DoxyCompactList}\small\item\em Deletes user with the specified ID. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Service containing methods to manage users 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_user_service_a0aab5959c1782b51e9343faae0b76305}\label{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_user_service_a0aab5959c1782b51e9343faae0b76305}} 
+\index{GieldaL2.INFRASTRUCTURE.Services.UserService@{GieldaL2.INFRASTRUCTURE.Services.UserService}!UserService@{UserService}}
+\index{UserService@{UserService}!GieldaL2.INFRASTRUCTURE.Services.UserService@{GieldaL2.INFRASTRUCTURE.Services.UserService}}
+\subsubsection{\texorpdfstring{UserService()}{UserService()}}
+{\footnotesize\ttfamily Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Services.\+User\+Service.\+User\+Service (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_user_repository}{I\+User\+Repository}}}]{user\+Repository }\end{DoxyParamCaption})}
+
+
+
+Initializes a new instance of the \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_user_service}{User\+Service}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Repository} & Repository containing users.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_user_service_a0758f1bb59fe3430fc4122347e82bccf}\label{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_user_service_a0758f1bb59fe3430fc4122347e82bccf}} 
+\index{GieldaL2.INFRASTRUCTURE.Services.UserService@{GieldaL2.INFRASTRUCTURE.Services.UserService}!AddUser@{AddUser}}
+\index{AddUser@{AddUser}!GieldaL2.INFRASTRUCTURE.Services.UserService@{GieldaL2.INFRASTRUCTURE.Services.UserService}}
+\subsubsection{\texorpdfstring{AddUser()}{AddUser()}}
+{\footnotesize\ttfamily void Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Services.\+User\+Service.\+Add\+User (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_user_d_t_o}{User\+D\+TO}}}]{user,  }\item[{\mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_statistics_d_t_o}{Statistics\+D\+TO}}}]{statistics }\end{DoxyParamCaption})}
+
+
+
+Adds user passed in the parameter to the database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & User \mbox{\hyperlink{namespace_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o}{D\+TO}} which will be added to the database.\\
+\hline
+{\em statistics} & \mbox{\hyperlink{namespace_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o}{D\+TO}} containing statistics which will be updated during work of this method.\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interface_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_interfaces_1_1_i_user_service_a964c730457bbce497d33fed5fda0b103}{Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Interfaces.\+I\+User\+Service}}.
+
+\mbox{\Hypertarget{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_user_service_ae318cd1c42a95c89d736e3dc1151dddc}\label{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_user_service_ae318cd1c42a95c89d736e3dc1151dddc}} 
+\index{GieldaL2.INFRASTRUCTURE.Services.UserService@{GieldaL2.INFRASTRUCTURE.Services.UserService}!DeleteUser@{DeleteUser}}
+\index{DeleteUser@{DeleteUser}!GieldaL2.INFRASTRUCTURE.Services.UserService@{GieldaL2.INFRASTRUCTURE.Services.UserService}}
+\subsubsection{\texorpdfstring{DeleteUser()}{DeleteUser()}}
+{\footnotesize\ttfamily bool Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Services.\+User\+Service.\+Delete\+User (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{\mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_statistics_d_t_o}{Statistics\+D\+TO}}}]{statistics }\end{DoxyParamCaption})}
+
+
+
+Deletes user with the specified ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID of the user which will be deleted.\\
+\hline
+{\em statistics} & \mbox{\hyperlink{namespace_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o}{D\+TO}} containing statistics which will be updated during work of this method.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if user with the specified ID has been found and deleted, otherwise false.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_interfaces_1_1_i_user_service_a3b6080d304c489e6876694388a692682}{Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Interfaces.\+I\+User\+Service}}.
+
+\mbox{\Hypertarget{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_user_service_aa50409112230c2fedfeb3f358665496d}\label{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_user_service_aa50409112230c2fedfeb3f358665496d}} 
+\index{GieldaL2.INFRASTRUCTURE.Services.UserService@{GieldaL2.INFRASTRUCTURE.Services.UserService}!EditUser@{EditUser}}
+\index{EditUser@{EditUser}!GieldaL2.INFRASTRUCTURE.Services.UserService@{GieldaL2.INFRASTRUCTURE.Services.UserService}}
+\subsubsection{\texorpdfstring{EditUser()}{EditUser()}}
+{\footnotesize\ttfamily bool Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Services.\+User\+Service.\+Edit\+User (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{\mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_user_d_t_o}{User\+D\+TO}}}]{user,  }\item[{\mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_statistics_d_t_o}{Statistics\+D\+TO}}}]{statistics }\end{DoxyParamCaption})}
+
+
+
+Edits user with the specified ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID of the user which will be edited.\\
+\hline
+{\em user} & User data which will be applied.\\
+\hline
+{\em statistics} & \mbox{\hyperlink{namespace_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o}{D\+TO}} containing statistics which will be updated during work of this method.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if user with the specified ID has been found and edited, otherwise false.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_interfaces_1_1_i_user_service_ab4f5c1c2ac78ee462e0a488b7f2ea50e}{Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Interfaces.\+I\+User\+Service}}.
+
+\mbox{\Hypertarget{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_user_service_a448582ca4e54e603f4dd8a5a12c4bed4}\label{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_user_service_a448582ca4e54e603f4dd8a5a12c4bed4}} 
+\index{GieldaL2.INFRASTRUCTURE.Services.UserService@{GieldaL2.INFRASTRUCTURE.Services.UserService}!GetAllUsers@{GetAllUsers}}
+\index{GetAllUsers@{GetAllUsers}!GieldaL2.INFRASTRUCTURE.Services.UserService@{GieldaL2.INFRASTRUCTURE.Services.UserService}}
+\subsubsection{\texorpdfstring{GetAllUsers()}{GetAllUsers()}}
+{\footnotesize\ttfamily I\+Collection$<$\mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_user_d_t_o}{User\+D\+TO}}$>$ Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Services.\+User\+Service.\+Get\+All\+Users (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_statistics_d_t_o}{Statistics\+D\+TO}}}]{statistics }\end{DoxyParamCaption})}
+
+
+
+Retrieves all users from the database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em statistics} & \mbox{\hyperlink{namespace_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o}{D\+TO}} containing statistics which will be updated during work of this method.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Collection of retrieved users from the database.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_interfaces_1_1_i_user_service_a3eccdbcf26de6b86ae770f0e3512664e}{Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Interfaces.\+I\+User\+Service}}.
+
+\mbox{\Hypertarget{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_user_service_a92394250a4617bc33dce562feabb6296}\label{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_user_service_a92394250a4617bc33dce562feabb6296}} 
+\index{GieldaL2.INFRASTRUCTURE.Services.UserService@{GieldaL2.INFRASTRUCTURE.Services.UserService}!GetUserById@{GetUserById}}
+\index{GetUserById@{GetUserById}!GieldaL2.INFRASTRUCTURE.Services.UserService@{GieldaL2.INFRASTRUCTURE.Services.UserService}}
+\subsubsection{\texorpdfstring{GetUserById()}{GetUserById()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_user_d_t_o}{User\+D\+TO}} Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Services.\+User\+Service.\+Get\+User\+By\+Id (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{\mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_statistics_d_t_o}{Statistics\+D\+TO}}}]{statistics }\end{DoxyParamCaption})}
+
+
+
+Retrieves an user with the specified ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID of the requested user.\\
+\hline
+{\em statistics} & \mbox{\hyperlink{namespace_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o}{D\+TO}} containing statistics which will be updated during work of this method.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+User \mbox{\hyperlink{namespace_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o}{D\+TO}} if found, otherwise null.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_interfaces_1_1_i_user_service_a2fd0719208e4bd393517dece3b039564}{Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Interfaces.\+I\+User\+Service}}.
+
+\mbox{\Hypertarget{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_user_service_aea2901aafb86692c9aa8efa24b8801ee}\label{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_services_1_1_user_service_aea2901aafb86692c9aa8efa24b8801ee}} 
+\index{GieldaL2.INFRASTRUCTURE.Services.UserService@{GieldaL2.INFRASTRUCTURE.Services.UserService}!GetUserByName@{GetUserByName}}
+\index{GetUserByName@{GetUserByName}!GieldaL2.INFRASTRUCTURE.Services.UserService@{GieldaL2.INFRASTRUCTURE.Services.UserService}}
+\subsubsection{\texorpdfstring{GetUserByName()}{GetUserByName()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_user_d_t_o}{User\+D\+TO}} Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Services.\+User\+Service.\+Get\+User\+By\+Name (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{\mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_statistics_d_t_o}{Statistics\+D\+TO}}}]{statistics }\end{DoxyParamCaption})}
+
+
+
+Retrieves an user with the specified name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the requested user.\\
+\hline
+{\em statistics} & \mbox{\hyperlink{namespace_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o}{D\+TO}} containing statistics which will be updated during work of this method.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+User \mbox{\hyperlink{namespace_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o}{D\+TO}} if found, otherwise null.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_interfaces_1_1_i_user_service_a438bd5d0424677c7797ce1ec00d132dc}{Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Interfaces.\+I\+User\+Service}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Pawel/\+Desktop/\+Git\+Hub/\+Gielda\+L2/\+Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E/\+Services/User\+Service.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,223 @@
+\hypertarget{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_user_repository}{}\section{Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Repositories.\+User\+Repository Class Reference}
+\label{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_user_repository}\index{GieldaL2.INFRASTRUCTURE.Repositories.UserRepository@{GieldaL2.INFRASTRUCTURE.Repositories.UserRepository}}
+
+
+Repository containing users data.  
+
+
+Inheritance diagram for Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Repositories.\+User\+Repository\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_user_repository}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_user_repository_ab90832b2de2f213d9cd05aee989a0a13}{User\+Repository}} (\mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_gielda_l2_context}{Gielda\+L2\+Context}} context)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_user_repository}{User\+Repository}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_entities_1_1_user}{User}} \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_user_repository_a59783783c8210efff03a749d4f63fadf}{Get\+By\+Id}} (int id)
+\begin{DoxyCompactList}\small\item\em Retrieves an user with the specified ID. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_entities_1_1_user}{User}} \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_user_repository_af81e3935a282ab7b2e4d8bdf7b379771}{Get\+By\+Name}} (string name)
+\begin{DoxyCompactList}\small\item\em Retrieves an user with the specified name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_entities_1_1_user}{User}} \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_user_repository_a6ddb02c156ab0944804a41a5a9531482}{Get\+By\+User\+Name\+And\+Password}} (string user\+Name, string password)
+\begin{DoxyCompactList}\small\item\em Retrieves an user with the specified username and password. \end{DoxyCompactList}\item 
+I\+Collection$<$ \mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_entities_1_1_user}{User}} $>$ \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_user_repository_ab9a56b5b0dfe9cf6350eebcf751adcfc}{Get\+All}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves all user entities from the Users table. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_user_repository_a686490e4e59fb25b843d11bab137ec56}{Add}} (\mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_entities_1_1_user}{User}} user)
+\begin{DoxyCompactList}\small\item\em Adds user entity to the Users table. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_user_repository_a2e07a0a1dd9a6731ed8706b82c66fb49}{Edit}} (\mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_entities_1_1_user}{User}} user)
+\begin{DoxyCompactList}\small\item\em Applies changes done in the user entity in the database. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_user_repository_a8715ce2a146a846905609162c41a6483}{Remove}} (\mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_entities_1_1_user}{User}} user)
+\begin{DoxyCompactList}\small\item\em Removes user entity from the Users table. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_user_repository_aec266d4cd489b911934e5317390c3cc4}{Last\+Operation\+Time}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Time of the last database operation (it was easier to do it this way instead of creating \char`\"{}out int time\char`\"{} in the every method because out variables cannot be assigned to the class members which is done in the services). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Repository containing users data. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_user_repository_ab90832b2de2f213d9cd05aee989a0a13}\label{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_user_repository_ab90832b2de2f213d9cd05aee989a0a13}} 
+\index{GieldaL2.INFRASTRUCTURE.Repositories.UserRepository@{GieldaL2.INFRASTRUCTURE.Repositories.UserRepository}!UserRepository@{UserRepository}}
+\index{UserRepository@{UserRepository}!GieldaL2.INFRASTRUCTURE.Repositories.UserRepository@{GieldaL2.INFRASTRUCTURE.Repositories.UserRepository}}
+\subsubsection{\texorpdfstring{UserRepository()}{UserRepository()}}
+{\footnotesize\ttfamily Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Repositories.\+User\+Repository.\+User\+Repository (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_gielda_l2_context}{Gielda\+L2\+Context}}}]{context }\end{DoxyParamCaption})}
+
+
+
+Initializes a new instance of the \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_user_repository}{User\+Repository}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & Entity Framework context.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_user_repository_a686490e4e59fb25b843d11bab137ec56}\label{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_user_repository_a686490e4e59fb25b843d11bab137ec56}} 
+\index{GieldaL2.INFRASTRUCTURE.Repositories.UserRepository@{GieldaL2.INFRASTRUCTURE.Repositories.UserRepository}!Add@{Add}}
+\index{Add@{Add}!GieldaL2.INFRASTRUCTURE.Repositories.UserRepository@{GieldaL2.INFRASTRUCTURE.Repositories.UserRepository}}
+\subsubsection{\texorpdfstring{Add()}{Add()}}
+{\footnotesize\ttfamily void Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Repositories.\+User\+Repository.\+Add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_entities_1_1_user}{User}}}]{user }\end{DoxyParamCaption})}
+
+
+
+Adds user entity to the Users table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & User entity which will be added to the database.\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_user_repository_afd1f24172cd7dd824feb7d1d67ff9475}{Gielda\+L2.\+D\+B.\+Interfaces.\+I\+User\+Repository}}.
+
+\mbox{\Hypertarget{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_user_repository_a2e07a0a1dd9a6731ed8706b82c66fb49}\label{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_user_repository_a2e07a0a1dd9a6731ed8706b82c66fb49}} 
+\index{GieldaL2.INFRASTRUCTURE.Repositories.UserRepository@{GieldaL2.INFRASTRUCTURE.Repositories.UserRepository}!Edit@{Edit}}
+\index{Edit@{Edit}!GieldaL2.INFRASTRUCTURE.Repositories.UserRepository@{GieldaL2.INFRASTRUCTURE.Repositories.UserRepository}}
+\subsubsection{\texorpdfstring{Edit()}{Edit()}}
+{\footnotesize\ttfamily void Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Repositories.\+User\+Repository.\+Edit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_entities_1_1_user}{User}}}]{user }\end{DoxyParamCaption})}
+
+
+
+Applies changes done in the user entity in the database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & User entity which has been modified.\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_user_repository_a65d2dc63fea742354209b2e13a15a452}{Gielda\+L2.\+D\+B.\+Interfaces.\+I\+User\+Repository}}.
+
+\mbox{\Hypertarget{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_user_repository_ab9a56b5b0dfe9cf6350eebcf751adcfc}\label{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_user_repository_ab9a56b5b0dfe9cf6350eebcf751adcfc}} 
+\index{GieldaL2.INFRASTRUCTURE.Repositories.UserRepository@{GieldaL2.INFRASTRUCTURE.Repositories.UserRepository}!GetAll@{GetAll}}
+\index{GetAll@{GetAll}!GieldaL2.INFRASTRUCTURE.Repositories.UserRepository@{GieldaL2.INFRASTRUCTURE.Repositories.UserRepository}}
+\subsubsection{\texorpdfstring{GetAll()}{GetAll()}}
+{\footnotesize\ttfamily I\+Collection$<$\mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_entities_1_1_user}{User}}$>$ Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Repositories.\+User\+Repository.\+Get\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieves all user entities from the Users table. 
+
+\begin{DoxyReturn}{Returns}
+List of the user entities.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_user_repository_ada0fb28a6665ffc0191086563dbeb28e}{Gielda\+L2.\+D\+B.\+Interfaces.\+I\+User\+Repository}}.
+
+\mbox{\Hypertarget{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_user_repository_a59783783c8210efff03a749d4f63fadf}\label{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_user_repository_a59783783c8210efff03a749d4f63fadf}} 
+\index{GieldaL2.INFRASTRUCTURE.Repositories.UserRepository@{GieldaL2.INFRASTRUCTURE.Repositories.UserRepository}!GetById@{GetById}}
+\index{GetById@{GetById}!GieldaL2.INFRASTRUCTURE.Repositories.UserRepository@{GieldaL2.INFRASTRUCTURE.Repositories.UserRepository}}
+\subsubsection{\texorpdfstring{GetById()}{GetById()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_entities_1_1_user}{User}} Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Repositories.\+User\+Repository.\+Get\+By\+Id (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Retrieves an user with the specified ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID of the requested user.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+User entity if found, otherwise null.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_user_repository_ae3b2e6d986054c6b336887b4d0d1cfac}{Gielda\+L2.\+D\+B.\+Interfaces.\+I\+User\+Repository}}.
+
+\mbox{\Hypertarget{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_user_repository_af81e3935a282ab7b2e4d8bdf7b379771}\label{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_user_repository_af81e3935a282ab7b2e4d8bdf7b379771}} 
+\index{GieldaL2.INFRASTRUCTURE.Repositories.UserRepository@{GieldaL2.INFRASTRUCTURE.Repositories.UserRepository}!GetByName@{GetByName}}
+\index{GetByName@{GetByName}!GieldaL2.INFRASTRUCTURE.Repositories.UserRepository@{GieldaL2.INFRASTRUCTURE.Repositories.UserRepository}}
+\subsubsection{\texorpdfstring{GetByName()}{GetByName()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_entities_1_1_user}{User}} Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Repositories.\+User\+Repository.\+Get\+By\+Name (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})}
+
+
+
+Retrieves an user with the specified name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the requested user.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+User entity if found, otherwise null.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_user_repository_a6bcf2b383638bfded753b394d1f4de0b}{Gielda\+L2.\+D\+B.\+Interfaces.\+I\+User\+Repository}}.
+
+\mbox{\Hypertarget{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_user_repository_a6ddb02c156ab0944804a41a5a9531482}\label{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_user_repository_a6ddb02c156ab0944804a41a5a9531482}} 
+\index{GieldaL2.INFRASTRUCTURE.Repositories.UserRepository@{GieldaL2.INFRASTRUCTURE.Repositories.UserRepository}!GetByUserNameAndPassword@{GetByUserNameAndPassword}}
+\index{GetByUserNameAndPassword@{GetByUserNameAndPassword}!GieldaL2.INFRASTRUCTURE.Repositories.UserRepository@{GieldaL2.INFRASTRUCTURE.Repositories.UserRepository}}
+\subsubsection{\texorpdfstring{GetByUserNameAndPassword()}{GetByUserNameAndPassword()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_entities_1_1_user}{User}} Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Repositories.\+User\+Repository.\+Get\+By\+User\+Name\+And\+Password (\begin{DoxyParamCaption}\item[{string}]{user\+Name,  }\item[{string}]{password }\end{DoxyParamCaption})}
+
+
+
+Retrieves an user with the specified username and password. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Name} & Username\\
+\hline
+{\em password} & Password\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+User entity if found, otherwise null.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_user_repository_a8a8920b50795c07316baf914e70f5ee3}{Gielda\+L2.\+D\+B.\+Interfaces.\+I\+User\+Repository}}.
+
+\mbox{\Hypertarget{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_user_repository_a8715ce2a146a846905609162c41a6483}\label{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_user_repository_a8715ce2a146a846905609162c41a6483}} 
+\index{GieldaL2.INFRASTRUCTURE.Repositories.UserRepository@{GieldaL2.INFRASTRUCTURE.Repositories.UserRepository}!Remove@{Remove}}
+\index{Remove@{Remove}!GieldaL2.INFRASTRUCTURE.Repositories.UserRepository@{GieldaL2.INFRASTRUCTURE.Repositories.UserRepository}}
+\subsubsection{\texorpdfstring{Remove()}{Remove()}}
+{\footnotesize\ttfamily void Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Repositories.\+User\+Repository.\+Remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_entities_1_1_user}{User}}}]{user }\end{DoxyParamCaption})}
+
+
+
+Removes user entity from the Users table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & User entity which will be removed.\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_user_repository_ad353a86a583d55065532459823c413f2}{Gielda\+L2.\+D\+B.\+Interfaces.\+I\+User\+Repository}}.
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_user_repository_aec266d4cd489b911934e5317390c3cc4}\label{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_user_repository_aec266d4cd489b911934e5317390c3cc4}} 
+\index{GieldaL2.INFRASTRUCTURE.Repositories.UserRepository@{GieldaL2.INFRASTRUCTURE.Repositories.UserRepository}!LastOperationTime@{LastOperationTime}}
+\index{LastOperationTime@{LastOperationTime}!GieldaL2.INFRASTRUCTURE.Repositories.UserRepository@{GieldaL2.INFRASTRUCTURE.Repositories.UserRepository}}
+\subsubsection{\texorpdfstring{LastOperationTime}{LastOperationTime}}
+{\footnotesize\ttfamily int Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Repositories.\+User\+Repository.\+Last\+Operation\+Time\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Time of the last database operation (it was easier to do it this way instead of creating \char`\"{}out int time\char`\"{} in the every method because out variables cannot be assigned to the class members which is done in the services). 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Pawel/\+Desktop/\+Git\+Hub/\+Gielda\+L2/\+Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E/\+Repositories/User\+Repository.\+cs\end{DoxyCompactItemize}

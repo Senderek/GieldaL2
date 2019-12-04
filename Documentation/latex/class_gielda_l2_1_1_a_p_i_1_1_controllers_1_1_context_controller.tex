@@ -1,0 +1,68 @@
+\hypertarget{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_context_controller}{}\section{Gielda\+L2.\+A\+P\+I.\+Controllers.\+Context\+Controller Class Reference}
+\label{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_context_controller}\index{GieldaL2.API.Controllers.ContextController@{GieldaL2.API.Controllers.ContextController}}
+
+
+Context controller containing endpoints which retrieves full data about the user.  
+
+
+Inheritance diagram for Gielda\+L2.\+A\+P\+I.\+Controllers.\+Context\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_context_controller}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_context_controller_a3c1b21abd23a836215091e591112960e}{Context\+Controller}} (\mbox{\hyperlink{interface_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_interfaces_1_1_i_user_service}{I\+User\+Service}} user\+Service, \mbox{\hyperlink{interface_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_interfaces_1_1_i_buy_offer_service}{I\+Buy\+Offer\+Service}} buy\+Offer\+Service, \mbox{\hyperlink{interface_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_interfaces_1_1_i_sell_offer_service}{I\+Sell\+Offer\+Service}} sell\+Offer\+Service)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_context_controller}{Context\+Controller}} class. \end{DoxyCompactList}\item 
+Action\+Result$<$ \mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_view_1_1_statistics_view_model}{Statistics\+View\+Model}}$<$ \mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_view_1_1_context_view_model}{Context\+View\+Model}} $>$ $>$ \mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_context_controller_a4b273ae74e0c12a862fd6aa82307fbc9}{Get}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves user and his offers/shares (based on the J\+WT token). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Context controller containing endpoints which retrieves full data about the user. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_context_controller_a3c1b21abd23a836215091e591112960e}\label{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_context_controller_a3c1b21abd23a836215091e591112960e}} 
+\index{GieldaL2.API.Controllers.ContextController@{GieldaL2.API.Controllers.ContextController}!ContextController@{ContextController}}
+\index{ContextController@{ContextController}!GieldaL2.API.Controllers.ContextController@{GieldaL2.API.Controllers.ContextController}}
+\subsubsection{\texorpdfstring{ContextController()}{ContextController()}}
+{\footnotesize\ttfamily Gielda\+L2.\+A\+P\+I.\+Controllers.\+Context\+Controller.\+Context\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_interfaces_1_1_i_user_service}{I\+User\+Service}}}]{user\+Service,  }\item[{\mbox{\hyperlink{interface_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_interfaces_1_1_i_buy_offer_service}{I\+Buy\+Offer\+Service}}}]{buy\+Offer\+Service,  }\item[{\mbox{\hyperlink{interface_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_interfaces_1_1_i_sell_offer_service}{I\+Sell\+Offer\+Service}}}]{sell\+Offer\+Service }\end{DoxyParamCaption})}
+
+
+
+Initializes a new instance of the \mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_context_controller}{Context\+Controller}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Service} & User service.\\
+\hline
+{\em buy\+Offer\+Service} & Buy offer service.\\
+\hline
+{\em sell\+Offer\+Service} & Sell offer service.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_context_controller_a4b273ae74e0c12a862fd6aa82307fbc9}\label{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_context_controller_a4b273ae74e0c12a862fd6aa82307fbc9}} 
+\index{GieldaL2.API.Controllers.ContextController@{GieldaL2.API.Controllers.ContextController}!Get@{Get}}
+\index{Get@{Get}!GieldaL2.API.Controllers.ContextController@{GieldaL2.API.Controllers.ContextController}}
+\subsubsection{\texorpdfstring{Get()}{Get()}}
+{\footnotesize\ttfamily Action\+Result$<$\mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_view_1_1_statistics_view_model}{Statistics\+View\+Model}}$<$\mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_view_1_1_context_view_model}{Context\+View\+Model}}$>$ $>$ Gielda\+L2.\+A\+P\+I.\+Controllers.\+Context\+Controller.\+Get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieves user and his offers/shares (based on the J\+WT token). 
+
+\begin{DoxyReturn}{Returns}
+User data and his offers/shares.
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Pawel/\+Desktop/\+Git\+Hub/\+Gielda\+L2/\+Gielda\+L2.\+A\+P\+I/\+Controllers/Context\+Controller.\+cs\end{DoxyCompactItemize}

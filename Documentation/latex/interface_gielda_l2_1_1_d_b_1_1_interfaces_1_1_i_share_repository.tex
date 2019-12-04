@@ -1,0 +1,184 @@
+\hypertarget{interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_share_repository}{}\section{Gielda\+L2.\+D\+B.\+Interfaces.\+I\+Share\+Repository Interface Reference}
+\label{interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_share_repository}\index{GieldaL2.DB.Interfaces.IShareRepository@{GieldaL2.DB.Interfaces.IShareRepository}}
+
+
+Interface implemented by Share\+Repository class  
+
+
+Inheritance diagram for Gielda\+L2.\+D\+B.\+Interfaces.\+I\+Share\+Repository\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_share_repository}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_entities_1_1_share}{Share}} \mbox{\hyperlink{interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_share_repository_af252fb27ec646e120265e2f71c83677a}{Get\+By\+Id}} (int id)
+\item 
+I\+Collection$<$ \mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_entities_1_1_share}{Share}} $>$ \mbox{\hyperlink{interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_share_repository_a5e13f8b06cb4711bb54137dabf783ed1}{Get\+All}} ()
+\begin{DoxyCompactList}\small\item\em Declaration of method that returns Collection of Share entities \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_share_repository_a92f21844eefac0604d9d195aa1f15214}{Add}} (\mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_entities_1_1_share}{Share}} share)
+\begin{DoxyCompactList}\small\item\em Declaration of method for adding Share to database \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_share_repository_a68449340553ab4702be8f3559ea50131}{Edit}} (\mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_entities_1_1_share}{Share}} share)
+\begin{DoxyCompactList}\small\item\em Declaration of method for modifying Share \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_share_repository_a270dc411526d961bac26e1df19ae2563}{Remove}} (\mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_entities_1_1_share}{Share}} share)
+\begin{DoxyCompactList}\small\item\em Declaration of method for removing Share \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_share_repository_a9670fbeb44bb7ac102fdff4b6a38e24f}{Set\+Share\+Owner\+By\+Id}} (\mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_entities_1_1_share}{Share}} share, int ownerid)
+\begin{DoxyCompactList}\small\item\em Sets share owner by id. (does not save changes) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_share_repository_ac790aa8aa9cb7cbaeb91b0c6201abf76}{Set\+Share\+Stock\+By\+Id}} (\mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_entities_1_1_share}{Share}} share, int stockid)
+\begin{DoxyCompactList}\small\item\em Sets share stock by id. (does not save changes) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Interface implemented by Share\+Repository class 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_share_repository_a92f21844eefac0604d9d195aa1f15214}\label{interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_share_repository_a92f21844eefac0604d9d195aa1f15214}} 
+\index{GieldaL2.DB.Interfaces.IShareRepository@{GieldaL2.DB.Interfaces.IShareRepository}!Add@{Add}}
+\index{Add@{Add}!GieldaL2.DB.Interfaces.IShareRepository@{GieldaL2.DB.Interfaces.IShareRepository}}
+\subsubsection{\texorpdfstring{Add()}{Add()}}
+{\footnotesize\ttfamily void Gielda\+L2.\+D\+B.\+Interfaces.\+I\+Share\+Repository.\+Add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_entities_1_1_share}{Share}}}]{share }\end{DoxyParamCaption})}
+
+
+
+Declaration of method for adding Share to database 
+
+
+\begin{DoxyParams}{Parameters}
+{\em share} & Share entity to add\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_share_repository_ab72f6f527449750b41956b564c892a7c}{Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Repositories.\+Share\+Repository}}.
+
+\mbox{\Hypertarget{interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_share_repository_a68449340553ab4702be8f3559ea50131}\label{interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_share_repository_a68449340553ab4702be8f3559ea50131}} 
+\index{GieldaL2.DB.Interfaces.IShareRepository@{GieldaL2.DB.Interfaces.IShareRepository}!Edit@{Edit}}
+\index{Edit@{Edit}!GieldaL2.DB.Interfaces.IShareRepository@{GieldaL2.DB.Interfaces.IShareRepository}}
+\subsubsection{\texorpdfstring{Edit()}{Edit()}}
+{\footnotesize\ttfamily void Gielda\+L2.\+D\+B.\+Interfaces.\+I\+Share\+Repository.\+Edit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_entities_1_1_share}{Share}}}]{share }\end{DoxyParamCaption})}
+
+
+
+Declaration of method for modifying Share 
+
+
+\begin{DoxyParams}{Parameters}
+{\em share} & Share entity to modify\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_share_repository_ac3b39b1ed8794698ad74054688667e6a}{Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Repositories.\+Share\+Repository}}.
+
+\mbox{\Hypertarget{interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_share_repository_a5e13f8b06cb4711bb54137dabf783ed1}\label{interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_share_repository_a5e13f8b06cb4711bb54137dabf783ed1}} 
+\index{GieldaL2.DB.Interfaces.IShareRepository@{GieldaL2.DB.Interfaces.IShareRepository}!GetAll@{GetAll}}
+\index{GetAll@{GetAll}!GieldaL2.DB.Interfaces.IShareRepository@{GieldaL2.DB.Interfaces.IShareRepository}}
+\subsubsection{\texorpdfstring{GetAll()}{GetAll()}}
+{\footnotesize\ttfamily I\+Collection$<$\mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_entities_1_1_share}{Share}}$>$ Gielda\+L2.\+D\+B.\+Interfaces.\+I\+Share\+Repository.\+Get\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Declaration of method that returns Collection of Share entities 
+
+\begin{DoxyReturn}{Returns}
+Collection of Share entities
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_share_repository_aef8271595f290092d8b99d4789c8f37c}{Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Repositories.\+Share\+Repository}}.
+
+\mbox{\Hypertarget{interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_share_repository_af252fb27ec646e120265e2f71c83677a}\label{interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_share_repository_af252fb27ec646e120265e2f71c83677a}} 
+\index{GieldaL2.DB.Interfaces.IShareRepository@{GieldaL2.DB.Interfaces.IShareRepository}!GetById@{GetById}}
+\index{GetById@{GetById}!GieldaL2.DB.Interfaces.IShareRepository@{GieldaL2.DB.Interfaces.IShareRepository}}
+\subsubsection{\texorpdfstring{GetById()}{GetById()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_entities_1_1_share}{Share}} Gielda\+L2.\+D\+B.\+Interfaces.\+I\+Share\+Repository.\+Get\+By\+Id (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+
+
+Declaration of method that returns specific Share entity
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Identifier of Share\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Singular Share entity
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_share_repository_ac034dd25c3630f8641baf9e7eafe94db}{Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Repositories.\+Share\+Repository}}.
+
+\mbox{\Hypertarget{interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_share_repository_a270dc411526d961bac26e1df19ae2563}\label{interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_share_repository_a270dc411526d961bac26e1df19ae2563}} 
+\index{GieldaL2.DB.Interfaces.IShareRepository@{GieldaL2.DB.Interfaces.IShareRepository}!Remove@{Remove}}
+\index{Remove@{Remove}!GieldaL2.DB.Interfaces.IShareRepository@{GieldaL2.DB.Interfaces.IShareRepository}}
+\subsubsection{\texorpdfstring{Remove()}{Remove()}}
+{\footnotesize\ttfamily void Gielda\+L2.\+D\+B.\+Interfaces.\+I\+Share\+Repository.\+Remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_entities_1_1_share}{Share}}}]{share }\end{DoxyParamCaption})}
+
+
+
+Declaration of method for removing Share 
+
+
+\begin{DoxyParams}{Parameters}
+{\em share} & Share entity to remove\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_share_repository_a76ee0cf8f78b19983167a3bcdff4e405}{Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Repositories.\+Share\+Repository}}.
+
+\mbox{\Hypertarget{interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_share_repository_a9670fbeb44bb7ac102fdff4b6a38e24f}\label{interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_share_repository_a9670fbeb44bb7ac102fdff4b6a38e24f}} 
+\index{GieldaL2.DB.Interfaces.IShareRepository@{GieldaL2.DB.Interfaces.IShareRepository}!SetShareOwnerById@{SetShareOwnerById}}
+\index{SetShareOwnerById@{SetShareOwnerById}!GieldaL2.DB.Interfaces.IShareRepository@{GieldaL2.DB.Interfaces.IShareRepository}}
+\subsubsection{\texorpdfstring{SetShareOwnerById()}{SetShareOwnerById()}}
+{\footnotesize\ttfamily void Gielda\+L2.\+D\+B.\+Interfaces.\+I\+Share\+Repository.\+Set\+Share\+Owner\+By\+Id (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_entities_1_1_share}{Share}}}]{share,  }\item[{int}]{ownerid }\end{DoxyParamCaption})}
+
+
+
+Sets share owner by id. (does not save changes) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em share} & \\
+\hline
+{\em ownerid} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_share_repository_a6843f1b6e31ecc35b15c6b677ed098a9}{Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Repositories.\+Share\+Repository}}.
+
+\mbox{\Hypertarget{interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_share_repository_ac790aa8aa9cb7cbaeb91b0c6201abf76}\label{interface_gielda_l2_1_1_d_b_1_1_interfaces_1_1_i_share_repository_ac790aa8aa9cb7cbaeb91b0c6201abf76}} 
+\index{GieldaL2.DB.Interfaces.IShareRepository@{GieldaL2.DB.Interfaces.IShareRepository}!SetShareStockById@{SetShareStockById}}
+\index{SetShareStockById@{SetShareStockById}!GieldaL2.DB.Interfaces.IShareRepository@{GieldaL2.DB.Interfaces.IShareRepository}}
+\subsubsection{\texorpdfstring{SetShareStockById()}{SetShareStockById()}}
+{\footnotesize\ttfamily void Gielda\+L2.\+D\+B.\+Interfaces.\+I\+Share\+Repository.\+Set\+Share\+Stock\+By\+Id (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gielda_l2_1_1_d_b_1_1_entities_1_1_share}{Share}}}]{share,  }\item[{int}]{stockid }\end{DoxyParamCaption})}
+
+
+
+Sets share stock by id. (does not save changes) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em share} & \\
+\hline
+{\em ownerid} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_repositories_1_1_share_repository_a9ab77adf00ff67d057e01c6fa2c8278c}{Gielda\+L2.\+I\+N\+F\+R\+A\+S\+T\+R\+U\+C\+T\+U\+R\+E.\+Repositories.\+Share\+Repository}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Pawel/\+Desktop/\+Git\+Hub/\+Gielda\+L2/\+Gielda\+L2.\+D\+B/\+Interfaces/I\+Share\+Repository.\+cs\end{DoxyCompactItemize}

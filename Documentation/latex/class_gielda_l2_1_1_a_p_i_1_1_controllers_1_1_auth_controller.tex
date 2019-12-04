@@ -1,0 +1,69 @@
+\hypertarget{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_auth_controller}{}\section{Gielda\+L2.\+A\+P\+I.\+Controllers.\+Auth\+Controller Class Reference}
+\label{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_auth_controller}\index{GieldaL2.API.Controllers.AuthController@{GieldaL2.API.Controllers.AuthController}}
+
+
+Authentication controller containing endpoints to check user identity and generating J\+WT tokens.  
+
+
+Inheritance diagram for Gielda\+L2.\+A\+P\+I.\+Controllers.\+Auth\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_auth_controller}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_auth_controller_a712994fbcc88bd7badac6459a856e0cc}{Auth\+Controller}} (\mbox{\hyperlink{interface_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_interfaces_1_1_i_auth_service}{I\+Auth\+Service}} auth\+Service)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_auth_controller}{Auth\+Controller}} class. \end{DoxyCompactList}\item 
+Action\+Result$<$ \mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_view_1_1_auth_result_view_model}{Auth\+Result\+View\+Model}} $>$ \mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_auth_controller_a59d18da2df4b70759ed8d3803c2b4605}{Log\+In}} (\mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_view_1_1_log_in_view_model}{Log\+In\+View\+Model}} view\+Model)
+\begin{DoxyCompactList}\small\item\em Authenticates user and generates J\+WT token if passed data is valid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Authentication controller containing endpoints to check user identity and generating J\+WT tokens. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_auth_controller_a712994fbcc88bd7badac6459a856e0cc}\label{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_auth_controller_a712994fbcc88bd7badac6459a856e0cc}} 
+\index{GieldaL2.API.Controllers.AuthController@{GieldaL2.API.Controllers.AuthController}!AuthController@{AuthController}}
+\index{AuthController@{AuthController}!GieldaL2.API.Controllers.AuthController@{GieldaL2.API.Controllers.AuthController}}
+\subsubsection{\texorpdfstring{AuthController()}{AuthController()}}
+{\footnotesize\ttfamily Gielda\+L2.\+A\+P\+I.\+Controllers.\+Auth\+Controller.\+Auth\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_interfaces_1_1_i_auth_service}{I\+Auth\+Service}}}]{auth\+Service }\end{DoxyParamCaption})}
+
+
+
+Initializes a new instance of the \mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_auth_controller}{Auth\+Controller}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em auth\+Service} & Authentication service.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_auth_controller_a59d18da2df4b70759ed8d3803c2b4605}\label{class_gielda_l2_1_1_a_p_i_1_1_controllers_1_1_auth_controller_a59d18da2df4b70759ed8d3803c2b4605}} 
+\index{GieldaL2.API.Controllers.AuthController@{GieldaL2.API.Controllers.AuthController}!LogIn@{LogIn}}
+\index{LogIn@{LogIn}!GieldaL2.API.Controllers.AuthController@{GieldaL2.API.Controllers.AuthController}}
+\subsubsection{\texorpdfstring{LogIn()}{LogIn()}}
+{\footnotesize\ttfamily Action\+Result$<$\mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_view_1_1_auth_result_view_model}{Auth\+Result\+View\+Model}}$>$ Gielda\+L2.\+A\+P\+I.\+Controllers.\+Auth\+Controller.\+Log\+In (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gielda_l2_1_1_a_p_i_1_1_view_models_1_1_view_1_1_log_in_view_model}{Log\+In\+View\+Model}}}]{view\+Model }\end{DoxyParamCaption})}
+
+
+
+Authenticates user and generates J\+WT token if passed data is valid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em view\+Model} & Authentication data.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Flag indicating if authentication has been done with success and J\+WT token.
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Pawel/\+Desktop/\+Git\+Hub/\+Gielda\+L2/\+Gielda\+L2.\+A\+P\+I/\+Controllers/Auth\+Controller.\+cs\end{DoxyCompactItemize}
