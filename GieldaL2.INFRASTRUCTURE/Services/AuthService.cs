@@ -41,6 +41,7 @@ namespace GieldaL2.INFRASTRUCTURE.Services
         {
             var hashedPassword = HashPassword(authDto.Password);
             var user = _userRepository.GetByUserNameAndPassword(authDto.UserName, hashedPassword);
+            //var user = _userRepository.GetByUserNameAndPassword(authDto.UserName, authDto.Password);
 
             if (user == null)
             {

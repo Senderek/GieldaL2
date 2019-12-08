@@ -95,7 +95,9 @@ namespace GieldaL2.API.Controllers
             var currentUserName = User.FindFirst(ClaimTypes.Name).Value;
             var currentUserDto = _userService.GetUserByName(currentUserName, statisticsDto);
 
-            return NotFound(Mapper.Map<StatisticsViewModel>(statisticsDto));
+            _stockExchangeLogic.FindBuyOffers(Mapper.Map<SellOfferDTO>(sellOffer), currentUserDto, statisticsDto);
+
+            return Mapper.Map<StatisticsViewModel>(statisticsDto);
         }
 
         /// <summary>
@@ -192,7 +194,7 @@ namespace GieldaL2.API.Controllers
             var currentUserName = User.FindFirst(ClaimTypes.Name).Value;
             var currentUserDto = _userService.GetUserByName(currentUserName, statisticsDto);
 
-            _stockExchangeLogic.ExecuteSellOffers(Mapper.Map<BuyOfferDTO>(buyOffer), currentUserDto, statisticsDto);
+            _stockExchangeLogic.FindSellOffers(Mapper.Map<BuyOfferDTO>(buyOffer), currentUserDto, statisticsDto);
 
             return Mapper.Map<StatisticsViewModel>(statisticsDto);
 

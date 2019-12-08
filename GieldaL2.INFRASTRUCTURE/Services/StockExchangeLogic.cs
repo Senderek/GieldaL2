@@ -36,7 +36,7 @@ namespace GieldaL2.INFRASTRUCTURE.Services
             _transactionService = transactionService;
         }
 
-        public void ExecuteSellOffers(BuyOfferDTO buyOffer, UserDTO currentUser, StatisticsDTO statistics)
+        public void FindSellOffers(BuyOfferDTO buyOffer, UserDTO currentUser, StatisticsDTO statistics)
         {
 
             if (currentUser.Value < buyOffer.Amount * buyOffer.Price)
@@ -147,13 +147,100 @@ namespace GieldaL2.INFRASTRUCTURE.Services
 
             if (buyOffer.Amount > 0)
             {
+                buyOffer.BuyerId = currentUser.Id;
                 _buyOfferService.Add(buyOffer, statistics);
+                //freeze users money equivalent to amount of shares he wants to buy left after searching through the market
+                currentUser.Value -= buyOffer.Amount * buyOffer.Price;
+                _userService.EditUser(currentUser.Id, currentUser, statistics);
             }
         }
 
-        public void ExecuteBuyOffers(SellOfferDTO sellOffer, UserDTO currentUser, StatisticsDTO statistics)
+        public void FindBuyOffers(SellOfferDTO sellOffer, UserDTO currentUser, StatisticsDTO statistics)
         {
-            
+
+            //get all buy offers for stock specified in offer
+            var share = _shareService.GetShareById(sellOffer.ShareId, statistics);
+            var offers = _buyOfferService.GetAll(statistics)
+                .Where(o=>o.StockId == share.StockId) //check if stock matched
+                .Where(o => o.Price >= sellOffer.Price) //price greater or equeal one in created offer
+                .Where(o=>o.BuyerId != currentUser.Id) //remove current user offers
+                .OrderByDescending(o => o.Price); //order by most expensive - shares goes to a highest bidder
+
+            foreach (var offer in offers)
+            {
+                int tradedAmount = 0;
+
+                //after this case offer is empty and we don't add it to database
+                if (sellOffer.Amount < offer.Amount)
+                {
+                    //sold some amount of shares to some user and subtract amount from this users offer
+                    offer.Amount -= sellOffer.Amount;
+                    _buyOfferService.Edit(offer, statistics);
+
+                    //subtract those sold shares from current user share entry
+                    share.Amount -= sellOffer.Amount;
+                    _shareService.EditShare(share.Id, share, statistics);
+
+                    //add sold shares to buyer share or create if doesn't have one
+                    var buyerShare = _shareService.GetAllShares(statistics).Where(c => c.OwnerId == offer.BuyerId).FirstOrDefault();
+                    if (buyerShare != null)
+                    {
+                        buyerShare.Amount += sellOffer.Amount;
+                        _shareService.EditShare(buyerShare.Id, buyerShare, statistics);
+                    }
+                    else
+                    {
+                        buyerShare = new ShareDTO
+                        {
+                            OwnerId = currentUser.Id,
+                            Amount = sellOffer.Amount,
+                            StockId = offer.StockId,
+                        };
+                        _shareService.AddShare(buyerShare, statistics);
+                    }
+
+                    //give money to current user(share holder)
+                    currentUser.Value += sellOffer.Amount * sellOffer.Price;
+                    _userService.EditUser(currentUser.Id, currentUser, statistics);
+
+                    tradedAmount = sellOffer.Amount;
+                    sellOffer.Amount = 0;
+                }
+                //this case implies that amount in created offer is greater than selected offer
+                else
+                {
+                    sellOffer.Amount -= offer.Amount;
+
+                    share.Amount -= offer.Amount;
+                    _shareService.EditShare(share.Id, share, statistics);
+
+                    currentUser.Value += offer.Amount * offer.Price;
+
+                    _buyOfferService.Delete(offer.Id, statistics);
+
+                }
+
+                //adding transaction for each iteration of trading
+                TransactionDTO transaction = new TransactionDTO
+                {
+                    Amount = tradedAmount,
+                    Price = offer.Price,
+                    BuyerId = offer.BuyerId,
+                    SellerId = currentUser.Id,
+                    StockId = offer.StockId,
+                    Date = DateTime.Now
+                };
+                _transactionService.Add(transaction, statistics);
+            }
+
+            if (sellOffer.Amount > 0)
+            {
+                sellOffer.SellerId = currentUser.Id;
+                _sellOfferService.Add(sellOffer, statistics);
+                //freeze currentuser shares equivalent to amount left in offer
+                share.Amount -= sellOffer.Amount;
+                _shareService.EditShare(share.Id, share, statistics);
+            }
         }
 
     }
