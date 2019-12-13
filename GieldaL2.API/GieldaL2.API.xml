@@ -201,30 +201,16 @@
         </member>
         <member name="M:GieldaL2.API.Controllers.TransactionsController.Get">
             <summary>
-            Action that returns Collection of TransactionViewModels
+            Retrieves Collection of transactions
             </summary>
             <returns>Collection of Transaction ViewModels</returns>
         </member>
         <member name="M:GieldaL2.API.Controllers.TransactionsController.Get(System.Int32)">
             <summary>
-            Action that returns specific TransactionViewModel
+            Retrieves specific transaction
             </summary>
             <param name="id">identifier of transaction</param>
             <returns>Singular Transaction ViewModel</returns>
-        </member>
-        <member name="M:GieldaL2.API.Controllers.TransactionsController.Post(GieldaL2.API.ViewModels.View.TransactionViewModel)">
-            <summary>
-            Adds transaction passed in the request body.
-            </summary>
-            <param name="transaction">Transaction which will be added.</param>
-            <returns>Backend statistics.</returns>
-        </member>
-        <member name="M:GieldaL2.API.Controllers.TransactionsController.Delete(System.Int32)">
-            <summary>
-            Deletes transaction with the specified ID.
-            </summary>
-            <param name="id">ID of the transaction which will be deleted.</param>
-            <returns>Backend statistics if transaction has been deleted with success, otherwise 404 if not found.</returns>
         </member>
         <member name="T:GieldaL2.API.Controllers.UsersController">
             <summary>
