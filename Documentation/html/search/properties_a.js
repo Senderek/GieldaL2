@@ -1,6 +1,0 @@
-var searchData=
-[
-  ['password',['Password',['../class_gielda_l2_1_1_d_b_1_1_entities_1_1_user.html#ab546ab0e6a45d75aea8117dfbae77944',1,'GieldaL2.DB.Entities.User.Password()'],['../class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_auth_d_t_o.html#aeaa643ae6f060ce554ac23680723d90b',1,'GieldaL2.INFRASTRUCTURE.DTO.AuthDTO.Password()'],['../class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_user_d_t_o.html#a028b87e2de3d5d05ae2364f697b52f9c',1,'GieldaL2.INFRASTRUCTURE.DTO.UserDTO.Password()']]],
-  ['price',['Price',['../class_gielda_l2_1_1_d_b_1_1_entities_1_1_buy_offer.html#afee4dc98719eb636e37b9ad1e1612a79',1,'GieldaL2.DB.Entities.BuyOffer.Price()'],['../class_gielda_l2_1_1_d_b_1_1_entities_1_1_sell_offer.html#a857ee5461635c6d2e07e6dd3bd4397e4',1,'GieldaL2.DB.Entities.SellOffer.Price()'],['../class_gielda_l2_1_1_d_b_1_1_entities_1_1_transaction.html#a82970ccb62642534e62697b19f7afc52',1,'GieldaL2.DB.Entities.Transaction.Price()'],['../class_gielda_l2_1_1_i_n_f_r_a_s_t_r_u_c_t_u_r_e_1_1_d_t_o_1_1_transaction_d_t_o.html#abaea5c3b4dc2bd029cf5f7781fc760ec',1,'GieldaL2.INFRASTRUCTURE.DTO.TransactionDTO.Price()']]],
-  ['pricedelta',['PriceDelta',['../class_gielda_l2_1_1_d_b_1_1_entities_1_1_stock.html#a81e7483e621a4c6baada66f707ab0c71',1,'GieldaL2::DB::Entities::Stock']]]
-];
