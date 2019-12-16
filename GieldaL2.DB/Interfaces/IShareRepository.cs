@@ -21,6 +21,12 @@ namespace GieldaL2.DB.Interfaces
         ICollection<Share> GetAll();
 
         /// <summary>
+        /// Method that returns Collection of Share entities for the specified user.
+        /// </summary>
+        /// <returns>Collection of Share entities for the specified user.</returns>
+        ICollection<Share> GetByUserId(int userId);
+
+        /// <summary>
         /// Declaration of method for adding Share to database
         /// </summary>
         /// <param name="share">Share entity to add</param>

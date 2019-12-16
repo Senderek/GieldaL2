@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Security.Cryptography;
 using System.Text;
 using GieldaL2.DB.Interfaces;
 using GieldaL2.INFRASTRUCTURE.DTO;
@@ -38,7 +39,9 @@ namespace GieldaL2.INFRASTRUCTURE.Services
         /// <returns>True if user has been authenticated with success, otherwise false.</returns>
         public bool LogIn(AuthDTO authDto, out string token)
         {
-            var user = _userRepository.GetByUserNameAndPassword(authDto.UserName, authDto.Password);
+            var hashedPassword = HashPassword(authDto.Password);
+            var user = _userRepository.GetByUserNameAndPassword(authDto.UserName, hashedPassword);
+            //var user = _userRepository.GetByUserNameAndPassword(authDto.UserName, authDto.Password);
 
             if (user == null)
             {
@@ -63,6 +66,13 @@ namespace GieldaL2.INFRASTRUCTURE.Services
             token = tokenHandler.WriteToken(tokenContainer);
 
             return true;
+        }
+
+        public string HashPassword(string password)
+        {
+            var bytes = new UTF8Encoding().GetBytes(password);
+            var hashBytes = MD5.Create().ComputeHash(bytes);
+            return Convert.ToBase64String(hashBytes);
         }
     }
 }

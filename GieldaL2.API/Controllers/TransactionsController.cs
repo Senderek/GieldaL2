@@ -26,7 +26,7 @@ namespace GieldaL2.API.Controllers
         }
 
         /// <summary>
-        /// Action that returns Collection of TransactionViewModels
+        /// Retrieves Collection of transactions
         /// </summary>
         /// <returns>Collection of Transaction ViewModels</returns>
         [HttpGet]
@@ -44,7 +44,7 @@ namespace GieldaL2.API.Controllers
         }
 
         /// <summary>
-        /// Action that returns specific TransactionViewModel
+        /// Retrieves specific transaction
         /// </summary>
         /// <param name="id">identifier of transaction</param>
         /// <returns>Singular Transaction ViewModel</returns>
@@ -67,33 +67,6 @@ namespace GieldaL2.API.Controllers
             statistics.Data = Mapper.Map<TransactionViewModel>(transaction);
 
             return statistics;
-        }
-
-        /// <summary>
-        /// Adds transaction passed in the request body.
-        /// </summary>
-        /// <param name="transaction">Transaction which will be added.</param>
-        /// <returns>Backend statistics.</returns>
-        [HttpPost]
-        [ProducesResponseType(201)]
-        [ProducesResponseType(500)]
-        public ActionResult<StatisticsViewModel> Post([FromBody] TransactionViewModel transaction)
-        {
-            return null;
-        }
-
-        /// <summary>
-        /// Deletes transaction with the specified ID.
-        /// </summary>
-        /// <param name="id">ID of the transaction which will be deleted.</param>
-        /// <returns>Backend statistics if transaction has been deleted with success, otherwise 404 if not found.</returns>
-        [HttpDelete("{id}")]
-        [ProducesResponseType(204)]
-        [ProducesResponseType(404)]
-        [ProducesResponseType(500)]
-        public ActionResult<StatisticsViewModel> Delete(int id)
-        {
-            return null;
-        }
+        }       
     }
 }

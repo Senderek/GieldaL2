@@ -47,6 +47,18 @@ namespace GieldaL2.INFRASTRUCTURE.Repositories
         }
 
         /// <summary>
+        /// Method that returns Collection of Share entities for the specified user.
+        /// </summary>
+        /// <returns>Collection of Share entities for the specified user.</returns>
+        public ICollection<Share> GetByUserId(int userId)
+        {
+            var watch = Stopwatch.StartNew();
+            var d = context.Shares.Where(p => p.OwnerId == userId).ToList();
+            LastOperationTime = (int)watch.ElapsedMilliseconds;
+            return d;
+        }
+
+        /// <summary>
         /// Method for adding Share entity to database
         /// </summary>
         /// <param name="share">Share entity to add</param>

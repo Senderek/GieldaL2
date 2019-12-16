@@ -14,5 +14,7 @@ namespace GieldaL2.INFRASTRUCTURE.Interfaces
         /// <param name="token">JWT token (generated when user passed valid login and password, otherwise null).</param>
         /// <returns>True if user has been authenticated with success, otherwise false.</returns>
         bool LogIn(AuthDTO authDto, out string token);
+        
+        string HashPassword(string password);
     }
 }

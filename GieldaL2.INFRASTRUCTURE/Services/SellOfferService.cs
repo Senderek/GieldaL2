@@ -57,6 +57,26 @@ namespace GieldaL2.INFRASTRUCTURE.Services
             statistics.SelectsTime += _sellOfferRepository.LastOperationTime;
             statistics.SelectsCount++;
         }
+
+        public bool Edit(SellOfferDTO sellOffer, StatisticsDTO statistics)
+        {
+            var offer = _sellOfferRepository.GetById(sellOffer.Id);
+            statistics.SelectsTime += _sellOfferRepository.LastOperationTime;
+            statistics.SelectsCount++;
+
+            if (offer == null)
+            {
+                return false;
+            }
+
+            offer.Price = sellOffer.Price;
+            offer.Amount = sellOffer.Amount;
+
+            _sellOfferRepository.Edit(offer);
+            statistics.UpdatesTime += _sellOfferRepository.LastOperationTime;
+            statistics.UpdatesCount++;
+            return true;
+        }
           
         public bool Delete(int id, StatisticsDTO statistics)
         {

@@ -23,12 +23,18 @@ namespace GieldaL2.API.Controllers
         private readonly ISellOfferService _sellOfferService;
         private readonly IBuyOfferService _buyOfferService;
         private readonly IUserService _userService;
+        private readonly IShareService _shareService;
+        private readonly IStockService _stockService;
+        private readonly IStockExchangeLogic _stockExchangeLogic;
 
-        public OffersController(ISellOfferService sellOfferService, IBuyOfferService buyOfferService, IUserService userService)
+        public OffersController(ISellOfferService sellOfferService, IBuyOfferService buyOfferService, IUserService userService, IShareService shareService, IStockService stockService, IStockExchangeLogic stockExchangeLogic)
         {
             _sellOfferService = sellOfferService;
             _buyOfferService = buyOfferService;
             _userService = userService;
+            _shareService = shareService;
+            _stockService = stockService;
+            _stockExchangeLogic = stockExchangeLogic;
         }
 
         /// <summary>
@@ -89,10 +95,8 @@ namespace GieldaL2.API.Controllers
             var currentUserName = User.FindFirst(ClaimTypes.Name).Value;
             var currentUserDto = _userService.GetUserByName(currentUserName, statisticsDto);
 
-            var sellOfferDto = Mapper.Map<SellOfferDTO>(sellOffer);
-            sellOfferDto.SellerId = currentUserDto.Id;
+            _stockExchangeLogic.FindBuyOffers(Mapper.Map<SellOfferDTO>(sellOffer), currentUserDto, statisticsDto);
 
-            _sellOfferService.Add(sellOfferDto, statisticsDto);
             return Mapper.Map<StatisticsViewModel>(statisticsDto);
         }
 
@@ -108,12 +112,28 @@ namespace GieldaL2.API.Controllers
         public ActionResult<StatisticsViewModel> DeleteSell(int id)
         {
             var statisticsDto = new StatisticsDTO();
-            if (!_sellOfferService.Delete(id, statisticsDto))
-            {
-                return NotFound(Mapper.Map<StatisticsViewModel>(statisticsDto));
-            }
+            var currentUserName = User.FindFirst(ClaimTypes.Name).Value;
+            var currentUserDto = _userService.GetUserByName(currentUserName, statisticsDto);
 
-            return Mapper.Map<StatisticsViewModel>(statisticsDto);
+            var sellOfferToDelete = _sellOfferService.GetById(id, statisticsDto);
+
+            if (sellOfferToDelete != null)
+            {
+                if (currentUserDto.Id == sellOfferToDelete.SellerId)
+                {
+                    if (_sellOfferService.Delete(id, statisticsDto))
+                    {
+                        //if offer exists, belongs to user and is sucessfully deleted add amount to share amount
+                        var share = _shareService.GetShareById(sellOfferToDelete.ShareId, statisticsDto);
+                        share.Amount += sellOfferToDelete.Amount;
+                        _shareService.EditShare(share.Id, share, statisticsDto);
+                        return Mapper.Map<StatisticsViewModel>(statisticsDto);
+                    }
+                }
+            }
+            
+            return NotFound(Mapper.Map<StatisticsViewModel>(statisticsDto));
+
         }
 
         /// <summary>
@@ -174,11 +194,10 @@ namespace GieldaL2.API.Controllers
             var currentUserName = User.FindFirst(ClaimTypes.Name).Value;
             var currentUserDto = _userService.GetUserByName(currentUserName, statisticsDto);
 
-            var buyOfferDto = Mapper.Map<BuyOfferDTO>(buyOffer);
-            buyOfferDto.BuyerId = currentUserDto.Id;
+            _stockExchangeLogic.FindSellOffers(Mapper.Map<BuyOfferDTO>(buyOffer), currentUserDto, statisticsDto);
 
-            _buyOfferService.Add(buyOfferDto, statisticsDto);
             return Mapper.Map<StatisticsViewModel>(statisticsDto);
+
         }
 
         /// <summary>
@@ -193,12 +212,26 @@ namespace GieldaL2.API.Controllers
         public ActionResult<StatisticsViewModel> DeleteBuy(int id)
         {
             var statisticsDto = new StatisticsDTO();
-            if (!_buyOfferService.Delete(id, statisticsDto))
-            {
-                return NotFound(Mapper.Map<StatisticsViewModel>(statisticsDto));
-            }
+            var currentUserName = User.FindFirst(ClaimTypes.Name).Value;
+            var currentUserDto = _userService.GetUserByName(currentUserName, statisticsDto);
 
-            return Mapper.Map<StatisticsViewModel>(statisticsDto);
+            var buyOfferToDelete = _buyOfferService.GetById(id, statisticsDto);
+
+            if (buyOfferToDelete != null)
+            {
+                if (buyOfferToDelete.BuyerId == currentUserDto.Id)
+                {
+                    if (_buyOfferService.Delete(buyOfferToDelete.Id, statisticsDto))
+                    {
+                        currentUserDto.Value += buyOfferToDelete.Price * buyOfferToDelete.Amount;
+                        if (_userService.EditUser(currentUserDto.Id, currentUserDto, statisticsDto))
+                        {
+                            return Mapper.Map<StatisticsViewModel>(statisticsDto);
+                        }                     
+                    }
+                }
+            }
+            return NotFound(Mapper.Map<StatisticsViewModel>(statisticsDto));
         }
     }
 }

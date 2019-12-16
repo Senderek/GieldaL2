@@ -1,4 +1,5 @@
-﻿using GieldaL2.DB.Interfaces;
+﻿using GieldaL2.DB.Entities;
+using GieldaL2.DB.Interfaces;
 using GieldaL2.INFRASTRUCTURE.DTO;
 using GieldaL2.INFRASTRUCTURE.Interfaces;
 using Omu.ValueInjecter;
@@ -53,5 +54,13 @@ namespace GieldaL2.INFRASTRUCTURE.Services
 
             return transaction;
         }
+
+        public void Add(TransactionDTO transactionDTO, StatisticsDTO statisticsDTO)
+        {
+            _transactionRepository.Add(Mapper.Map<Transaction>(transactionDTO));
+            statisticsDTO.SelectsTime += _transactionRepository.LastOperationTime;
+            statisticsDTO.SelectsCount++;
+        }
+
     }
 }
