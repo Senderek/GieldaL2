@@ -92,7 +92,7 @@ namespace GieldaL2.INFRASTRUCTURE.Services
             var mappedUser = Mapper.Map<User>(user);
             mappedUser.Password = _authService.HashPassword(user.Password);
 
-            _userRepository.Add(Mapper.Map<User>(user));
+            _userRepository.Add(Mapper.Map<User>(mappedUser));
             statistics.InsertsTime += _userRepository.LastOperationTime;
             statistics.InsertsCount++;
         }
