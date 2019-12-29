@@ -1,6 +1,7 @@
 ﻿using GieldaL2.DB.Entities;
 using GieldaL2.INFRASTRUCTURE.DTO;
 using Omu.ValueInjecter;
+using System;
 
 namespace GieldaL2.INFRASTRUCTURE.Mappers
 {
@@ -54,8 +55,7 @@ namespace GieldaL2.INFRASTRUCTURE.Mappers
                 ShareId = src.ShareId,
                 Amount = src.Amount,
                 Price = src.Price,
-                Date = src.Date
-
+                Date = DateTime.SpecifyKind(src.Date, DateTimeKind.Utc)
             });
 
             Mapper.AddMap<BuyOffer, BuyOfferDTO>(src => new BuyOfferDTO
@@ -65,7 +65,7 @@ namespace GieldaL2.INFRASTRUCTURE.Mappers
                 StockId = src.StockId,
                 Amount = src.Amount,
                 Price = src.Price,
-                Date = src.Date,
+                Date = DateTime.SpecifyKind(src.Date, DateTimeKind.Utc)
             });
         }
     }
