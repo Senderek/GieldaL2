@@ -4,7 +4,7 @@
     {
         public int BackendTime { get; set; }
 
-        public float SelectsTime { get; set; }
+        public int SelectsTime { get; set; }
         public int SelectsCount { get; set; }
 
         public int UpdatesTime { get; set; }
