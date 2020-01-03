@@ -23,6 +23,7 @@ namespace GieldaL2.API.Controllers
         private readonly IUserService _userService;
         private readonly IBuyOfferService _buyOfferService;
         private readonly ISellOfferService _sellOfferService;
+        private readonly IShareService _shareService;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="UsersController"/> class.
@@ -30,11 +31,12 @@ namespace GieldaL2.API.Controllers
         /// <param name="userService">User service.</param>
         /// <param name="buyOfferService">Buy offers service.</param>
         /// <param name="sellOfferService">Sell offers service.</param>
-        public UsersController(IUserService userService, IBuyOfferService buyOfferService, ISellOfferService sellOfferService)
+        public UsersController(IUserService userService, IBuyOfferService buyOfferService, ISellOfferService sellOfferService, IShareService shareService)
         {
             _userService = userService;
             _buyOfferService = buyOfferService;
             _sellOfferService = sellOfferService;
+            _shareService = shareService;
         }
 
         /// <summary>
@@ -83,7 +85,7 @@ namespace GieldaL2.API.Controllers
         /// <summary>
         /// Retrieves shares assigned to the specified user.
         /// </summary>
-        /// <param name="id">User ID.</param>
+        /// <param name="userId">User ID.</param>
         /// <returns>Shares of the specified user.</returns>
         [HttpGet("{id}/shares")]
         [ProducesResponseType(200)]
@@ -91,7 +93,18 @@ namespace GieldaL2.API.Controllers
         [ProducesResponseType(500)]
         public ActionResult<StatisticsViewModel<IEnumerable<ShareViewModel>>> GetShares(int id)
         {
-            throw new NotImplementedException();
+            var statisticsDto = new StatisticsDTO();
+
+            if (_userService.GetUserById(id, statisticsDto) == null)
+            {
+                return NotFound(Mapper.Map<StatisticsViewModel>(statisticsDto));
+            }
+
+            var currentUserShares = _shareService.GetByUserId(id, statisticsDto);
+            var statistics = Mapper.Map<StatisticsViewModel<IEnumerable<ShareViewModel>>>(statisticsDto);
+            statistics.Data = currentUserShares.Select(p => Mapper.Map<ShareViewModel>(p)).ToList();
+
+            return statistics;
         }
 
         /// <summary>
