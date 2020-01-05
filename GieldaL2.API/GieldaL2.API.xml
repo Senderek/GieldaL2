@@ -217,7 +217,7 @@
             Users controller containing endpoints to manage users.
             </summary>
         </member>
-        <member name="M:GieldaL2.API.Controllers.UsersController.#ctor(GieldaL2.INFRASTRUCTURE.Interfaces.IUserService,GieldaL2.INFRASTRUCTURE.Interfaces.IBuyOfferService,GieldaL2.INFRASTRUCTURE.Interfaces.ISellOfferService)">
+        <member name="M:GieldaL2.API.Controllers.UsersController.#ctor(GieldaL2.INFRASTRUCTURE.Interfaces.IUserService,GieldaL2.INFRASTRUCTURE.Interfaces.IBuyOfferService,GieldaL2.INFRASTRUCTURE.Interfaces.ISellOfferService,GieldaL2.INFRASTRUCTURE.Interfaces.IShareService)">
             <summary>
             Initializes a new instance of the <see cref="T:GieldaL2.API.Controllers.UsersController"/> class.
             </summary>
@@ -242,7 +242,7 @@
             <summary>
             Retrieves shares assigned to the specified user.
             </summary>
-            <param name="id">User ID.</param>
+            <param name="userId">User ID.</param>
             <returns>Shares of the specified user.</returns>
         </member>
         <member name="M:GieldaL2.API.Controllers.UsersController.GetSellOffers(System.Int32)">
