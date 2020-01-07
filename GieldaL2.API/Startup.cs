@@ -88,6 +88,10 @@ namespace GieldaL2.API
 
             services.AddMvc(options => { options.Filters.Add<BackendTimeFilter>(); });
 
+            services.Configure<MvcJsonOptions>(options => {
+                options.SerializerSettings.DateFormatString = "yyyy-MM-ddTHH:mm:ss.fffZ";
+            });
+
             var builder = new ContainerBuilder();
             builder.Populate(services);
             builder.RegisterModule<ContainerModule>();
