@@ -153,6 +153,8 @@ namespace GieldaL2.INFRASTRUCTURE.Services
                 currentUser.Value -= buyOffer.Amount * buyOffer.Price;
                 _userService.EditUser(currentUser.Id, currentUser, statistics);
             }
+
+            CalculatePriceChange(buyOffer.StockId, statistics);
         }
 
         public void FindBuyOffers(SellOfferDTO sellOffer, UserDTO currentUser, StatisticsDTO statistics)
@@ -241,6 +243,17 @@ namespace GieldaL2.INFRASTRUCTURE.Services
                 share.Amount -= sellOffer.Amount;
                 _shareService.EditShare(share.Id, share, statistics);
             }
+
+            CalculatePriceChange(share.StockId, statistics);
+        }
+
+        public void CalculatePriceChange(int stockId, StatisticsDTO statistics)
+        {
+            decimal newPrice = _transactionService.GetAll(statistics).Where(item => item.StockId == stockId).TakeLast(100).Average(s => s.Price);
+
+            StockDTO stock = _stockService.GetStockById(stockId, statistics);
+            stock.CurrentPrice = newPrice;
+            _stockService.EditStock(stockId, stock, statistics);
         }
 
     }
