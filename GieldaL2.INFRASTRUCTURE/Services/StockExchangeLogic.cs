@@ -250,11 +250,15 @@ namespace GieldaL2.INFRASTRUCTURE.Services
         public void CalculatePriceChange(int stockId, StatisticsDTO statistics)
         {
             decimal newPrice = _transactionService.GetAll(statistics).Where(item => item.StockId == stockId).TakeLast(100).Average(s => s.Price);
-
             StockDTO stock = _stockService.GetStockById(stockId, statistics);
+            
+            stock.PriceDelta = ((stock.CurrentPrice / newPrice) * 100) - 100;
             stock.CurrentPrice = newPrice;
+
             _stockService.EditStock(stockId, stock, statistics);
+
         }
+ 
 
     }
 }
