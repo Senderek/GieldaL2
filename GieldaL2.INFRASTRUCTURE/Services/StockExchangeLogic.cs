@@ -162,6 +162,10 @@ namespace GieldaL2.INFRASTRUCTURE.Services
 
             //get all buy offers for stock specified in offer
             var share = _shareService.GetShareById(sellOffer.ShareId, statistics);
+            if (share.Amount < sellOffer.Amount)
+            {
+                return;
+            }
             var offers = _buyOfferService.GetAll(statistics)
                 .Where(o=>o.StockId == share.StockId) //check if stock matched
                 .Where(o => o.Price >= sellOffer.Price) //price greater or equeal one in created offer
@@ -217,6 +221,9 @@ namespace GieldaL2.INFRASTRUCTURE.Services
                     _shareService.EditShare(share.Id, share, statistics);
 
                     currentUser.Value += offer.Amount * offer.Price;
+                    currentUser.Password = null;
+                    _userService.EditUser(currentUser.Id ,currentUser, statistics);
+
 
                     _buyOfferService.Delete(offer.Id, statistics);
 
