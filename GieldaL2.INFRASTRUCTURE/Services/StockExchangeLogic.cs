@@ -61,6 +61,8 @@ namespace GieldaL2.INFRASTRUCTURE.Services
                     //money got exchanged
                     targetUser.Value += price;
                     currentUser.Value -= price;
+                    currentUser.Password = null;
+                    targetUser.Password = null;
                     _userService.EditUser(currentUser.Id, currentUser, statistics);
                     _userService.EditUser(targetUser.Id, targetUser, statistics);
 
@@ -102,6 +104,8 @@ namespace GieldaL2.INFRASTRUCTURE.Services
                     //money got exchanged
                     targetUser.Value += price;
                     currentUser.Value -= price;
+                    currentUser.Password = null;
+                    targetUser.Password = null;
                     _userService.EditUser(currentUser.Id, currentUser, statistics);
                     _userService.EditUser(targetUser.Id, targetUser, statistics);
 
@@ -151,6 +155,7 @@ namespace GieldaL2.INFRASTRUCTURE.Services
                 _buyOfferService.Add(buyOffer, statistics);
                 //freeze users money equivalent to amount of shares he wants to buy left after searching through the market
                 currentUser.Value -= buyOffer.Amount * buyOffer.Price;
+                currentUser.Password = null;
                 _userService.EditUser(currentUser.Id, currentUser, statistics);
             }
 
@@ -207,6 +212,7 @@ namespace GieldaL2.INFRASTRUCTURE.Services
 
                     //give money to current user(share holder)
                     currentUser.Value += sellOffer.Amount * sellOffer.Price;
+                    currentUser.Password = null;
                     _userService.EditUser(currentUser.Id, currentUser, statistics);
 
                     tradedAmount = sellOffer.Amount;
