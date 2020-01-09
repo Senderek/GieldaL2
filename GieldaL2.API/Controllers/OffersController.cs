@@ -163,7 +163,6 @@ namespace GieldaL2.API.Controllers
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
-        [AllowAnonymous]
         public ActionResult<StatisticsViewModel<BuyOfferViewModel>> GetBuy(int id)
         {
             var statisticsDto = new StatisticsDTO();
