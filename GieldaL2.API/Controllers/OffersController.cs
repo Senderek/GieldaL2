@@ -224,6 +224,8 @@ namespace GieldaL2.API.Controllers
                     if (_buyOfferService.Delete(buyOfferToDelete.Id, statisticsDto))
                     {
                         currentUserDto.Value += buyOfferToDelete.Price * buyOfferToDelete.Amount;
+                        currentUserDto.Password = null;
+
                         if (_userService.EditUser(currentUserDto.Id, currentUserDto, statisticsDto))
                         {
                             return Mapper.Map<StatisticsViewModel>(statisticsDto);

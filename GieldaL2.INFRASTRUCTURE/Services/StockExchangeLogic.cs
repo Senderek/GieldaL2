@@ -61,6 +61,8 @@ namespace GieldaL2.INFRASTRUCTURE.Services
                     //money got exchanged
                     targetUser.Value += price;
                     currentUser.Value -= price;
+                    currentUser.Password = null;
+                    targetUser.Password = null;
                     _userService.EditUser(currentUser.Id, currentUser, statistics);
                     _userService.EditUser(targetUser.Id, targetUser, statistics);
 
@@ -102,6 +104,8 @@ namespace GieldaL2.INFRASTRUCTURE.Services
                     //money got exchanged
                     targetUser.Value += price;
                     currentUser.Value -= price;
+                    currentUser.Password = null;
+                    targetUser.Password = null;
                     _userService.EditUser(currentUser.Id, currentUser, statistics);
                     _userService.EditUser(targetUser.Id, targetUser, statistics);
 
@@ -151,8 +155,11 @@ namespace GieldaL2.INFRASTRUCTURE.Services
                 _buyOfferService.Add(buyOffer, statistics);
                 //freeze users money equivalent to amount of shares he wants to buy left after searching through the market
                 currentUser.Value -= buyOffer.Amount * buyOffer.Price;
+                currentUser.Password = null;
                 _userService.EditUser(currentUser.Id, currentUser, statistics);
             }
+
+            CalculatePriceChange(buyOffer.StockId, statistics);
         }
 
         public void FindBuyOffers(SellOfferDTO sellOffer, UserDTO currentUser, StatisticsDTO statistics)
@@ -160,6 +167,10 @@ namespace GieldaL2.INFRASTRUCTURE.Services
 
             //get all buy offers for stock specified in offer
             var share = _shareService.GetShareById(sellOffer.ShareId, statistics);
+            if (share.Amount < sellOffer.Amount)
+            {
+                return;
+            }
             var offers = _buyOfferService.GetAll(statistics)
                 .Where(o=>o.StockId == share.StockId) //check if stock matched
                 .Where(o => o.Price >= sellOffer.Price) //price greater or equeal one in created offer
@@ -201,6 +212,7 @@ namespace GieldaL2.INFRASTRUCTURE.Services
 
                     //give money to current user(share holder)
                     currentUser.Value += sellOffer.Amount * sellOffer.Price;
+                    currentUser.Password = null;
                     _userService.EditUser(currentUser.Id, currentUser, statistics);
 
                     tradedAmount = sellOffer.Amount;
@@ -215,6 +227,9 @@ namespace GieldaL2.INFRASTRUCTURE.Services
                     _shareService.EditShare(share.Id, share, statistics);
 
                     currentUser.Value += offer.Amount * offer.Price;
+                    currentUser.Password = null;
+                    _userService.EditUser(currentUser.Id ,currentUser, statistics);
+
 
                     _buyOfferService.Delete(offer.Id, statistics);
 
@@ -241,7 +256,22 @@ namespace GieldaL2.INFRASTRUCTURE.Services
                 share.Amount -= sellOffer.Amount;
                 _shareService.EditShare(share.Id, share, statistics);
             }
+
+            CalculatePriceChange(share.StockId, statistics);
         }
+
+        public void CalculatePriceChange(int stockId, StatisticsDTO statistics)
+        {
+            decimal newPrice = _transactionService.GetAll(statistics).Where(item => item.StockId == stockId).TakeLast(100).Average(s => s.Price);
+            StockDTO stock = _stockService.GetStockById(stockId, statistics);
+            
+            stock.PriceDelta = ((stock.CurrentPrice / newPrice) * 100) - 100;
+            stock.CurrentPrice = newPrice;
+
+            _stockService.EditStock(stockId, stock, statistics);
+
+        }
+ 
 
     }
 }
